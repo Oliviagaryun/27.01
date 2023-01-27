@@ -1,0 +1,148 @@
+﻿namespace UI_21
+{
+    partial class Frm_Game
+    {
+        /// <summary>
+        /// Required designer variable.
+        /// </summary>
+        private System.ComponentModel.IContainer components = null;
+
+        /// <summary>
+        /// Clean up any resources being used.
+        /// </summary>
+        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+        }
+
+        #region Windows Form Designer generated code
+
+        /// <summary>
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
+        /// </summary>
+        private void InitializeComponent()
+        {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_Game));
+            this.btn_Stand = new System.Windows.Forms.Button();
+            this.Btn_Hit = new System.Windows.Forms.Button();
+            this.Btn_Return = new System.Windows.Forms.Button();
+            this.lbl_TotalBet = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.lbl_cardVal = new System.Windows.Forms.Label();
+            this.SuspendLayout();
+            // 
+            // btn_Stand
+            // 
+            this.btn_Stand.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_Stand.BackgroundImage")));
+            this.btn_Stand.Location = new System.Drawing.Point(191, 280);
+            this.btn_Stand.Name = "btn_Stand";
+            this.btn_Stand.Size = new System.Drawing.Size(94, 29);
+            this.btn_Stand.TabIndex = 0;
+            this.btn_Stand.Text = "Stand";
+            this.btn_Stand.UseVisualStyleBackColor = true;
+            this.btn_Stand.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // Btn_Hit
+            // 
+            this.Btn_Hit.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("Btn_Hit.BackgroundImage")));
+            this.Btn_Hit.Location = new System.Drawing.Point(539, 280);
+            this.Btn_Hit.Name = "Btn_Hit";
+            this.Btn_Hit.Size = new System.Drawing.Size(94, 29);
+            this.Btn_Hit.TabIndex = 1;
+            this.Btn_Hit.Text = "Hit";
+            this.Btn_Hit.UseVisualStyleBackColor = true;
+            this.Btn_Hit.Click += new System.EventHandler(this.Btn_Hit_Click);
+            // 
+            // Btn_Return
+            // 
+            this.Btn_Return.BackColor = System.Drawing.SystemColors.WindowFrame;
+            this.Btn_Return.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.Btn_Return.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.Btn_Return.Location = new System.Drawing.Point(12, 12);
+            this.Btn_Return.Name = "Btn_Return";
+            this.Btn_Return.Size = new System.Drawing.Size(123, 43);
+            this.Btn_Return.TabIndex = 9;
+            this.Btn_Return.Text = "RETURN";
+            this.Btn_Return.UseVisualStyleBackColor = false;
+            this.Btn_Return.Click += new System.EventHandler(this.Btn_Return_Click);
+            // 
+            // lbl_TotalBet
+            // 
+            this.lbl_TotalBet.AutoSize = true;
+            this.lbl_TotalBet.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(100)))), ((int)(((byte)(62)))));
+            this.lbl_TotalBet.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lbl_TotalBet.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.lbl_TotalBet.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.lbl_TotalBet.Location = new System.Drawing.Point(388, 186);
+            this.lbl_TotalBet.Name = "lbl_TotalBet";
+            this.lbl_TotalBet.Size = new System.Drawing.Size(54, 31);
+            this.lbl_TotalBet.TabIndex = 12;
+            this.lbl_TotalBet.Text = "////";
+            this.lbl_TotalBet.Click += new System.EventHandler(this.lbl_TotalBet_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.White;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label1.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label1.Image = ((System.Drawing.Image)(resources.GetObject("label1.Image")));
+            this.label1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.label1.Location = new System.Drawing.Point(303, 321);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(38, 31);
+            this.label1.TabIndex = 13;
+            this.label1.Text = "    ";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
+            // 
+            // lbl_cardVal
+            // 
+            this.lbl_cardVal.AutoSize = true;
+            this.lbl_cardVal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(100)))), ((int)(((byte)(62)))));
+            this.lbl_cardVal.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lbl_cardVal.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.lbl_cardVal.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.lbl_cardVal.Location = new System.Drawing.Point(450, 280);
+            this.lbl_cardVal.Name = "lbl_cardVal";
+            this.lbl_cardVal.Size = new System.Drawing.Size(78, 25);
+            this.lbl_cardVal.TabIndex = 14;
+            this.lbl_cardVal.Text = "counter";
+            this.lbl_cardVal.Click += new System.EventHandler(this.label2_Click);
+            // 
+            // Frm_Game
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.lbl_cardVal);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lbl_TotalBet);
+            this.Controls.Add(this.Btn_Return);
+            this.Controls.Add(this.Btn_Hit);
+            this.Controls.Add(this.btn_Stand);
+            this.Name = "Frm_Game";
+            this.Text = "Frm_Game";
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
+        }
+
+        #endregion
+
+        private Button button1;
+        private Button button2;
+        private Button Btn_Return;
+        private Button btn_Stand;
+        private Button Btn_Hit;
+        private Label lbl_TotalBet;
+        private Label label1;
+        private Label lbl_cardVal;
+    }
+}
