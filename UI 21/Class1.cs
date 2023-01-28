@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -33,15 +34,18 @@ namespace UI_21
             {
                 string[] face = { "Ace", "2", "3", "4", "5", "6", "7", "8", "9", "10", "Jack", "Queen", "King" };
                 string[] suit = { "hearts", "clubs", "Diamonds", "spades" };
-                string path = "/Users/Olivi/Desktop/UI 21/UI 21/bin/Debug/net6.0-windows/zh/Cards";
+                string path = "cards/Playing Cards/PNG-cards-1.3";
                 List<Card> deck = new List<Card>();
                 currentCard = 0;
                 
                 //Made a loop to loop through each file in my image folder of cards
                 foreach(string image in Directory.EnumerateFiles(path, "*", SearchOption.AllDirectories)) 
                 {
-                    string filename = Path.GetFileName(image);
-                    string[] SplitFilenameThing = filename.Split("_of_");
+                    string filename = Path.GetFileNameWithoutExtension(image);
+                    string[] SplitFilenameThing = new string[2]; 
+                    //had to compensate for the red joker
+                    if (filename != "red_joker") { SplitFilenameThing = filename.Split("_of_"); } else { SplitFilenameThing = filename.Split("_"); }
+                    
                     string tempface = SplitFilenameThing[0];
                     string tempCard = SplitFilenameThing[1];
                     Card card = new Card(tempface, tempCard, image);
