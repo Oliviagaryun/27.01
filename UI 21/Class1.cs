@@ -47,6 +47,8 @@ namespace UI_21
             }
                 */
             }
+
+            public string GetFace() { return this.face; }
         }
         public class Deck
         {
