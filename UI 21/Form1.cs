@@ -52,7 +52,7 @@ namespace UI_21
         private void Btn_Hit_Click(object sender, EventArgs e)
         {
             Deck deck = new Deck();
-            deck.Hit(player, dealer);
+            deck.Hit();
             // deal another card 
             // added to player value 
 
