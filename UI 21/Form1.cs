@@ -4,10 +4,13 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Numerics;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using UI_21;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+using static UI_21.Game;
 
 namespace UI_21
 {
@@ -48,15 +51,21 @@ namespace UI_21
 
         private void Btn_Hit_Click(object sender, EventArgs e)
         {
-            // function hit
+            Deck deck = new Deck();
+            deck.Hit(player, dealer);
             // deal another card 
-           // added to player value 
-          
+            // added to player value 
+
         }
 
         private void label2_Click(object sender, EventArgs e)
         {
             // show card value
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -35,6 +35,12 @@
             this.lbl_TotalBet = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.lbl_cardVal = new System.Windows.Forms.Label();
+            this.Pb_backOfCard = new System.Windows.Forms.PictureBox();
+            this.Pb_DealtCard1 = new System.Windows.Forms.PictureBox();
+            this.Pb_DealtCard2 = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.Pb_backOfCard)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Pb_DealtCard1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Pb_DealtCard2)).BeginInit();
             this.SuspendLayout();
             // 
             // btn_Stand
@@ -94,7 +100,7 @@
             this.label1.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.label1.Image = ((System.Drawing.Image)(resources.GetObject("label1.Image")));
             this.label1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label1.Location = new System.Drawing.Point(303, 321);
+            this.label1.Location = new System.Drawing.Point(250, 321);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(38, 31);
             this.label1.TabIndex = 13;
@@ -108,12 +114,45 @@
             this.lbl_cardVal.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lbl_cardVal.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.lbl_cardVal.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.lbl_cardVal.Location = new System.Drawing.Point(450, 280);
+            this.lbl_cardVal.Location = new System.Drawing.Point(539, 312);
             this.lbl_cardVal.Name = "lbl_cardVal";
             this.lbl_cardVal.Size = new System.Drawing.Size(78, 25);
             this.lbl_cardVal.TabIndex = 14;
             this.lbl_cardVal.Text = "counter";
             this.lbl_cardVal.Click += new System.EventHandler(this.label2_Click);
+            // 
+            // Pb_backOfCard
+            // 
+            this.Pb_backOfCard.BackColor = System.Drawing.Color.Transparent;
+            this.Pb_backOfCard.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("Pb_backOfCard.BackgroundImage")));
+            this.Pb_backOfCard.Location = new System.Drawing.Point(191, 55);
+            this.Pb_backOfCard.Name = "Pb_backOfCard";
+            this.Pb_backOfCard.Size = new System.Drawing.Size(97, 162);
+            this.Pb_backOfCard.TabIndex = 15;
+            this.Pb_backOfCard.TabStop = false;
+            this.Pb_backOfCard.Click += new System.EventHandler(this.pictureBox1_Click);
+            // 
+            // Pb_DealtCard1
+            // 
+            this.Pb_DealtCard1.BackColor = System.Drawing.Color.DimGray;
+            this.Pb_DealtCard1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.Pb_DealtCard1.Location = new System.Drawing.Point(294, 292);
+            this.Pb_DealtCard1.Name = "Pb_DealtCard1";
+            this.Pb_DealtCard1.Size = new System.Drawing.Size(97, 162);
+            this.Pb_DealtCard1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.Pb_DealtCard1.TabIndex = 16;
+            this.Pb_DealtCard1.TabStop = false;
+            // 
+            // Pb_DealtCard2
+            // 
+            this.Pb_DealtCard2.BackColor = System.Drawing.Color.DimGray;
+            this.Pb_DealtCard2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.Pb_DealtCard2.Location = new System.Drawing.Point(413, 292);
+            this.Pb_DealtCard2.Name = "Pb_DealtCard2";
+            this.Pb_DealtCard2.Size = new System.Drawing.Size(97, 162);
+            this.Pb_DealtCard2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.Pb_DealtCard2.TabIndex = 17;
+            this.Pb_DealtCard2.TabStop = false;
             // 
             // Frm_Game
             // 
@@ -121,6 +160,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.Pb_DealtCard2);
+            this.Controls.Add(this.Pb_DealtCard1);
+            this.Controls.Add(this.Pb_backOfCard);
             this.Controls.Add(this.lbl_cardVal);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.lbl_TotalBet);
@@ -129,6 +171,9 @@
             this.Controls.Add(this.btn_Stand);
             this.Name = "Frm_Game";
             this.Text = "Frm_Game";
+            ((System.ComponentModel.ISupportInitialize)(this.Pb_backOfCard)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Pb_DealtCard1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Pb_DealtCard2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -144,5 +189,8 @@
         private Label lbl_TotalBet;
         private Label label1;
         private Label lbl_cardVal;
+        private PictureBox Pb_backOfCard;
+        private PictureBox Pb_DealtCard1;
+        private PictureBox Pb_DealtCard2;
     }
 }
