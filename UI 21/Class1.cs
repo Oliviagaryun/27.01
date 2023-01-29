@@ -130,11 +130,11 @@ namespace UI_21
 
                 foreach (Card card in player.Cards)
                 {
-                    playerTotal += card.Value;
+                    playerTotal += Convert.ToInt32(card.GetFace());
                 }
                 foreach (Card card in dealer.Cards)
                 {
-                    dealerTotal += card.Value;
+                    dealerTotal += Convert.ToInt32(card.GetFace());
                 }
 
                 if (playerTotal > 21)
