@@ -18,6 +18,8 @@ namespace UI_21
             private string suit; // hearts,clubs,diamonds,spades
             private string location; //location of the card image
             private int Value;
+            public int playerTotal;
+
 
             public Card(string cardFace, string cardSuit, string Location)
             {// constructor 
@@ -25,30 +27,10 @@ namespace UI_21
                 this.suit = cardSuit;
                 this.location = Location;
                 this.Value = 0;
-                /*switch (cardFace)
-                {
-                    case "Ace":
-                        this.value = 11;
-                        break;
-                    case "Jack":
-                    case "Queen":
-                    case "King":
-                        this.value = 10;
-                        break;
-                    default:
-                        this.value = int.Parse(cardFace);
-                        break;
-                }
-            }
-            public int value
-            {
-                get { return this.value; }
-                set { this.value = value; }
-            }
-                */
+                
             }
 
-            public string GetFace() { return this.face; }
+            public int GetFace() { return Convert.ToInt32(this.face); }
         }
         public class Deck
         {
@@ -105,15 +87,17 @@ namespace UI_21
                 currentCard++;
                 player.Cards.Add(deck[currentCard]);
                 currentCard++;
+                playerTotal = player.Cards[0].GetFace() + player.Cards[1].GetFace();
                 dealer.Cards.Add(deck[currentCard]);
                 currentCard++;
-
+                int dealerTotal = dealer.Cards[2].GetFace();
                 // need to give cards their totals and add to int
             }
             public void Hit(Player player, Dealer dealer)
             {
                 player.Cards.Add(deck[currentCard]);
                 currentCard++;
+                
 
             }
             public void Stand(Player player, Dealer dealer)

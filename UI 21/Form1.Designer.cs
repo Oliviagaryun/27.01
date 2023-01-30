@@ -116,9 +116,9 @@
             this.lbl_cardVal.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.lbl_cardVal.Location = new System.Drawing.Point(539, 312);
             this.lbl_cardVal.Name = "lbl_cardVal";
-            this.lbl_cardVal.Size = new System.Drawing.Size(78, 25);
+            this.lbl_cardVal.Size = new System.Drawing.Size(28, 25);
             this.lbl_cardVal.TabIndex = 14;
-            this.lbl_cardVal.Text = "counter";
+            this.lbl_cardVal.Text = "//";
             this.lbl_cardVal.Click += new System.EventHandler(this.label2_Click);
             // 
             // Pb_backOfCard

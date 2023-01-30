@@ -33,9 +33,10 @@ namespace UI_21
 
         private void button1_Click(object sender, EventArgs e)
         {
-            //fucntion stand
+            Stand();
             // show dealer's hidden card
             // function winner
+            DetermineWinner();
         }
 
         private void lbl_TotalBet_Click(object sender, EventArgs e)
@@ -60,7 +61,7 @@ namespace UI_21
 
         private void label2_Click(object sender, EventArgs e)
         {
-            // show card value
+            lbl_cardVal.Text = playerTotal.ToString();
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
