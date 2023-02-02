@@ -19,6 +19,7 @@ namespace UI_21
             private string location; //location of the card image
             private int Value;
             public int playerTotal;
+            public int dealerTotal;
 
 
             public Card(string cardFace, string cardSuit, string Location)

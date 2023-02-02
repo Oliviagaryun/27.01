@@ -128,6 +128,7 @@
             this.Pb_backOfCard.Location = new System.Drawing.Point(191, 55);
             this.Pb_backOfCard.Name = "Pb_backOfCard";
             this.Pb_backOfCard.Size = new System.Drawing.Size(97, 162);
+            this.Pb_backOfCard.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.Pb_backOfCard.TabIndex = 15;
             this.Pb_backOfCard.TabStop = false;
             this.Pb_backOfCard.Click += new System.EventHandler(this.pictureBox1_Click);
