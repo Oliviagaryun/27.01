@@ -33,7 +33,7 @@
             this.Btn_Hit = new System.Windows.Forms.Button();
             this.Btn_Return = new System.Windows.Forms.Button();
             this.lbl_TotalBet = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lbl_hint = new System.Windows.Forms.Label();
             this.lbl_cardVal = new System.Windows.Forms.Label();
             this.Pb_backOfCard = new System.Windows.Forms.PictureBox();
             this.Pb_DealtCard1 = new System.Windows.Forms.PictureBox();
@@ -92,20 +92,20 @@
             this.lbl_TotalBet.Text = "////";
             this.lbl_TotalBet.Click += new System.EventHandler(this.lbl_TotalBet_Click);
             // 
-            // label1
+            // lbl_hint
             // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.White;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label1.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label1.Image = ((System.Drawing.Image)(resources.GetObject("label1.Image")));
-            this.label1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label1.Location = new System.Drawing.Point(250, 321);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(38, 31);
-            this.label1.TabIndex = 13;
-            this.label1.Text = "    ";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
+            this.lbl_hint.AutoSize = true;
+            this.lbl_hint.BackColor = System.Drawing.Color.White;
+            this.lbl_hint.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lbl_hint.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.lbl_hint.Image = ((System.Drawing.Image)(resources.GetObject("lbl_hint.Image")));
+            this.lbl_hint.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.lbl_hint.Location = new System.Drawing.Point(250, 321);
+            this.lbl_hint.Name = "lbl_hint";
+            this.lbl_hint.Size = new System.Drawing.Size(38, 31);
+            this.lbl_hint.TabIndex = 13;
+            this.lbl_hint.Text = "    ";
+            this.lbl_hint.Click += new System.EventHandler(this.label1_Click);
             // 
             // lbl_cardVal
             // 
@@ -125,7 +125,7 @@
             // 
             this.Pb_backOfCard.BackColor = System.Drawing.Color.Transparent;
             this.Pb_backOfCard.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("Pb_backOfCard.BackgroundImage")));
-            this.Pb_backOfCard.Location = new System.Drawing.Point(191, 55);
+            this.Pb_backOfCard.Location = new System.Drawing.Point(188, 55);
             this.Pb_backOfCard.Name = "Pb_backOfCard";
             this.Pb_backOfCard.Size = new System.Drawing.Size(97, 162);
             this.Pb_backOfCard.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -165,7 +165,7 @@
             this.Controls.Add(this.Pb_DealtCard1);
             this.Controls.Add(this.Pb_backOfCard);
             this.Controls.Add(this.lbl_cardVal);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lbl_hint);
             this.Controls.Add(this.lbl_TotalBet);
             this.Controls.Add(this.Btn_Return);
             this.Controls.Add(this.Btn_Hit);
@@ -188,7 +188,7 @@
         private Button btn_Stand;
         private Button Btn_Hit;
         private Label lbl_TotalBet;
-        private Label label1;
+        private Label lbl_hint;
         private Label lbl_cardVal;
         private PictureBox Pb_backOfCard;
         private PictureBox Pb_DealtCard1;

@@ -6,184 +6,234 @@ using System.Numerics;
 using System.Text;
 using System.Threading.Tasks;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
-using static UI_21.Game;
+
 
 namespace UI_21
 {
-    internal class Game
+    class Card
     {
-        public class Card
+        public string Rank { get; set; }
+        public string Suit { get; set; }
+        public int Value { get; set; }
+
+        public Card(string rank, string suit, int value)
         {
-            private string face; // ace -> K
-            private string suit; // hearts,clubs,diamonds,spades
-            private string location; //location of the card image
-            private int Value;
-            public int playerTotal;
-            public int dealerTotal;
-
-
-            public Card(string cardFace, string cardSuit, string Location)
-            {// constructor 
-                this.face = cardFace;
-                this.suit = cardSuit;
-                this.location = Location;
-                this.Value = 0;
-                
-            }
-
-            public int GetFace() { return Convert.ToInt32(this.face); }
+            Rank = rank;
+            Suit = suit;
+            Value = value;
         }
-        public class Deck
+    }
+
+    class Deck
+    {
+        public List<Card> Cards { get; set; }
+
+        public Deck()
         {
-            private Card[] deck;
-            private int currentCard;
-
-            private int totalCards = 52;
-            private Random RanNum = new Random();
-
-            public Deck()
+            Cards = new List<Card>();
+            string[] suits = { "Hearts", "Diamonds", "Spades", "Clubs" };
+            string[] ranks = { "Ace", "2", "3", "4", "5", "6", "7", "8", "9", "10", "Jack", "Queen", "King" };
+            int[] values = { 11, 2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10, 10 };
+            string path = "cards/Playing Cards/PNG-cards-1.3";
+            foreach (string image in Directory.EnumerateFiles(path, "*", SearchOption.AllDirectories))
             {
-                string[] face = { "Ace", "2", "3", "4", "5", "6", "7", "8", "9", "10", "Jack", "Queen", "King" };
-                string[] suit = { "hearts", "clubs", "Diamonds", "spades" };
-                string path = "cards/Playing Cards/PNG-cards-1.3";
-                List<Card> deck = new List<Card>();
-                currentCard = 0;
+                string filename = Path.GetFileNameWithoutExtension(image);
+                string[] SplitFilenameThing = new string[2];
+                //had to compensate for the red joker
+                if (filename != "red_joker") { SplitFilenameThing = filename.Split("_of_"); } else { SplitFilenameThing = filename.Split("_"); }
 
-                //Made a loop to loop through each file in my image folder of cards
-                foreach (string image in Directory.EnumerateFiles(path, "*", SearchOption.AllDirectories))
-                {
-                    string filename = Path.GetFileNameWithoutExtension(image);
-                    string[] SplitFilenameThing = new string[2];
-                    //had to compensate for the red joker
-                    if (filename != "red_joker") { SplitFilenameThing = filename.Split("_of_"); } else { SplitFilenameThing = filename.Split("_"); }
+                string tempface = SplitFilenameThing[0];
+                string tempCard = SplitFilenameThing[1];
+                Card card = new Card(tempface, tempCard, image);
+                Cards.Add(card);
 
-                    string tempface = SplitFilenameThing[0];
-                    string tempCard = SplitFilenameThing[1];
-                    Card card = new Card(tempface, tempCard, image);
-                    deck.Add(card);
 
-                }
-                // deck.Add(new Card(face[count % 11], suit[count / 13]);
-                Shuffle(deck);
-                //deck.Remove(someCard);
-                //deck.ForEach(card => Console.WriteLine(card.ToString()));
-                // deck location starts a 0 
 
-            }
-
-            public void Shuffle(List<Card> deck)
+                for (int i = 0; i < suits.Length; i++)
             {
-                Random rng = new Random();
-                for (int i = 0; i < deck.Count; i++)
+                for (int j = 0; j < ranks.Length; j++)
                 {
-                    int randomIndex = rng.Next(deck.Count);
-                    Card temp = deck[i];
-                    deck[i] = deck[randomIndex];
-                    deck[randomIndex] = temp;
+                    Card cards = new Card(ranks[j], suits[i], values[j]);
+                    Cards.Add(card);
                 }
             }
-            public void Deal(Player player, Dealer dealer)
+        }
+
+        public void Shuffle()
+        {
+            List<Card> newDeck = new List<Card>();
+            Random random = new Random();
+            while (Cards.Count > 0)
             {
-                player.Cards.Add(deck[currentCard]);
-                currentCard++;
-                player.Cards.Add(deck[currentCard]);
-                currentCard++;
-                playerTotal = player.Cards[0].GetFace() + player.Cards[1].GetFace();
-                dealer.Cards.Add(deck[currentCard]);
-                currentCard++;
-                int dealerTotal = dealer.Cards[2].GetFace();
-                // need to give cards their totals and add to int
+                int index = random.Next(Cards.Count);
+                newDeck.Add(Cards[index]);
+                Cards.RemoveAt(index);
             }
-            public void Hit(Player player, Dealer dealer)
-            {
-                player.Cards.Add(deck[currentCard]);
-                currentCard++;
-                
+            Cards = newDeck;
+        }
+    }
 
+    class Player
+    {
+        public List<Card> Hand { get; set; }
+
+        public Player()
+        {
+            Hand = new List<Card>();
+        }
+
+        public void Draw(Deck deck)
+        {
+            Hand.Add(deck.Cards[0]);
+            deck.Cards.RemoveAt(0);
+        }
+
+        public int GetTotal()
+        {
+            int total = 0;
+            foreach (var card in Hand)
+            {
+                total += card.Value;
             }
-            public void Stand(Player player, Dealer dealer)
-            {
-                // if dealers card total  <17
-                dealer.Cards.Add(deck[currentCard]);
-                currentCard++;
+            return total;
+        }
+    }
 
+    class Dealer
+    {
+        public List<Card> Hand { get; set; }
+
+        public Dealer()
+        {
+            Hand = new List<Card>();
+        }
+
+        public void Draw(Deck deck)
+        {
+            Hand.Add(deck.Cards[0]);
+            deck.Cards.RemoveAt(0);
+        }
+
+        public int GetTotal()
+        {
+            int total = 0;
+            foreach (var card in Hand)
+            {
+                total += card.Value;
             }
-            public void DetermineWinner(Player player, Dealer dealer)
+            return total;
+        }
+    }
+
+    class Game
+        {// Create instances of the deck, player, and dealer classes
+            public Deck Deck { get; set; }
+        public Player Player { get; set; }
+        public Dealer Dealer { get; set; }
+        public int Bet { get; set; }
+
+        public Game()
+        {
+            Deck = new Deck();
+            Player = new Player();
+            Dealer = new Dealer();
+        }
+
+            public void Setup()
             {
-                int playerTotal = 0;
-                int dealerTotal = 0;
+                Shuffle(Card);
 
-                foreach (Card card in player.Cards)
-                {
-                    playerTotal += Convert.ToInt32(card.GetFace());
-                }
-                foreach (Card card in dealer.Cards)
-                {
-                    dealerTotal += Convert.ToInt32(card.GetFace());
-                }
+                //Console.WriteLine("Enter your bet: ");
+                //Bet = Convert.ToInt32(Console.ReadLine());
 
-                if (playerTotal > 21)
+                // Draw two cards for the player and two cards for the dealer
+                Player.Draw(Deck);
+                Player.Draw(Deck);
+
+                Dealer.Draw(Deck);
+                Dealer.Draw(Deck);
+
+                // Display the player's cards
+                Console.WriteLine("Your cards are: ");
+                foreach (var card in Player.Hand)
                 {
-                    Console.WriteLine("Player busts, dealer wins.");
-                    Bank = Bank - bet;
+                    Console.WriteLine(card.Rank + " of " + card.Suit);
                 }
-                else if (dealerTotal > 21)
+                Console.WriteLine("Your total is: " + Player.GetTotal());
+
+                // Display the dealer's first card and one hidden card
+                Console.WriteLine("Dealer's cards are: ");
+                Console.WriteLine(Dealer.Hand[0].Rank + " of " + Dealer.Hand[0].Suit);
+                Console.WriteLine("Hidden card");
+                /*
+                while (Player.GetTotal() < 21)
                 {
-                    Console.WriteLine("Dealer busts, player wins.");
-                    Bank = Bank + bet * 2;
+                    Console.WriteLine("Do you want to hit or stand?");
+                    string action = Console.ReadLine().ToLower();
+                    if (action == "hit")
+                    {
+                        Player.Draw(Deck);
+                        Console.WriteLine("Your cards are: ");
+                        foreach (var card in Player.Hand)
+                        {
+                            Console.WriteLine(card.Rank + " of " + card.Suit);
+                        }
+                        Console.WriteLine("Your total is: " + Player.GetTotal());
+                    }
+                    else if (action == "stand")
+                    {
+                        break;
+                    }
                 }
-                else if (dealerTotal > playerTotal)
+            }
+                */
+            }
+
+            public void Hit()
+            {
+                Player.Draw(Deck);
+                Console.WriteLine("Your cards are: ");
+                foreach (var card in Player.Hand)
                 {
-                    Console.WriteLine("Dealer wins.");
-                    Bank = Bank - bet;
+                    Console.WriteLine(card.Rank + " of " + card.Suit);
+                    // call corresponding image 
+
                 }
-                else if (playerTotal > dealerTotal)
+                Console.WriteLine("Your total is: " + Player.GetTotal());
+            }
+
+
+            public void DetermineWinner() 
+            { 
+                Console.WriteLine("Dealer's cards are: ");
+                foreach (var card in Dealer.Hand)
                 {
-                    Console.WriteLine("Player wins.");
-                    Bank = Bank + bet * 2;
+                    Console.WriteLine(card.Rank + " of " + card.Suit);
+                }
+                Console.WriteLine("Dealer's total is: " + Dealer.GetTotal());
+
+                if (Player.GetTotal() > 21)
+                {
+                    Console.WriteLine("You lose!");
+
+                }
+                else if (Dealer.GetTotal() > 21)
+                {
+                    Console.WriteLine("Dealer busts! You win!");
+                    Console.WriteLine("You win " + (Bet * 2) + " chips.");
+                }
+                else if (Dealer.GetTotal() < Player.GetTotal())
+                {
+                    Console.WriteLine("You win!");
+                    Console.WriteLine("You win " + (Bet * 2) + " chips.");
                 }
                 else
                 {
-                    Console.WriteLine("Draw.");
-
+                    Console.WriteLine("You lose!");
                 }
-            }
-            private int Bank = 1500;
-            private int bet = 0;
 
-            public void Bet(int bet)
-            {
-                if (bet <= Bank)
-                {
-                    Bank -= bet;
-                }
-                else
-                {
-                    Console.WriteLine("Insufficient funds. Please enter a lower bet amount.");
-                }
-            }
-        }
 
-        public class Player
-        {
-            public List<Card> Cards { get; set; }
-
-            public Player()
-            {
-                Cards = new List<Card>();
-            }
-        }
-        public class Dealer
-        {
-            public List<Card> Cards { get; set; }
-
-            public Dealer()
-            {
-                Cards = new List<Card>();
             }
         }
     }
 }
-
-
-

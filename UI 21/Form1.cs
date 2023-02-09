@@ -14,17 +14,22 @@ using static UI_21.Game;
 
 namespace UI_21
 {
+
     public partial class Frm_Game : Form
     {
+
+        private Game game = new Game();
+
         public Frm_Game()
         {
             
-            
+
             InitializeComponent();
         }
 
         private void Btn_Return_Click(object sender, EventArgs e)
         {
+
             this.Hide();
             Frm_Betting form1 = new Frm_Betting();
             form1.ShowDialog();
@@ -33,10 +38,8 @@ namespace UI_21
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Stand();
-            // show dealer's hidden card
-            // function winner
-            DetermineWinner();
+            
+            game.deck.DetermineWinner(game.player, game.dealer);
         }
 
         private void lbl_TotalBet_Click(object sender, EventArgs e)
@@ -50,18 +53,19 @@ namespace UI_21
 
         }
 
+        
         private void Btn_Hit_Click(object sender, EventArgs e)
         {
-            Deck deck = new Deck();
-            deck.Hit();
-            // deal another card 
-            // added to player value 
+            Game G1 = new Game();
+            G1.Hit();
+            // call function hit 
 
         }
 
         private void label2_Click(object sender, EventArgs e)
         {
-            lbl_cardVal.Text = playerTotal.ToString();
+            
+            lbl_cardVal.Text = Player.GetTotal();
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)

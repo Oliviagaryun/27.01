@@ -59,22 +59,22 @@ namespace UI_21
             Bet = 0;
         }
 
-        private void Btn_chip10_Click(object sender, EventArgs e)
+        private void Btn_chip5_Click(object sender, EventArgs e)
         {
             Bet = Bet + 5;
         }
 
-        private void Btn_chip50_Click(object sender, EventArgs e)
+        private void Btn_chip25_Click(object sender, EventArgs e)
         {
             Bet = Bet + 25;
         }
 
-        private void Btn_chip100_Click(object sender, EventArgs e)
+        private void Btn_chip50_Click(object sender, EventArgs e)
         {
             Bet  = Bet + 50;
         }   
 
-        private void Btn_Chip500_Click(object sender, EventArgs e)
+        private void Btn_Chip100_Click(object sender, EventArgs e)
         {
             Bet = Bet + 100;
         }
@@ -97,6 +97,11 @@ namespace UI_21
             Frm_Game form1 = new Frm_Game();
             form1.ShowDialog();
             this.Close();
+        }
+
+        private void Frm_Betting_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
