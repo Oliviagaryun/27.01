@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 //using OfficeOpenXml;
-using Excel = Microsoft.Office.Interop.Excel;
+using System.IO;
 
 namespace UI_21
 {
@@ -24,116 +24,74 @@ namespace UI_21
         private int DlWinAmt;
       */
 
-       
+
         class Program
         {
             static void Main(string[] args)
             {
-                DataTable blackjackData = ReadDataFromExcel("blkjckhands.xlsx");
-                int numberOfSimulations = 10000;
-                int numberOfWins = 0;
+                string filePath = "blkjckhands.csv";
 
-                for (int i = 0; i < numberOfSimulations; i++)
+                try
                 {
-                    int playerScore = 0;
-                    int dealerScore = 0;
-                    bool playerBusted = false;
+                    int totalHands = 0;
+                    int sumofcards = 0;
+                    int totalWins = 0;
 
-                    // Player's turn
-                    while (playerScore < 17)
+                    string[] lines = File.ReadAllLines(filePath);
+
+                    foreach (string line in lines)
                     {
-                        int cardValue = GetRandomCardValue(blackjackData);
-                        playerScore += cardValue;
-                        if (playerScore > 21)
+                        string[] values = line.Split(',');
+
+                        // Parse the values into variables
+                        string hand = values[0];
+                        string result = values[1];
+
+                        totalHands++;
+
+                        if (result == "win")
                         {
-                            playerBusted = true;
-                            break;
+                            totalWins++;
                         }
                     }
 
-                    // Dealer's turn
-                    if (!playerBusted)
-                    {
-                        while (dealerScore < 17)
-                        {
-                            int cardValue = GetRandomCardValue(blackjackData);
-                            dealerScore += cardValue;
-                        }
+                    // Calculate the win rate
+                    double winRate = (double)totalWins / (double)totalHands;
 
-                        if (dealerScore > 21 || playerScore > dealerScore)
-                        {
-                            numberOfWins++;
-                        }
-                    }
+                    Console.WriteLine("Total hands: {0}", totalHands);
+                    Console.WriteLine("Total wins: {0}", totalWins);
+                    Console.WriteLine("Win rate: {0:P2}", winRate);
                 }
-
-                Console.WriteLine("Number of Wins: " + numberOfWins);
-                Console.WriteLine("Winning Percentage: " + ((double)numberOfWins / numberOfSimulations * 100) + "%");
-
-                Console.ReadLine();
-            }
-
-            private static int GetRandomCardValue(DataTable blackjackData)
-            {
-                Random random = new Random();
-                int randomIndex = random.Next(0, blackjackData.Rows.Count - 1);
-                int cardValue = Convert.ToInt32(blackjackData.Rows[randomIndex]["Value"]);
-                return cardValue;
-            }
-
-            private static DataTable ReadDataFromExcel(string fileName)
-            {
-                DataTable dataTable = new DataTable();
-                Excel.Application xlApp = new Excel.Application();
-                Excel.Workbook xlWorkbook = xlApp.Workbooks.Open(fileName);
-                Excel._Worksheet xlWorksheet = xlWorkbook.Sheets[1];
-                Excel.Range xlRange = xlWorksheet.UsedRange;
-
-                int rowCount = xlRange.Rows.Count;
-                int colCount = xlRange.Columns.Count;
-
-                // Add columns to the DataTable
-                for (int i = 1; i <= colCount; i++)
+                catch (Exception ex)
                 {
-                    dataTable.Columns.Add(xlRange.Cells[1, i].Value2.ToString());
+                    Console.WriteLine("An error occurred: " + ex.Message);
                 }
-
-                // Add rows to the DataTable
-                for (int i = 2; i <= rowCount; i++)
-                {
-                    DataRow dataRow = dataTable.NewRow();
-                    for (int j = 1; j <= colCount; j++)
-                    {
-                        dataRow[j - 1] = xlRange.Cells[i, j].Value2;
-                    }
-                    dataTable.Rows.Add(dataRow);
-                }
-                xlWorkbook.Close();
-                xlApp.Quit();
-
-                return dataTable;
-            }
-        }
-
-
-        class CardGames
-            {
-                int PlayerID;
-                //int[] playerCards;
-                //int[] dealerCards;
-                bool Blackjack;
-                bool Win;
-                bool plyrBust;
-                bool dealerBust;
-
-            }
-            class Dealer
-            {
-                int GameID;
-                //int[] dealerCards;
             }
         }
     }
 }
+
+
+
+/*
+        class CardGames
+        {
+            int PlayerID;
+            //int[] playerCards;
+            //int[] dealerCards;
+            bool Blackjack;
+            bool Win;
+            bool plyrBust;
+            bool dealerBust;
+
+        }
+        class Dealer
+        {
+            int GameID;
+            //int[] dealerCards;
+        }
+    }
+}
+*/
 
 
