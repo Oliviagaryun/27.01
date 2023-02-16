@@ -61,18 +61,19 @@ namespace UI_21
                 }
             }
 
-            public void Shuffle()
+            
+        }
+        public void Shuffle()
+        {
+            List<Card> newDeck = new List<Card>();
+            Random random = new Random();
+            while (Cards.Count > 0)
             {
-                List<Card> newDeck = new List<Card>();
-                Random random = new Random();
-                while (Cards.Count > 0)
-                {
-                    int index = random.Next(Cards.Count);
-                    newDeck.Add(Cards[index]);
-                    Cards.RemoveAt(index);
-                }
-                Cards = newDeck;
+                int index = random.Next(Cards.Count);
+                newDeck.Add(Cards[index]);
+                Cards.RemoveAt(index);
             }
+            Cards = newDeck;
         }
     }
     class Player
