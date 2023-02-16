@@ -18,11 +18,14 @@ namespace UI_21
         public string Suit { get; set; }
         public int Value { get; set; }
 
-        public Card(string rank, string suit, int value)
+        public string Location { get; set; }
+
+        public Card(string rank, string suit, int value, string path)
         {
             Rank = rank;
             Suit = suit;
             Value = value;
+            Location = path;
         }
     }
 
@@ -46,7 +49,8 @@ namespace UI_21
 
                 string tempface = SplitFilenameThing[0];
                 string tempCard = SplitFilenameThing[1];
-                Card card = new Card(tempface, tempCard, image);
+                int AValue = 0;
+                Card card = new Card(tempface, tempCard, AValue ,image);
                 Cards.Add(card);
 
 
