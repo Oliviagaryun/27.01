@@ -28,7 +28,7 @@ namespace UI_21
 
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void button1_Click(object sender, EventArgs e)// 1
         {
 
             Btn_chip1.BackColor = Color.Transparent; 
@@ -37,7 +37,7 @@ namespace UI_21
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
-            //textBox1.Text = Bank.ToString();
+            textBox1.Text = Bank.ToString();
         }
 
         private void form_Load(object sender, EventArgs e)
@@ -59,14 +59,15 @@ namespace UI_21
             Bet = 0;
         }
 
-        private void Btn_chip5_Click(object sender, EventArgs e)
-        {
-            Bet = Bet + 5;
-        }
 
-        private void Btn_chip25_Click(object sender, EventArgs e)
+        private void button1_Click_3(object sender, EventArgs e)
         {
             Bet = Bet + 25;
+        }
+        private void Btn_chip25_Click(object sender, EventArgs e)
+            
+        {
+            Bet = Bet + 5;
         }
 
         private void Btn_chip50_Click(object sender, EventArgs e)
@@ -99,9 +100,8 @@ namespace UI_21
             this.Close();
         }
 
-        private void Frm_Betting_Load(object sender, EventArgs e)
-        {
+       
 
-        }
+        
     }
 }

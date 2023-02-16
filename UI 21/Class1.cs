@@ -6,6 +6,7 @@ using System.Numerics;
 using System.Text;
 using System.Threading.Tasks;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+using Microsoft.Office.Interop.Excel; // to read and write into excel file 
 
 
 namespace UI_21
@@ -50,94 +51,94 @@ namespace UI_21
 
 
                 for (int i = 0; i < suits.Length; i++)
-            {
-                for (int j = 0; j < ranks.Length; j++)
                 {
-                    Card cards = new Card(ranks[j], suits[i], values[j]);
-                    Cards.Add(card);
+                    for (int j = 0; j < ranks.Length; j++)
+                    {
+                        Card cards = new Card(ranks[j], suits[i], values[j]);
+                        Cards.Add(card);
+                    }
                 }
             }
-        }
 
-        public void Shuffle()
-        {
-            List<Card> newDeck = new List<Card>();
-            Random random = new Random();
-            while (Cards.Count > 0)
+            public void Shuffle()
             {
-                int index = random.Next(Cards.Count);
-                newDeck.Add(Cards[index]);
-                Cards.RemoveAt(index);
+                List<Card> newDeck = new List<Card>();
+                Random random = new Random();
+                while (Cards.Count > 0)
+                {
+                    int index = random.Next(Cards.Count);
+                    newDeck.Add(Cards[index]);
+                    Cards.RemoveAt(index);
+                }
+                Cards = newDeck;
             }
-            Cards = newDeck;
-        }
-    }
-
-    class Player
-    {
-        public List<Card> Hand { get; set; }
-
-        public Player()
-        {
-            Hand = new List<Card>();
         }
 
-        public void Draw(Deck deck)
+        class Player
         {
-            Hand.Add(deck.Cards[0]);
-            deck.Cards.RemoveAt(0);
-        }
+            public List<Card> Hand { get; set; }
 
-        public int GetTotal()
-        {
-            int total = 0;
-            foreach (var card in Hand)
+            public Player()
             {
-                total += card.Value;
+                Hand = new List<Card>();
             }
-            return total;
-        }
-    }
 
-    class Dealer
-    {
-        public List<Card> Hand { get; set; }
-
-        public Dealer()
-        {
-            Hand = new List<Card>();
-        }
-
-        public void Draw(Deck deck)
-        {
-            Hand.Add(deck.Cards[0]);
-            deck.Cards.RemoveAt(0);
-        }
-
-        public int GetTotal()
-        {
-            int total = 0;
-            foreach (var card in Hand)
+            public void Draw(Deck deck)
             {
-                total += card.Value;
+                Hand.Add(deck.Cards[0]);
+                deck.Cards.RemoveAt(0);
             }
-            return total;
-        }
-    }
 
-    class Game
+            public int GetTotal()
+            {
+                int total = 0;
+                foreach (var card in Hand)
+                {
+                    total += card.Value;
+                }
+                return total;
+            }
+        }
+
+        class Dealer
+        {
+            public List<Card> Hand { get; set; }
+
+            public Dealer()
+            {
+                Hand = new List<Card>();
+            }
+
+            public void Draw(Deck deck)
+            {
+                Hand.Add(deck.Cards[0]);
+                deck.Cards.RemoveAt(0);
+            }
+
+            public int GetTotal()
+            {
+                int total = 0;
+                foreach (var card in Hand)
+                {
+                    total += card.Value;
+                }
+                return total;
+            }
+        }
+
+        class Game
         {// Create instances of the deck, player, and dealer classes
             public Deck Deck { get; set; }
-        public Player Player { get; set; }
-        public Dealer Dealer { get; set; }
-        public int Bet { get; set; }
+            public Player Player { get; set; }
+            public Dealer Dealer { get; set; }
+            public int Bet { get; set; }
 
-        public Game()
-        {
-            Deck = new Deck();
-            Player = new Player();
-            Dealer = new Dealer();
-        }
+            public Game()
+            {
+                Deck = new Deck();
+                Player = new Player();
+                Dealer = new Dealer();
+            }
 
             public void Setup()
             {
@@ -203,8 +204,9 @@ namespace UI_21
             }
 
 
-            public void DetermineWinner() 
-            { 
+            public void DetermineWinner()
+            {
+                bool win = false;
                 Console.WriteLine("Dealer's cards are: ");
                 foreach (var card in Dealer.Hand)
                 {
@@ -215,25 +217,61 @@ namespace UI_21
                 if (Player.GetTotal() > 21)
                 {
                     Console.WriteLine("You lose!");
+                    // bool win is false 
 
                 }
                 else if (Dealer.GetTotal() > 21)
                 {
                     Console.WriteLine("Dealer busts! You win!");
                     Console.WriteLine("You win " + (Bet * 2) + " chips.");
+                    win = true;
                 }
                 else if (Dealer.GetTotal() < Player.GetTotal())
                 {
                     Console.WriteLine("You win!");
                     Console.WriteLine("You win " + (Bet * 2) + " chips.");
+                    win = true;
                 }
                 else
                 {
                     Console.WriteLine("You lose!");
+                    // bool win is false 
                 }
 
-
             }
+
         }
+
     }
+
+
 }
+/* SEUN: idk where this should go. 
+ this should create a new excel file which will record the data of each game 
+Excel.Application excelApp = new Excel.Application();
+
+// create a new workbook
+Excel.Workbook workbook = excelApp.Workbooks.Add();
+//first sheet
+Excel.Worksheet worksheet = workbook.Sheets[1];
+ int row = 1
+// headers 
+worksheet.Cells[row, 1] = "Player Name";
+worksheet.Cells[row, 2] = "Player Total";
+worksheet.Cells[row, 3] = "Dealer Total";
+worksheet.Cells[row1, 4] = "Win";
+ int row++; 
+
+// write the data to subsequent rows ( idk if this would work ) 
+worksheet.Cells[row, 1] = playerName;
+worksheet.Cells[row, 2] = Player.GetTotal();
+worksheet.Cells[row, 3] = Dealer.GetTotal();
+worksheet.Cells[row, 4] = win;
+
+// save the workbook
+workbook.SaveAs("BlackjackHands.xlsx");
+
+// close the workbook and Excel application
+workbook.Close();
+excelApp.Quit();
+*/
