@@ -148,7 +148,9 @@ namespace UI_21
 
         public void Setup()
         {
-            Shuffle(Card);
+            //you probably want to create a public deck clas you can access anywhere
+            Deck deck = new Deck();
+            deck.Shuffle();
 
             //Console.WriteLine("Enter your bet: ");
             //Bet = Convert.ToInt32(Console.ReadLine());
