@@ -73,171 +73,169 @@ namespace UI_21
                 Cards = newDeck;
             }
         }
+    }
+    class Player
+    {
+        public List<Card> Hand { get; set; }
 
-        class Player
+        public Player()
         {
-            public List<Card> Hand { get; set; }
-
-            public Player()
-            {
-                Hand = new List<Card>();
-            }
-
-            public void Draw(Deck deck)
-            {
-                Hand.Add(deck.Cards[0]);
-                deck.Cards.RemoveAt(0);
-            }
-
-            public int GetTotal()
-            {
-                int total = 0;
-                foreach (var card in Hand)
-                {
-                    total += card.Value;
-                }
-                return total;
-            }
+            Hand = new List<Card>();
         }
 
-        class Dealer
+        public void Draw(Deck deck)
         {
-            public List<Card> Hand { get; set; }
-
-            public Dealer()
-            {
-                Hand = new List<Card>();
-            }
-
-            public void Draw(Deck deck)
-            {
-                Hand.Add(deck.Cards[0]);
-                deck.Cards.RemoveAt(0);
-            }
-
-            public int GetTotal()
-            {
-                int total = 0;
-                foreach (var card in Hand)
-                {
-                    total += card.Value;
-                }
-                return total;
-            }
+            Hand.Add(deck.Cards[0]);
+            deck.Cards.RemoveAt(0);
         }
 
-        class Game
-        {// Create instances of the deck, player, and dealer classes
-            public Deck Deck { get; set; }
-            public Player Player { get; set; }
-            public Dealer Dealer { get; set; }
-            public int Bet { get; set; }
-
-            public Game()
+        public int GetTotal()
+        {
+            int total = 0;
+            foreach (var card in Hand)
             {
-                Deck = new Deck();
-                Player = new Player();
-                Dealer = new Dealer();
+                total += card.Value;
             }
+            return total;
+        }
+    }
 
-            public void Setup()
+    class Dealer
+    {
+        public List<Card> Hand { get; set; }
+
+        public Dealer()
+        {
+            Hand = new List<Card>();
+        }
+
+        public void Draw(Deck deck)
+        {
+            Hand.Add(deck.Cards[0]);
+            deck.Cards.RemoveAt(0);
+        }
+
+        public int GetTotal()
+        {
+            int total = 0;
+            foreach (var card in Hand)
             {
-                Shuffle(Card);
+                total += card.Value;
+            }
+            return total;
+        }
+    }
 
-                //Console.WriteLine("Enter your bet: ");
-                //Bet = Convert.ToInt32(Console.ReadLine());
+    class Game
+    {// Create instances of the deck, player, and dealer classes
+        public Deck Deck { get; set; }
+        public Player Player { get; set; }
+        public Dealer Dealer { get; set; }
+        public int Bet { get; set; }
 
-                // Draw two cards for the player and two cards for the dealer
-                Player.Draw(Deck);
-                Player.Draw(Deck);
+        public Game()
+        {
+            Deck = new Deck();
+            Player = new Player();
+            Dealer = new Dealer();
+        }
 
-                Dealer.Draw(Deck);
-                Dealer.Draw(Deck);
+        public void Setup()
+        {
+            Shuffle(Card);
 
-                // Display the player's cards
-                Console.WriteLine("Your cards are: ");
-                foreach (var card in Player.Hand)
+            //Console.WriteLine("Enter your bet: ");
+            //Bet = Convert.ToInt32(Console.ReadLine());
+
+            // Draw two cards for the player and two cards for the dealer
+            Player.Draw(Deck);
+            Player.Draw(Deck);
+
+            Dealer.Draw(Deck);
+            Dealer.Draw(Deck);
+
+            // Display the player's cards
+            Console.WriteLine("Your cards are: ");
+            foreach (var card in Player.Hand)
+            {
+                Console.WriteLine(card.Rank + " of " + card.Suit);
+            }
+            Console.WriteLine("Your total is: " + Player.GetTotal());
+
+            // Display the dealer's first card and one hidden card
+            Console.WriteLine("Dealer's cards are: ");
+            Console.WriteLine(Dealer.Hand[0].Rank + " of " + Dealer.Hand[0].Suit);
+            Console.WriteLine("Hidden card");
+            /*
+            while (Player.GetTotal() < 21)
+            {
+                Console.WriteLine("Do you want to hit or stand?");
+                string action = Console.ReadLine().ToLower();
+                if (action == "hit")
                 {
-                    Console.WriteLine(card.Rank + " of " + card.Suit);
-                }
-                Console.WriteLine("Your total is: " + Player.GetTotal());
-
-                // Display the dealer's first card and one hidden card
-                Console.WriteLine("Dealer's cards are: ");
-                Console.WriteLine(Dealer.Hand[0].Rank + " of " + Dealer.Hand[0].Suit);
-                Console.WriteLine("Hidden card");
-                /*
-                while (Player.GetTotal() < 21)
-                {
-                    Console.WriteLine("Do you want to hit or stand?");
-                    string action = Console.ReadLine().ToLower();
-                    if (action == "hit")
+                    Player.Draw(Deck);
+                    Console.WriteLine("Your cards are: ");
+                    foreach (var card in Player.Hand)
                     {
-                        Player.Draw(Deck);
-                        Console.WriteLine("Your cards are: ");
-                        foreach (var card in Player.Hand)
-                        {
-                            Console.WriteLine(card.Rank + " of " + card.Suit);
-                        }
-                        Console.WriteLine("Your total is: " + Player.GetTotal());
+                        Console.WriteLine(card.Rank + " of " + card.Suit);
                     }
-                    else if (action == "stand")
-                    {
-                        break;
-                    }
+                    Console.WriteLine("Your total is: " + Player.GetTotal());
+                }
+                else if (action == "stand")
+                {
+                    break;
                 }
             }
-                */
-            }
+        }
+            */
+        }
 
-            public void Hit()
+        public void Hit()
+        {
+            Player.Draw(Deck);
+            Console.WriteLine("Your cards are: ");
+            foreach (var card in Player.Hand)
             {
-                Player.Draw(Deck);
-                Console.WriteLine("Your cards are: ");
-                foreach (var card in Player.Hand)
-                {
-                    Console.WriteLine(card.Rank + " of " + card.Suit);
-                    // call corresponding image 
+                Console.WriteLine(card.Rank + " of " + card.Suit);
+                // call corresponding image 
 
-                }
-                Console.WriteLine("Your total is: " + Player.GetTotal());
             }
+            Console.WriteLine("Your total is: " + Player.GetTotal());
+        }
 
 
-            public void DetermineWinner()
+        public void DetermineWinner()
+        {
+            bool win = false;
+            Console.WriteLine("Dealer's cards are: ");
+            foreach (var card in Dealer.Hand)
             {
-                bool win = false;
-                Console.WriteLine("Dealer's cards are: ");
-                foreach (var card in Dealer.Hand)
-                {
-                    Console.WriteLine(card.Rank + " of " + card.Suit);
-                }
-                Console.WriteLine("Dealer's total is: " + Dealer.GetTotal());
+                Console.WriteLine(card.Rank + " of " + card.Suit);
+            }
+            Console.WriteLine("Dealer's total is: " + Dealer.GetTotal());
 
-                if (Player.GetTotal() > 21)
-                {
-                    Console.WriteLine("You lose!");
-                    // bool win is false 
+            if (Player.GetTotal() > 21)
+            {
+                Console.WriteLine("You lose!");
+                // bool win is false 
 
-                }
-                else if (Dealer.GetTotal() > 21)
-                {
-                    Console.WriteLine("Dealer busts! You win!");
-                    Console.WriteLine("You win " + (Bet * 2) + " chips.");
-                    win = true;
-                }
-                else if (Dealer.GetTotal() < Player.GetTotal())
-                {
-                    Console.WriteLine("You win!");
-                    Console.WriteLine("You win " + (Bet * 2) + " chips.");
-                    win = true;
-                }
-                else
-                {
-                    Console.WriteLine("You lose!");
-                    // bool win is false 
-                }
-
+            }
+            else if (Dealer.GetTotal() > 21)
+            {
+                Console.WriteLine("Dealer busts! You win!");
+                Console.WriteLine("You win " + (Bet * 2) + " chips.");
+                win = true;
+            }
+            else if (Dealer.GetTotal() < Player.GetTotal())
+            {
+                Console.WriteLine("You win!");
+                Console.WriteLine("You win " + (Bet * 2) + " chips.");
+                win = true;
+            }
+            else
+            {
+                Console.WriteLine("You lose!");
+                // bool win is false 
             }
 
         }
