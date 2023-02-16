@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Numerics;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
-using Microsoft.Office.Interop.Excel; // to read and write into excel file 
+using Excel = Microsoft.Office.Interop.Excel; // to read and write into excel file 
 
 
 namespace UI_21
@@ -240,36 +241,93 @@ namespace UI_21
 
         }
 
+        //creates the BlackJack data
+        public void ExportGameData()
+        {
+            //Declare variables
+            Excel.Application xlApp;
+            Excel.Workbook xlWorkBook;
+            Excel.Worksheet xlWorkSheet;
+            Excel.Range xlRange;
+
+            //Create a new Excel application object and set its visibility to true
+            xlApp = new Excel.Application();
+            xlApp.Visible = true;
+
+            //Create a new workbook and add a worksheet to it
+            xlWorkBook = xlApp.Workbooks.Add();
+            xlWorkSheet = (Excel.Worksheet)xlWorkBook.Worksheets.get_Item(1);
+
+            //Create four headers for the first four cells in row 1
+            string[] headers = { "Player Name", "Player Total", "Dealer Total", "Win" };
+
+            for (int i = 0; i < headers.Length; i++)
+            {
+                //Create a cell at row 1 column i+1
+                xlRange = (Excel.Range)xlWorkSheet.Cells[1, i + 1];
+                //Set the value of the cell to the header text
+                xlRange.Value = headers[i];
+                //Format the cell as bold and center-aligned
+                xlRange.Font.Bold = true;
+                xlRange.HorizontalAlignment = Excel.XlHAlign.xlHAlignCenter;
+
+                //Release the range object from memory
+                Marshal.ReleaseComObject(xlRange);
+                xlRange = null;
+            }
+
+            //Save your workbook as BlackjackHands.xlsx in C drive
+            xlWorkBook.SaveAs("BlackjackHands.xlsx");
+
+            //Close your workbook and quit your application
+            xlWorkBook.Close();
+            xlApp.Quit();
+
+
+
+
+
+
+
+            //// this should create a new excel file which will record the data of each game 
+            //Microsoft.Office.Interop.Excel.Application excelApp = new Microsoft.Office.Interop.Excel.Application();
+            //excelApp.Visible = true;
+            //Microsoft.Office.Interop.Excel.Range range;
+
+            //// create a new workbook
+            //var workbook = excelApp.Workbooks.Add();
+            ////first sheet
+            //var worksheet = workbook.Worksheets.get_Item(1);
+            //int row = 1;
+            //range = worksheet.get_Range("A1", "A1");
+            //// headers 
+            //worksheet.Cells[row, 1] = "Player Name";
+            //worksheet.Cells[row, 2] = "Player Total";
+            //worksheet.Cells[row, 3] = "Dealer Total";
+            //worksheet.Cells[row1, 4] = "Win";
+            //int row++; 
+
+            //// write the data to subsequent rows ( idk if this would work ) 
+            //worksheet.Cells[row, 1] = playerName;
+            //worksheet.Cells[row, 2] = Player.GetTotal();
+            //worksheet.Cells[row, 3] = Dealer.GetTotal();
+            //worksheet.Cells[row, 4] = win;
+
+            //// save the workbook
+            //workbook.SaveAs("BlackjackHands.xlsx");
+
+            //// close the workbook and Excel application
+            //workbook.Close();
+            //excelApp.Quit();
+        }
+
+        //function to add values to the file
+        public void AddValues(string name, int playerTotal, int dealerTotal, int win)
+        {
+            
+        }
+
     }
 
 
 }
-/* SEUN: idk where this should go. 
- this should create a new excel file which will record the data of each game 
-Excel.Application excelApp = new Excel.Application();
-
-// create a new workbook
-Excel.Workbook workbook = excelApp.Workbooks.Add();
-//first sheet
-Excel.Worksheet worksheet = workbook.Sheets[1];
- int row = 1
-// headers 
-worksheet.Cells[row, 1] = "Player Name";
-worksheet.Cells[row, 2] = "Player Total";
-worksheet.Cells[row, 3] = "Dealer Total";
-worksheet.Cells[row1, 4] = "Win";
- int row++; 
-
-// write the data to subsequent rows ( idk if this would work ) 
-worksheet.Cells[row, 1] = playerName;
-worksheet.Cells[row, 2] = Player.GetTotal();
-worksheet.Cells[row, 3] = Dealer.GetTotal();
-worksheet.Cells[row, 4] = win;
-
-// save the workbook
-workbook.SaveAs("BlackjackHands.xlsx");
-
-// close the workbook and Excel application
-workbook.Close();
-excelApp.Quit();
-*/
