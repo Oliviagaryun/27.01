@@ -324,7 +324,29 @@ namespace UI_21
         //function to add values to the file
         public void AddValues(string name, int playerTotal, int dealerTotal, int win)
         {
-            
+            Excel.Application excelApp = new Excel.Application(); //creates an Excel application object
+            Excel.Workbook workbook = excelApp.Workbooks.Add("BlackjackHands.xlsx"); //opens an existing workbook at BlackjackHands.xlsx
+            Excel.Worksheet worksheet = (Excel.Worksheet)workbook.Worksheets.Item[1]; //accesses the first worksheet in the workbook
+
+            Excel.Range usedRange = worksheet.UsedRange; //gets all used cells in worksheet
+            int lastRow = usedRange.Row + usedRange.Rows.Count - 1; //gets row number of last used cell
+
+            int newRow = lastRow + 1; //gets index of new row
+
+            Excel.Range range = (Excel.Range)worksheet.Cells[newRow, 1]; //selects cell of last used row
+            range.Value = name;
+            range = (Excel.Range)worksheet.Cells[newRow, 2];
+            range.Value = playerTotal;
+            range = (Excel.Range)(worksheet.Cells[newRow, 3]);
+            range.Value = dealerTotal;
+            range = (Excel.Range)(worksheet.Cells[newRow, 4]);
+            range.Value = win;
+
+            workbook.SaveAs("BlackjackHands.xlsx"); //saves your changes at BlackjackHands.xlsx
+            workbook.Close(); //closes your workbook 
+            excelApp.Quit(); //quits your Excel application 
+
+
         }
 
     }
