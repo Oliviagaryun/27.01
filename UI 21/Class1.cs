@@ -59,7 +59,7 @@ namespace UI_21
                 {
                     for (int j = 0; j < ranks.Length; j++)
                     {
-                        Card cards = new Card(ranks[j], suits[i], values[j]);
+                        Card cards = new Card(ranks[j], suits[i], values[j], "templocation");
                         Cards.Add(card);
                     }
                 }
