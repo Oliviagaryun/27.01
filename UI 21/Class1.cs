@@ -18,14 +18,11 @@ namespace UI_21
         public string Suit { get; set; }
         public int Value { get; set; }
 
-        public string Location { get; set; }
-
-        public Card(string rank, string suit, int value, string path)
+        public Card(string rank, string suit, int value)
         {
             Rank = rank;
             Suit = suit;
             Value = value;
-            Location = path;
         }
     }
 
@@ -33,36 +30,52 @@ namespace UI_21
     {
         public List<Card> Cards { get; set; }
 
+        //this dictionary stores the location of every card image to the corresponding card
+        public Dictionary<Card, string> CardImages = new Dictionary<Card, string>();
+
         public Deck()
         {
-            Cards = new List<Card>();
+            var Cards = new List<Card>();
             string[] suits = { "Hearts", "Diamonds", "Spades", "Clubs" };
             string[] ranks = { "Ace", "2", "3", "4", "5", "6", "7", "8", "9", "10", "Jack", "Queen", "King" };
             int[] values = { 11, 2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10, 10 };
             string path = "cards/Playing Cards/PNG-cards-1.3";
+
+            //creates a card based on every suit and rank and adds the card to a list of cards
+            for (int i = 0; i < suits.Length; i++)
+            {
+                for (int j = 0; j < ranks.Length; j++)
+                {
+                    Card card = new Card(ranks[j], suits[i], values[j]);
+                    Cards.Add(card);
+                }
+            }
+
+            //need to add the correct image to the card
+            //this loop iterates through every card image in my folder
             foreach (string image in Directory.EnumerateFiles(path, "*", SearchOption.AllDirectories))
             {
                 string filename = Path.GetFileNameWithoutExtension(image);
                 string[] SplitFilenameThing = new string[2];
-                //had to compensate for the red joker
-                if (filename != "red_joker") { SplitFilenameThing = filename.Split("_of_"); } else { SplitFilenameThing = filename.Split("_"); }
+                SplitFilenameThing = filename.Split("_"); 
 
-                string tempface = SplitFilenameThing[0];
-                string tempCard = SplitFilenameThing[1];
-                int AValue = 0;
-                Card card = new Card(tempface, tempCard, AValue ,image);
-                Cards.Add(card);
+                string tempRank = SplitFilenameThing[0];
+                string tempSuit = SplitFilenameThing[2];
 
-
-
-                for (int i = 0; i < suits.Length; i++)
+                //for every file, goes through the made list of cards, when it find the right card with the right suit and rank, it adds that card to a dictionary
+                foreach(var card in Cards) 
                 {
-                    for (int j = 0; j < ranks.Length; j++)
+                    if(tempRank.ToLower() == card.Rank.ToLower()) 
                     {
-                        Card cards = new Card(ranks[j], suits[i], values[j], "templocation");
-                        Cards.Add(card);
+                        if(tempSuit.ToLower() == card.Suit.ToLower()) 
+                        {
+                            CardImages.Add(card, image);
+                            
+                        }
                     }
                 }
+
+
             }
 
             
