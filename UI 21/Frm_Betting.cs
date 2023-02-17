@@ -106,7 +106,7 @@ namespace UI_21
             Boolean GameResult = form1.returnResult();
             this.Close();
         }
-        public bool DetermineWinner()
+        public void SetBankValue()
         {
 
         }
