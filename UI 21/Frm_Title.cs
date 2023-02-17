@@ -18,7 +18,9 @@ namespace UI_21
 
         private void button2_Click(object sender, EventArgs e)
         {
-            this.Hide();
+            //create new player 
+            //
+            // this.Hide();
             Frm_Betting form1 = new Frm_Betting();// use class names
             form1.ShowDialog();
             this.Close();

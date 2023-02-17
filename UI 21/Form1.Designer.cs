@@ -143,6 +143,7 @@
             this.Pb_DealtCard1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.Pb_DealtCard1.TabIndex = 16;
             this.Pb_DealtCard1.TabStop = false;
+            this.Pb_DealtCard1.Click += new System.EventHandler(this.Pb_DealtCard1_Click);
             // 
             // Pb_DealtCard2
             // 

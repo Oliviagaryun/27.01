@@ -17,10 +17,12 @@ namespace UI_21
     {
         public int Bank = 1500;
         public int Bet = 0;
+        Player player;
            // Bank = Bank - Bet;
         public Frm_Betting()
         {
             InitializeComponent();
+            player = new Player();
         }
 
         private void label1_Click(object sender, EventArgs e)

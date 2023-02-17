@@ -8,7 +8,16 @@ using System.Text;
 using System.Threading.Tasks;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using Excel = Microsoft.Office.Interop.Excel; // to read and write into excel file 
-
+/*
+ * player object in lower case
+ * make a public player
+ * 
+ * 
+ * create new game whe button bet is pressed 
+ * whe game 
+ * 
+ * button play create new player 
+ */
 
 namespace UI_21
 {
@@ -24,9 +33,12 @@ namespace UI_21
             Suit = suit;
             Value = value;
         }
+
+        // create function equal , check wanted card is equal to the dictonary 
+        // takes location of the dictionary
     }
 
-    class Deck
+    public class Deck
     {
         public List<Card> Cards { get; set; }
 
@@ -94,7 +106,7 @@ namespace UI_21
             Cards = newDeck;
         }
     }
-    class Player
+    public class Player
     {
         public List<Card> Hand { get; set; }
 
@@ -120,7 +132,7 @@ namespace UI_21
         }
     }
 
-    class Dealer
+    public class Dealer
     {
         public List<Card> Hand { get; set; }
 
@@ -146,7 +158,7 @@ namespace UI_21
         }
     }
 
-    class Game
+    public class Game
     {// Create instances of the deck, player, and dealer classes
         public Deck Deck { get; set; }
         public Player Player { get; set; }

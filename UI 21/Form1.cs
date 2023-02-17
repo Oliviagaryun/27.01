@@ -20,7 +20,7 @@ namespace UI_21
 
         private Game game = new Game();
 
-        public Frm_Game()
+        public Frm_Game(Player player)
         {
             
 
@@ -79,6 +79,11 @@ namespace UI_21
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Pb_DealtCard1_Click(object sender, EventArgs e)
         {
 
         }
