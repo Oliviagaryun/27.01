@@ -65,6 +65,7 @@ namespace UI_21
                 //for every file, goes through the made list of cards, when it find the right card with the right suit and rank, it adds that card to a dictionary
                 foreach(var card in Cards) 
                 {
+                    //checks the rank and suit before adding the card, converts to lower to make sure all the characters are the same
                     if(tempRank.ToLower() == card.Rank.ToLower()) 
                     {
                         if(tempSuit.ToLower() == card.Suit.ToLower()) 
