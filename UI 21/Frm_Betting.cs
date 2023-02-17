@@ -108,7 +108,16 @@ namespace UI_21
         }
         public void SetBankValue()
         {
+            if (GameResult = true)
+            {
+                int Bank = Bank + Bet * 2;
 
+            }
+            else (GameResult = false);
+            {
+                int Bank = Bank - Bet;
+            }
+                
         }
 
 
