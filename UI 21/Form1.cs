@@ -71,8 +71,11 @@ namespace UI_21
 
         private void label2_Click(object sender, EventArgs e)
         {
+            //made another temp player, you can remove this once you make a public player that all these functions can access
+            Player TEMPplayer = new Player();
             
-            lbl_cardVal.Text = Player.GetTotal();
+            //converted the total to string so it can be put in lbl_cardVal.text
+            lbl_cardVal.Text = Convert.ToString(TEMPplayer.GetTotal());
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
