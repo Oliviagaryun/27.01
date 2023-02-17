@@ -21,7 +21,7 @@ using Excel = Microsoft.Office.Interop.Excel; // to read and write into excel fi
 
 namespace UI_21
 {
-    class Card
+    public class Card
     {
         public string Rank { get; set; }
         public string Suit { get; set; }
