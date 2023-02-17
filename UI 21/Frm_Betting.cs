@@ -82,14 +82,15 @@ namespace UI_21
 
         public void label1_Click_1(object sender, EventArgs e)
         {
-            lbl_TotalBet.Text =  "$" + Bet.ToString();
+            //Im guessing you havent made the labels yet, this is why this doesn't work, lbl_totalBet doesn't exist yet
+            //lbl_TotalBet.Text =  "$" + Bet.ToString();
             //lbl_TotalBet.Text = Console.WriteLine("$ ") + Bet.ToString();
 
         }
 
         private void label1_Click_2(object sender, EventArgs e)
         {
-            lbl_Bank.Text = "$" + Bank.ToString();
+            //lbl_Bank.Text = "$" + Bank.ToString();
         }
 
         private void Btn_Bet_Click(object sender, EventArgs e)
