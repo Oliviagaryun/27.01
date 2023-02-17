@@ -4,7 +4,7 @@ namespace UI_21
     {
         public Frm_Title()
         {
-            Game.Deck deck = new Game.Deck();
+            Deck deck = new Deck();
             InitializeComponent();
         }
 
