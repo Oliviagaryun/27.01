@@ -38,8 +38,11 @@ namespace UI_21
 
         private void button1_Click(object sender, EventArgs e)
         {
-            
-            game.deck.DetermineWinner(game.player, game.dealer);
+            Player tempPlayer = new Player();
+            Dealer tempDealer = new Dealer();
+
+
+            Game.DetermineWinner(tempPlayer, tempDealer);
         }
 
         private void lbl_TotalBet_Click(object sender, EventArgs e)

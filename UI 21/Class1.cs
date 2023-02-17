@@ -226,29 +226,29 @@ namespace UI_21
         }
 
 
-        public void DetermineWinner()
+        public void DetermineWinner(Player player, Dealer dealer)
         {
             bool win = false;
             Console.WriteLine("Dealer's cards are: ");
-            foreach (var card in Dealer.Hand)
+            foreach (var card in dealer.Hand)
             {
                 Console.WriteLine(card.Rank + " of " + card.Suit);
             }
-            Console.WriteLine("Dealer's total is: " + Dealer.GetTotal());
+            Console.WriteLine("Dealer's total is: " + dealer.GetTotal());
 
-            if (Player.GetTotal() > 21)
+            if (player.GetTotal() > 21)
             {
                 Console.WriteLine("You lose!");
                 // bool win is false 
 
             }
-            else if (Dealer.GetTotal() > 21)
+            else if (dealer.GetTotal() > 21)
             {
                 Console.WriteLine("Dealer busts! You win!");
                 Console.WriteLine("You win " + (Bet * 2) + " chips.");
                 win = true;
             }
-            else if (Dealer.GetTotal() < Player.GetTotal())
+            else if (dealer.GetTotal() < player.GetTotal())
             {
                 Console.WriteLine("You win!");
                 Console.WriteLine("You win " + (Bet * 2) + " chips.");
