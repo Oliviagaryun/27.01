@@ -9,7 +9,7 @@ using System.IO;
 
 namespace UI_21
 {
-    internal class Blackjack_Data
+    public class Blackjack_Data
     {
         /*private List<int> cards = new List<int>(); // data reads up to 5 cards
         private List<int> Dealcard = new List<int>();
@@ -23,49 +23,48 @@ namespace UI_21
         private int plyWinAmt;
         private int DlWinAmt;
       */
+    }
 
-
-        class Program
+    public class BlackjackData_Program
+    {
+        public static void ReadBlackJackData()
         {
-            static void Main(string[] args)
+            string filePath = "blkjckhands.csv";
+
+            try
             {
-                string filePath = "blkjckhands.csv";
+                int totalHands = 0;
+                int sumofcards = 0;
+                int totalWins = 0;
 
-                try
+                string[] lines = File.ReadAllLines(filePath);
+
+                foreach (string line in lines)
                 {
-                    int totalHands = 0;
-                    int sumofcards = 0;
-                    int totalWins = 0;
+                    string[] values = line.Split(',');
 
-                    string[] lines = File.ReadAllLines(filePath);
+                    // Parse the values into variables
+                    string hand = values[0];
+                    string result = values[1];
 
-                    foreach (string line in lines)
+                    totalHands++;
+
+                    if (result == "win")
                     {
-                        string[] values = line.Split(',');
-
-                        // Parse the values into variables
-                        string hand = values[0];
-                        string result = values[1];
-
-                        totalHands++;
-
-                        if (result == "win")
-                        {
-                            totalWins++;
-                        }
+                        totalWins++;
                     }
-
-                    // Calculate the win rate
-                    double winRate = (double)totalWins / (double)totalHands;
-
-                    Console.WriteLine("Total hands: {0}", totalHands);
-                    Console.WriteLine("Total wins: {0}", totalWins);
-                    Console.WriteLine("Win rate: {0:P2}", winRate);
                 }
-                catch (Exception ex)
-                {
-                    Console.WriteLine("An error occurred: " + ex.Message);
-                }
+
+                // Calculate the win rate
+                double winRate = (double)totalWins / (double)totalHands;
+
+                Console.WriteLine("Total hands: {0}", totalHands);
+                Console.WriteLine("Total wins: {0}", totalWins);
+                Console.WriteLine("Win rate: {0:P2}", winRate);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("An error occurred: " + ex.Message);
             }
         }
     }
