@@ -38,11 +38,15 @@ namespace UI_21
 
         private void button1_Click(object sender, EventArgs e)
         {
+            //PUT THESE SOMEHWERE ELSE THAT IS PUBLIC
             Player tempPlayer = new Player();
             Dealer tempDealer = new Dealer();
 
+            //made a temporary game object, YOU NEED TO PUT THIS SOMEWHERE ELSE
+            Game TEMPgame = new Game();
 
-            Game.DetermineWinner(tempPlayer, tempDealer);
+
+            TEMPgame.DetermineWinner(tempPlayer, tempDealer);
         }
 
         private void lbl_TotalBet_Click(object sender, EventArgs e)
