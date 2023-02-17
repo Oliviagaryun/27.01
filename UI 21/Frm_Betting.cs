@@ -18,6 +18,7 @@ namespace UI_21
         public int Bank = 1500;
         public int Bet = 0;
         Player player;
+        public bool GameResult= false;
            // Bank = Bank - Bet;
         public Frm_Betting()
         {
@@ -98,13 +99,21 @@ namespace UI_21
         private void Btn_Bet_Click(object sender, EventArgs e)
         {
             this.Hide();
-            Frm_Game form1 = new Frm_Game();
+            Frm_Game form1 = new Frm_Game(player);
             form1.ShowDialog();
+            //form 1.play game 
+            //form1.returnResult();
+            Boolean GameResult = form1.returnResult();
             this.Close();
         }
+        public bool DetermineWinner()
+        {
 
-       
+        }
 
-        
+
+
+
+
     }
 }

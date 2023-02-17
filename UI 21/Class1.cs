@@ -238,7 +238,7 @@ namespace UI_21
         }
 
 
-        public void DetermineWinner(Player player, Dealer dealer)
+        public bool DetermineWinner(Player player, Dealer dealer)
         {
             bool win = false;
             Console.WriteLine("Dealer's cards are: ");
@@ -271,7 +271,7 @@ namespace UI_21
                 Console.WriteLine("You lose!");
                 // bool win is false 
             }
-
+            return win;
         }
 
         //creates the BlackJack data

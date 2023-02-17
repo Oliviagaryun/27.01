@@ -18,13 +18,17 @@ namespace UI_21
     public partial class Frm_Game : Form
     {
 
-        private Game game = new Game();
+        Game game;
+        public Player player;
+        public Dealer dealer;
 
-        public Frm_Game(Player player)
+        public Frm_Game(Player player1)
         {
-            
+
 
             InitializeComponent();
+            dealer = dealer;
+            player = player1;
         }
 
         private void Btn_Return_Click(object sender, EventArgs e)
@@ -38,16 +42,18 @@ namespace UI_21
 
         private void button1_Click(object sender, EventArgs e)
         {
-            //PUT THESE SOMEHWERE ELSE THAT IS PUBLIC
-            Player tempPlayer = new Player();
-            Dealer tempDealer = new Dealer();
 
-            //made a temporary game object, YOU NEED TO PUT THIS SOMEWHERE ELSE
-            Game TEMPgame = new Game();
+            
+            Game game = new Game();
 
 
-            TEMPgame.DetermineWinner(tempPlayer, tempDealer);
+           
         }
+        public bool returnResult()
+            {
+            return game.DetermineWinner(player, dealer);// returns true or false.
+        }
+
 
         private void lbl_TotalBet_Click(object sender, EventArgs e)
         {
