@@ -38,10 +38,15 @@ namespace UI_21
             Bet = Bet + 1;
         }
 
-        private void textBox1_TextChanged(object sender, EventArgs e)
+        /*private void textBox1_TextChanged(object sender, EventArgs e)
         {
             textBox1.Text = Bank.ToString();
+            // Bank is called above but doesnt add to the textbox. does it have to be a label to display variables? 
+        // tried as a label below. but there is still an errror
         }
+        */
+
+
 
         private void form_Load(object sender, EventArgs e)
         {
@@ -124,9 +129,15 @@ namespace UI_21
                 
         }
 
+        private void label1_Click_3(object sender, EventArgs e) // lbl bank
+        {
+            lbl_Bank = "$" + Bank.ToString();
 
+        }
 
+        private void Frm_Betting_Load(object sender, EventArgs e)
+        {
 
-
+        }
     }
 }

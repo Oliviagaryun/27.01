@@ -173,6 +173,7 @@
             this.Controls.Add(this.btn_Stand);
             this.Name = "Frm_Game";
             this.Text = "Frm_Game";
+            this.Load += new System.EventHandler(this.Frm_Game_Load);
             ((System.ComponentModel.ISupportInitialize)(this.Pb_backOfCard)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Pb_DealtCard1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Pb_DealtCard2)).EndInit();

@@ -100,6 +100,11 @@ namespace UI_21
             }
 
         }
+
+        private void Frm_Game_Load(object sender, EventArgs e)
+        {
+
+        }
     }
     }
 }

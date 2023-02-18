@@ -24,5 +24,15 @@ namespace UI_21
             form1.ShowDialog();
             this.Close();
         }
+
+        private void Frm_History_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
