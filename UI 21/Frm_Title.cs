@@ -34,5 +34,10 @@ namespace UI_21
             this.Close();
 
         }
+
+        private void Frm_Title_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

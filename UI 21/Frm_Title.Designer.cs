@@ -84,6 +84,7 @@
             this.ForeColor = System.Drawing.Color.Green;
             this.Name = "Frm_Title";
             this.Text = "Title";
+            this.Load += new System.EventHandler(this.Frm_Title_Load);
             this.ResumeLayout(false);
 
         }
