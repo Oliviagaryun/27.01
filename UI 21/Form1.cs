@@ -21,14 +21,18 @@ namespace UI_21
         Game game;
         public Player player;
         public Dealer dealer;
+        public Deck deck;
 
         public Frm_Game(Player player1)
         {
 
 
             InitializeComponent();
-            dealer = dealer;
+            //NEW INSTANCE OF DEALER 
+            //NOT dealer = dealer
+            dealer = new Dealer();
             player = player1;
+            deck = new Deck();
         }
 
         private void Btn_Return_Click(object sender, EventArgs e)
@@ -92,10 +96,13 @@ namespace UI_21
         private void Pb_DealtCard1_Click(object sender, EventArgs e)
         {
             
-            foreach (var card in Game.Player.Hand)
+            foreach (var card in player.Hand)
                 // player hand is from game class. How do i bring it over?
+                //the object i told you to create at the top...
             {
-                string imagePath = Deck.CardImages[card];
+                //where is deck coming from?
+                //you need to create the objects
+                string imagePath = deck.CardImages[card];
                 // use the imagePath to display the image for the card
             }
 
