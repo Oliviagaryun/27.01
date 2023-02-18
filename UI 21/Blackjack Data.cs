@@ -72,25 +72,5 @@ namespace UI_21
 
 
 
-/*
-        class CardGames
-        {
-            int PlayerID;
-            //int[] playerCards;
-            //int[] dealerCards;
-            bool Blackjack;
-            bool Win;
-            bool plyrBust;
-            bool dealerBust;
-
-        }
-        class Dealer
-        {
-            int GameID;
-            //int[] dealerCards;
-        }
-    }
-}
-*/
 
 
