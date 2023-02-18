@@ -3,8 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Data.OleDB;
+using System.Data.OleDb;
 using System.Security.Cryptography;
+using Microsoft.Office.Interop.Excel;
 
 namespace UI_21
 {
@@ -21,6 +22,13 @@ namespace UI_21
     }// hash end 
     class login
     {
+        //created temporary text boxes
+        System.Windows.Forms.TextBox txtRegisterPassword = new System.Windows.Forms.TextBox();
+        System.Windows.Forms.TextBox txtRegisterUsername = new System.Windows.Forms.TextBox();
+        System.Windows.Forms.TextBox txtLoginPassword = new System.Windows.Forms.TextBox();
+        System.Windows.Forms.TextBox txtLoginUsername = new System.Windows.Forms.TextBox();
+
+
         private static OleDbConnection con = new OleDbConnection("Provider=Microsoft.Jet.OLEDB.4.0;Data Source=db_graphix_users.mdb"); //establishing connection
         private static OleDbCommand cmd = new OleDbCommand(); // command to execute later
         private static OleDbDataAdapter da = new OleDbDataAdapter(); //data adapter
@@ -41,7 +49,7 @@ namespace UI_21
             else
             {
                 con.Open(); //open connection
-                string regSQL = "INSERT INTO tbl_users ([username], [password]) VALUES ('" + txtRegisterUsername.Text + "', '" + txtRegisterPassword.Text + "')"; //the sql command to insert username and password
+                regSQL = "INSERT INTO tbl_users ([username], [password]) VALUES ('" + txtRegisterUsername.Text + "', '" + txtRegisterPassword.Text + "')"; //the sql command to insert username and password
                 cmd = new OleDbCommand(regSQL, con); //setting up the command and the connection
                 try
                 {
@@ -71,7 +79,7 @@ namespace UI_21
             try
             {
                 con.Open(); //connection open
-                string logSQL = "SELECT * FROM tbl_users WHERE username=  '" + txtLoginUsername.Text + "' and password= '" + txtLoginPassword.Text + "'"; //sql statement
+                logSQL = "SELECT * FROM tbl_users WHERE username=  '" + txtLoginUsername.Text + "' and password= '" + txtLoginPassword.Text + "'"; //sql statement
                 cmd = new OleDbCommand(logSQL, con); //execute the sql
 
                 OleDbDataReader dr = cmd.ExecuteReader(); //use the reader to read through the usernames and passwords
