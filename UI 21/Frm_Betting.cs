@@ -131,7 +131,9 @@ namespace UI_21
 
         private void label1_Click_3(object sender, EventArgs e) // lbl bank
         {
-            lbl_Bank = "$" + Bank.ToString();
+            //Label has a text attribute
+            //So you are adding the value to the Text attribute in the label
+            lbl_Bank.Text = "$" + Bank.ToString();
 
         }
 
