@@ -91,8 +91,15 @@ namespace UI_21
 
         private void Pb_DealtCard1_Click(object sender, EventArgs e)
         {
+            
+            foreach (var card in Game.Player.Hand)
+                // player hand is from game class. How do i bring it over?
+            {
+                string imagePath = Deck.CardImages[card];
+                // use the imagePath to display the image for the card
+            }
 
         }
-        }
+    }
     }
 }

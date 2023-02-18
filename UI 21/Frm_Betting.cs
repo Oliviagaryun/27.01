@@ -104,7 +104,7 @@ namespace UI_21
             //form 1.play game 
             //form1.returnResult();
             Boolean GameResult = form1.returnResult();
-            this.Close();
+            
         }
         public void SetBankValue()
         {
@@ -113,9 +113,13 @@ namespace UI_21
                  Bank = Bank + Bet * 2;
 
             }
-            else
+            else if (GameResult == true)
             {
                  Bank = Bank - Bet;
+            }
+            else
+            {
+                Console.WriteLine("error");
             }
                 
         }
