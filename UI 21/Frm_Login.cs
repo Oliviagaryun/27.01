@@ -15,6 +15,27 @@ namespace UI_21
         public Frm_Login()
         {
             InitializeComponent();
+            bool register = false;
+        }
+
+        private void txtLoginUsername_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void register_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtLoginPassword_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

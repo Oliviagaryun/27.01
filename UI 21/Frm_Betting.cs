@@ -129,13 +129,12 @@ namespace UI_21
                 
         }
 
-        private void label1_Click_3(object sender, EventArgs e) // lbl bank
+        /*private void label1_Click_3(object sender, EventArgs e) // lbl bank
         {
-            //Label has a text attribute
-            //So you are adding the value to the Text attribute in the label
-            lbl_Bank.Text = "$" + Bank.ToString();
+            lbl_Bank = "$" + Bank.ToString();
 
         }
+        */
 
         private void Frm_Betting_Load(object sender, EventArgs e)
         {
