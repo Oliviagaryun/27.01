@@ -4,10 +4,21 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Data.OleDB;
+using System.Security.Cryptography;
 
 namespace UI_21
 {
-
+    class Hashing//hash start
+    {
+        public static string HashPassword(string password)
+        {
+            using (var sha256 = SHA256.Create())
+            {
+                var hashedBytes = sha256.ComputeHash(Encoding.UTF8.GetBytes(password));
+                return Convert.ToBase64String(hashedBytes);
+            }
+        }
+    }// hash end 
     class login
     {
         private static OleDbConnection con = new OleDbConnection("Provider=Microsoft.Jet.OLEDB.4.0;Data Source=db_graphix_users.mdb"); //establishing connection
@@ -16,6 +27,9 @@ namespace UI_21
 
         private void btnRegister_Click(object sender, EventArgs e)  //register part there 
         {
+            string hashedPassword = Hashing.HashPassword(txtRegisterPassword.Text);//hash
+            string regSQL = "INSERT INTO tbl_users ([username], [password]) VALUES ('" + txtRegisterUsername.Text + "', '" + hashedPassword + "')";//hash
+
             if (txtRegisterUsername.Text == "" && txtRegisterPassword.Text == "") //check if fields are empty
             {
                 MessageBox.Show("Username and Password fields are empty.", "Registration failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -50,6 +64,10 @@ namespace UI_21
 
         private void btnLogin_Click(object sender, EventArgs e) //login part
         {
+
+            string hashedPassword = Hashing.HashPassword(txtLoginPassword.Text);//hash
+            string logSQL = "SELECT * FROM tbl_users WHERE username=  '" + txtLoginUsername.Text + "' and password= '" + hashedPassword + "'";//hash
+
             try
             {
                 con.Open(); //connection open
