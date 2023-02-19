@@ -30,7 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_hint));
             this.Pb_yellow = new System.Windows.Forms.PictureBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txt_hint = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.Pb_yellow)).BeginInit();
             this.SuspendLayout();
             // 
@@ -43,13 +43,13 @@
             this.Pb_yellow.TabIndex = 0;
             this.Pb_yellow.TabStop = false;
             // 
-            // textBox1
+            // txt_hint
             // 
-            this.textBox1.Location = new System.Drawing.Point(113, 112);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(198, 27);
-            this.textBox1.TabIndex = 1;
-            this.textBox1.TextChanged += new System.EventHandler(this.Hint_TextChanged);
+            this.txt_hint.Location = new System.Drawing.Point(113, 112);
+            this.txt_hint.Name = "txt_hint";
+            this.txt_hint.Size = new System.Drawing.Size(198, 27);
+            this.txt_hint.TabIndex = 1;
+            this.txt_hint.TextChanged += new System.EventHandler(this.Hint_TextChanged);
             // 
             // frm_hint
             // 
@@ -57,7 +57,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(422, 309);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txt_hint);
             this.Controls.Add(this.Pb_yellow);
             this.Name = "frm_hint";
             this.Text = "frm_hint";
@@ -70,6 +70,6 @@
         #endregion
 
         private PictureBox Pb_yellow;
-        private TextBox textBox1;
+        private TextBox txt_hint;
     }
 }
