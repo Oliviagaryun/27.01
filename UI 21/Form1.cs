@@ -39,7 +39,7 @@ namespace UI_21
         {
 
             this.Hide();
-            Frm_Betting form1 = new Frm_Betting();
+            Frm_Betting form1 = new Frm_Betting();// take to betting form 
             form1.ShowDialog();
             this.Close();
         }
@@ -64,11 +64,7 @@ namespace UI_21
             //lbl_TotalBet.Text = "$" + Bet.ToString();
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
-            // give  a hint 
-
-        }
+        
 
         
         private void Btn_Hit_Click(object sender, EventArgs e)
@@ -111,6 +107,13 @@ namespace UI_21
         private void Frm_Game_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void btn_hint_Click(object sender, EventArgs e) // this needs to be tested 
+        {
+            frm_hint form1 = new frm_hint();// take to hint form 
+            form1.ShowDialog();
+            this.Close();
         }
     }
 }

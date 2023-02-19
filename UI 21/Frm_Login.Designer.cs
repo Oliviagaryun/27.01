@@ -42,7 +42,7 @@
             // 
             // Pb_login
             // 
-            this.Pb_login.Location = new System.Drawing.Point(234, 126);
+            this.Pb_login.Location = new System.Drawing.Point(190, 126);
             this.Pb_login.Name = "Pb_login";
             this.Pb_login.Size = new System.Drawing.Size(439, 206);
             this.Pb_login.TabIndex = 0;
@@ -50,7 +50,7 @@
             // 
             // txtLoginUsername
             // 
-            this.txtLoginUsername.Location = new System.Drawing.Point(513, 171);
+            this.txtLoginUsername.Location = new System.Drawing.Point(462, 171);
             this.txtLoginUsername.Name = "txtLoginUsername";
             this.txtLoginUsername.Size = new System.Drawing.Size(125, 27);
             this.txtLoginUsername.TabIndex = 1;
@@ -58,7 +58,7 @@
             // 
             // txtLoginPassword
             // 
-            this.txtLoginPassword.Location = new System.Drawing.Point(513, 227);
+            this.txtLoginPassword.Location = new System.Drawing.Point(462, 227);
             this.txtLoginPassword.Name = "txtLoginPassword";
             this.txtLoginPassword.Size = new System.Drawing.Size(125, 27);
             this.txtLoginPassword.TabIndex = 2;
@@ -76,7 +76,7 @@
             // lbl_Username
             // 
             this.lbl_Username.AutoSize = true;
-            this.lbl_Username.Location = new System.Drawing.Point(404, 171);
+            this.lbl_Username.Location = new System.Drawing.Point(381, 171);
             this.lbl_Username.Name = "lbl_Username";
             this.lbl_Username.Size = new System.Drawing.Size(75, 20);
             this.lbl_Username.TabIndex = 4;
@@ -86,7 +86,7 @@
             // lbl_Password
             // 
             this.lbl_Password.AutoSize = true;
-            this.lbl_Password.Location = new System.Drawing.Point(404, 227);
+            this.lbl_Password.Location = new System.Drawing.Point(386, 227);
             this.lbl_Password.Name = "lbl_Password";
             this.lbl_Password.Size = new System.Drawing.Size(70, 20);
             this.lbl_Password.TabIndex = 5;
