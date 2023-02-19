@@ -103,6 +103,8 @@ namespace UI_21
 
         private void Btn_Bet_Click(object sender, EventArgs e)
         {
+
+            
             this.Hide();
             Frm_Game form1 = new Frm_Game(player);
             form1.ShowDialog();

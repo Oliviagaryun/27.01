@@ -22,7 +22,7 @@ namespace UI_21
             try
             {
                 int totalHands = 0;
-                int sumofcards = 0;
+                //int sumofcards = 0;
                 int totalWins = 0;
 
 
@@ -35,24 +35,26 @@ namespace UI_21
                     // Parse the values into variables
                    
                     string sumOfCards = values[7];// i think it will be at the 7th index. check the excel sheet.
-                    sumofcards = int.Parse(sumOfCardsString);// i thought this would convert the string read in to an int.
+                    int sumofcards = int.Parse(sumOfCards);// i thought this would convert the string read in to an int.
                     string result = values[15]; // i think it will be at the 15th index
 
 
                     totalHands++;
 
-                    if (result == "win")
+                    /*if (result == "win")
                     {
-                        totalWins++;
-                    }
-
-                    /*if (sumofcards = game.Player.GetTotal())
-                     * create new game?
-                    {
-
                         totalWins++;
                     }
                     */
+                    Game game = new Game();
+                    game.Setup();
+                    int playerTotal = game.Player.GetTotal();
+                    if (sumofcards = playerTotal)
+                    {
+
+                        totalWins++;
+                    }
+                    
                 }
 
 
