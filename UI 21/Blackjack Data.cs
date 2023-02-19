@@ -22,8 +22,9 @@ namespace UI_21
             try
             {
                 int totalHands = 0;
-                //int sumofcards = 0;
+                int sumofcards = 0;
                 int totalWins = 0;
+
 
                 string[] lines = File.ReadAllLines(filePath);
 
@@ -32,9 +33,11 @@ namespace UI_21
                     string[] values = line.Split(',');// everytime there is a comma will split the original line 
 
                     // Parse the values into variables
-                    // not sure on these two lines 
-                    string hand = values[0];
-                    string result = values[1];
+                   
+                    string sumOfCards = values[7];// i think it will be at the 7th index. check the excel sheet.
+                    sumofcards = int.Parse(sumOfCardsString);// i thought this would convert the string read in to an int.
+                    string result = values[15]; // i think it will be at the 15th index
+
 
                     totalHands++;
 
@@ -42,7 +45,17 @@ namespace UI_21
                     {
                         totalWins++;
                     }
+
+                    /*if (sumofcards = game.Player.GetTotal())
+                     * create new game?
+                    {
+
+                        totalWins++;
+                    }
+                    */
                 }
+
+
                 // try and calculate the information for the hints 
                 // Calculate the win rate
                 winRate = (double)totalWins / (double)totalHands;
@@ -62,6 +75,7 @@ namespace UI_21
     }
 }
 
+ 
 
 
 
