@@ -233,6 +233,7 @@ namespace UI_21
             {
                 Console.WriteLine(card.Rank + " of " + card.Suit);
                 // call corresponding image 
+                
 
             }
             Console.WriteLine("Your total is: " + Player.GetTotal());
@@ -241,13 +242,20 @@ namespace UI_21
 
         public bool DetermineWinner(Player player, Dealer dealer)
         {
-            bool win = false;
+            bool win = false; // set 
             Console.WriteLine("Dealer's cards are: ");
-            foreach (var card in dealer.Hand)
+            foreach (var card in dealer.Hand) // reveals both dealers cards
             {
                 Console.WriteLine(card.Rank + " of " + card.Suit);
             }
             Console.WriteLine("Dealer's total is: " + dealer.GetTotal());
+            
+            // this isnt compulsary, not a priority.
+            while (dealer.GetTotal() < 17)
+            {
+                Dealer.Draw(Deck);
+               
+            }
 
             if (player.GetTotal() > 21)
             {
