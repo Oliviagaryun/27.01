@@ -134,12 +134,13 @@
             // 
             this.Pb_DealtCard2.BackColor = System.Drawing.Color.DimGray;
             this.Pb_DealtCard2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.Pb_DealtCard2.Location = new System.Drawing.Point(413, 292);
+            this.Pb_DealtCard2.Location = new System.Drawing.Point(425, 292);
             this.Pb_DealtCard2.Name = "Pb_DealtCard2";
             this.Pb_DealtCard2.Size = new System.Drawing.Size(97, 162);
             this.Pb_DealtCard2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.Pb_DealtCard2.TabIndex = 17;
             this.Pb_DealtCard2.TabStop = false;
+            this.Pb_DealtCard2.Click += new System.EventHandler(this.Pb_DealtCard2_Click);
             // 
             // btn_hint
             // 

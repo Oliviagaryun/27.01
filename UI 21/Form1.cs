@@ -46,7 +46,9 @@ namespace UI_21
 
         private void btn_stand(object sender, EventArgs e)
         {
-           // game to continue. show dealers hidden card and determine winner 
+            
+            // game to continue. show dealers hidden card and determine winner 
+            //Class1.DetermineWinner();
             
            
         }
@@ -115,6 +117,11 @@ namespace UI_21
             frm_hint form1 = new frm_hint();// take to hint form 
             form1.ShowDialog();
             this.Close();
+        }
+
+        private void Pb_DealtCard2_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
