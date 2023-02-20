@@ -46,7 +46,9 @@ namespace UI_21
                         totalWins++;
                     }
                     */
-                    Game game = new Game();
+
+                    
+                    Game game;
                     game.Setup();
                     int playerTotal = game.Player.GetTotal();
                     if (sumofcards = playerTotal)
