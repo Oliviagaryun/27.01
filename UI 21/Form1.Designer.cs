@@ -122,7 +122,7 @@
             // 
             this.Pb_DealtCard1.BackColor = System.Drawing.Color.DimGray;
             this.Pb_DealtCard1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.Pb_DealtCard1.Location = new System.Drawing.Point(294, 292);
+            this.Pb_DealtCard1.Location = new System.Drawing.Point(310, 292);
             this.Pb_DealtCard1.Name = "Pb_DealtCard1";
             this.Pb_DealtCard1.Size = new System.Drawing.Size(97, 162);
             this.Pb_DealtCard1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;

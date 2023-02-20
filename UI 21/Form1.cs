@@ -60,8 +60,11 @@ namespace UI_21
 
 
         private void lbl_TotalBet_Click(object sender, EventArgs e)
-        {
+        {  
             lbl_TotalBet.Text = "$" + Frm_Betting.Bet.ToString();
+
+            //string Bet = Frm_Betting.Bet.ToString();
+            // lbl_TotalBet.Text = "$" + Bet;
         }
 
         
