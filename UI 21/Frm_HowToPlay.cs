@@ -22,12 +22,12 @@ namespace UI_21
 
         }
 
-        private void label1_Click(object sender, EventArgs e)
+        private void HowToPlay_txt(object sender, EventArgs e)
         {
 
         }
 
-        private void label1_Click_1(object sender, EventArgs e)
+        private void TITLE(object sender, EventArgs e)
         {
 
         }

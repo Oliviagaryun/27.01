@@ -8,7 +8,7 @@ namespace UI_21
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void History(object sender, EventArgs e)
         {
             this.Hide();
             Frm_History form1 = new Frm_History();// use class names
@@ -16,17 +16,16 @@ namespace UI_21
             this.Close();
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void Play(object sender, EventArgs e)
         {
-            //create new player 
-            //
+            Player player= new Player();
             // this.Hide();
             Frm_Betting form1 = new Frm_Betting();// use class names
             form1.ShowDialog();
             this.Close();
         }
 
-        private void Btn_HowToPlay_Click(object sender, EventArgs e)
+        private void HowToPlay(object sender, EventArgs e)
         {
             this.Hide();
             Frm_HowToPlay form1 = new Frm_HowToPlay();// use class names

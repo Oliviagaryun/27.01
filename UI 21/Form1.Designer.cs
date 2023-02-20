@@ -52,7 +52,7 @@
             this.btn_Stand.TabIndex = 0;
             this.btn_Stand.Text = "Stand";
             this.btn_Stand.UseVisualStyleBackColor = true;
-            this.btn_Stand.Click += new System.EventHandler(this.button1_Click);
+            this.btn_Stand.Click += new System.EventHandler(this.btn_stand);
             // 
             // Btn_Hit
             // 
@@ -104,7 +104,7 @@
             this.lbl_cardVal.Size = new System.Drawing.Size(28, 25);
             this.lbl_cardVal.TabIndex = 14;
             this.lbl_cardVal.Text = "//";
-            this.lbl_cardVal.Click += new System.EventHandler(this.label2_Click);
+            this.lbl_cardVal.Click += new System.EventHandler(this.lbl_PlayerTotal);
             // 
             // Pb_backOfCard
             // 
@@ -116,7 +116,7 @@
             this.Pb_backOfCard.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.Pb_backOfCard.TabIndex = 15;
             this.Pb_backOfCard.TabStop = false;
-            this.Pb_backOfCard.Click += new System.EventHandler(this.pictureBox1_Click);
+            this.Pb_backOfCard.Click += new System.EventHandler(this.BackofCard);
             // 
             // Pb_DealtCard1
             // 

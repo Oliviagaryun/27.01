@@ -44,13 +44,10 @@ namespace UI_21
             this.Close();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void btn_stand(object sender, EventArgs e)
         {
-
+           // game to continue. show dealers hidden card and determine winner 
             
-            Game game = new Game();
-
-
            
         }
         public bool returnResult()
@@ -61,11 +58,12 @@ namespace UI_21
 
         private void lbl_TotalBet_Click(object sender, EventArgs e)
         {  
-            lbl_TotalBet.Text = "$" + Frm_Betting.Bet.ToString();
+            lbl_TotalBet.Text = "$" + Convert.ToString(Frm_Betting.Bet);
 
             //string Bet = Frm_Betting.Bet.ToString();
             // lbl_TotalBet.Text = "$" + Bet;
         }
+        
 
         
 
@@ -78,7 +76,7 @@ namespace UI_21
 
         }
 
-        private void label2_Click(object sender, EventArgs e)
+        private void lbl_PlayerTotal(object sender, EventArgs e)
         {
             //made another temp player, you can remove this once you make a public player that all these functions can access
             Player TEMPplayer = new Player();
@@ -87,7 +85,7 @@ namespace UI_21
             lbl_cardVal.Text = Convert.ToString(TEMPplayer.GetTotal());
         }
 
-        private void pictureBox1_Click(object sender, EventArgs e)
+        private void BackofCard(object sender, EventArgs e)
         {
 
         }

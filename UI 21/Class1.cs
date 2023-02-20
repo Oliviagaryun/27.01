@@ -14,7 +14,7 @@ using Excel = Microsoft.Office.Interop.Excel; // to read and write into excel fi
  * 
  * 
  * create new game whe button bet is pressed 
- * whe game 
+ * 
  * 
  * button play create new player 
  */
@@ -208,6 +208,7 @@ namespace UI_21
                 if (action == "hit")
                 {
                     Player.Draw(Deck);
+                    Console.WriteLine("Your cards are: ");
                     Console.WriteLine("Your cards are: ");
                     foreach (var card in Player.Hand)
                     {

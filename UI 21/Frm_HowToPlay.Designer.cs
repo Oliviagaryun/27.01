@@ -45,7 +45,7 @@
             this.lbl_rules.Size = new System.Drawing.Size(803, 300);
             this.lbl_rules.TabIndex = 0;
             this.lbl_rules.Text = resources.GetString("lbl_rules.Text");
-            this.lbl_rules.Click += new System.EventHandler(this.label1_Click);
+            this.lbl_rules.Click += new System.EventHandler(this.HowToPlay_txt);
             // 
             // lbl_HowToPlay
             // 
@@ -57,7 +57,7 @@
             this.lbl_HowToPlay.Size = new System.Drawing.Size(260, 57);
             this.lbl_HowToPlay.TabIndex = 1;
             this.lbl_HowToPlay.Text = "How to Play";
-            this.lbl_HowToPlay.Click += new System.EventHandler(this.label1_Click_1);
+            this.lbl_HowToPlay.Click += new System.EventHandler(this.TITLE);
             // 
             // Btn_MM
             // 

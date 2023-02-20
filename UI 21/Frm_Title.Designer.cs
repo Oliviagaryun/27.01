@@ -44,7 +44,7 @@
             this.Btn_History.TabIndex = 0;
             this.Btn_History.Text = "History";
             this.Btn_History.UseVisualStyleBackColor = true;
-            this.Btn_History.Click += new System.EventHandler(this.button1_Click);
+            this.Btn_History.Click += new System.EventHandler(this.History);
             // 
             // Btn_Play
             // 
@@ -56,7 +56,7 @@
             this.Btn_Play.TabIndex = 1;
             this.Btn_Play.Text = "Play";
             this.Btn_Play.UseVisualStyleBackColor = true;
-            this.Btn_Play.Click += new System.EventHandler(this.button2_Click);
+            this.Btn_Play.Click += new System.EventHandler(this.Play);
             // 
             // Btn_HowToPlay
             // 
@@ -68,7 +68,7 @@
             this.Btn_HowToPlay.TabIndex = 2;
             this.Btn_HowToPlay.Text = "How to Play";
             this.Btn_HowToPlay.UseVisualStyleBackColor = true;
-            this.Btn_HowToPlay.Click += new System.EventHandler(this.Btn_HowToPlay_Click);
+            this.Btn_HowToPlay.Click += new System.EventHandler(this.HowToPlay);
             // 
             // Frm_Title
             // 
