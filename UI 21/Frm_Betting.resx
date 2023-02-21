@@ -59,7 +59,7 @@
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="Btn_chip1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
+    <value>0, 29</value>
   </data>
   <data name="Btn_chip1.Size" type="System.Drawing.Size, System.Drawing">
     <value>75, 23</value>
@@ -74,8 +74,14 @@
   <data name="&gt;&gt;Btn_chip1.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="&gt;&gt;Btn_chip1.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;Btn_chip1.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
   <data name="Btn_chip5.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
+    <value>0, 104</value>
   </data>
   <data name="Btn_chip5.Size" type="System.Drawing.Size, System.Drawing">
     <value>75, 23</value>
@@ -89,8 +95,14 @@
   <data name="&gt;&gt;Btn_chip5.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="&gt;&gt;Btn_chip5.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;Btn_chip5.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
   <data name="Btn_chip100.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
+    <value>0, 160</value>
   </data>
   <data name="Btn_chip100.Size" type="System.Drawing.Size, System.Drawing">
     <value>75, 23</value>
@@ -104,8 +116,14 @@
   <data name="&gt;&gt;Btn_chip100.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="&gt;&gt;Btn_chip100.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;Btn_chip100.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
   <data name="Btn_Chip500.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
+    <value>23, 328</value>
   </data>
   <data name="Btn_Chip500.Size" type="System.Drawing.Size, System.Drawing">
     <value>75, 23</value>
@@ -119,8 +137,14 @@
   <data name="&gt;&gt;Btn_Chip500.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="&gt;&gt;Btn_Chip500.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;Btn_Chip500.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
   <data name="Btn_MM.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
+    <value>142, 354</value>
   </data>
   <data name="Btn_MM.Size" type="System.Drawing.Size, System.Drawing">
     <value>75, 23</value>
@@ -134,8 +158,14 @@
   <data name="&gt;&gt;Btn_MM.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="&gt;&gt;Btn_MM.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;Btn_MM.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
   <data name="Btn_Bet.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
+    <value>142, 234</value>
   </data>
   <data name="Btn_Bet.Size" type="System.Drawing.Size, System.Drawing">
     <value>75, 23</value>
@@ -149,8 +179,14 @@
   <data name="&gt;&gt;Btn_Bet.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="&gt;&gt;Btn_Bet.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;Btn_Bet.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
   <data name="button1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
+    <value>142, 124</value>
   </data>
   <data name="button1.Size" type="System.Drawing.Size, System.Drawing">
     <value>75, 23</value>
@@ -163,6 +199,12 @@
   </data>
   <data name="&gt;&gt;button1.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;button1.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;button1.ZOrder" xml:space="preserve">
+    <value>6</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>

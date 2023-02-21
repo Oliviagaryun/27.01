@@ -75,7 +75,15 @@
             // 
             // Frm_Betting
             // 
+            this.BackColor = System.Drawing.SystemColors.Control;
             resources.ApplyResources(this, "$this");
+            this.Controls.Add(this.Btn_chip1);
+            this.Controls.Add(this.Btn_chip5);
+            this.Controls.Add(this.Btn_chip100);
+            this.Controls.Add(this.Btn_Chip500);
+            this.Controls.Add(this.Btn_MM);
+            this.Controls.Add(this.Btn_Bet);
+            this.Controls.Add(this.button1);
             this.Name = "Frm_Betting";
             this.Load += new System.EventHandler(this.Frm_Betting_Load);
             this.ResumeLayout(false);
