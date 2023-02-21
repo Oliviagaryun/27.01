@@ -57,7 +57,7 @@ namespace UI_21
                         totalWins++;
                     }
                     
-                }
+                }//
 
 
                 // try and calculate the information for the hints 
