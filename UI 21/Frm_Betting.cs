@@ -142,5 +142,50 @@ namespace UI_21
         {
 
         }
+
+        private void button1_Click_2(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Btn_Bet_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Btn_MM_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Btn_chip1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Btn_chip5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Btn_chip100_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Btn_Chip50_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lbl_BaNk(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lbl_bet(object sender, EventArgs e)
+        {
+
+        }
     }
 }
