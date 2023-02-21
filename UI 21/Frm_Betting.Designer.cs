@@ -37,7 +37,7 @@
             this.Btn_Bet = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.lbl_bank = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.label2_bet = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // Btn_chip1
@@ -91,19 +91,18 @@
             // 
             resources.ApplyResources(this.lbl_bank, "lbl_bank");
             this.lbl_bank.Name = "lbl_bank";
-            this.lbl_bank.Click += new System.EventHandler(this.lbl_bank);
             // 
-            // label2
+            // label2_bet
             // 
-            resources.ApplyResources(this.label2, "label2");
-            this.label2.Name = "label2";
-            this.label2.Click += new System.EventHandler(this.lbl_bet);
+            resources.ApplyResources(this.label2_bet, "label2_bet");
+            this.label2_bet.Name = "label2_bet";
+            this.label2_bet.Click += new System.EventHandler(this.lbl_bet);
             // 
             // Frm_Betting
             // 
             this.BackColor = System.Drawing.SystemColors.Control;
             resources.ApplyResources(this, "$this");
-            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label2_bet);
             this.Controls.Add(this.lbl_bank);
             this.Controls.Add(this.Btn_chip1);
             this.Controls.Add(this.Btn_chip5);
@@ -130,6 +129,6 @@
         private Button button1;
         private Label lbl_Bank;
         private Label lbl_bank;
-        private Label label2;
+        private Label label2_bet;
     }
 }

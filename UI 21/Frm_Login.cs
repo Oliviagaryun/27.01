@@ -126,6 +126,11 @@ namespace UI_21
             Login_Click();
 
         }
+
+        private void lbl_Password_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 
 

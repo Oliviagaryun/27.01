@@ -43,6 +43,7 @@
             // 
             // Pb_login
             // 
+            this.Pb_login.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(214)))), ((int)(((byte)(91)))));
             this.Pb_login.Location = new System.Drawing.Point(190, 125);
             this.Pb_login.Name = "Pb_login";
             this.Pb_login.Size = new System.Drawing.Size(439, 240);
@@ -77,6 +78,7 @@
             // lbl_Username
             // 
             this.lbl_Username.AutoSize = true;
+            this.lbl_Username.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(214)))), ((int)(((byte)(91)))));
             this.lbl_Username.Location = new System.Drawing.Point(383, 141);
             this.lbl_Username.Name = "lbl_Username";
             this.lbl_Username.Size = new System.Drawing.Size(75, 20);
@@ -87,15 +89,17 @@
             // lbl_Password
             // 
             this.lbl_Password.AutoSize = true;
+            this.lbl_Password.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(214)))), ((int)(((byte)(91)))));
             this.lbl_Password.Location = new System.Drawing.Point(383, 213);
             this.lbl_Password.Name = "lbl_Password";
             this.lbl_Password.Size = new System.Drawing.Size(70, 20);
             this.lbl_Password.TabIndex = 5;
             this.lbl_Password.Text = "Password";
+            this.lbl_Password.Click += new System.EventHandler(this.lbl_Password_Click);
             // 
             // btnRegister
             // 
-            this.btnRegister.Location = new System.Drawing.Point(258, 304);
+            this.btnRegister.Location = new System.Drawing.Point(269, 304);
             this.btnRegister.Name = "btnRegister";
             this.btnRegister.Size = new System.Drawing.Size(94, 29);
             this.btnRegister.TabIndex = 6;
@@ -105,10 +109,10 @@
             // 
             // BTN_Login
             // 
-            this.BTN_Login.Location = new System.Drawing.Point(486, 304);
+            this.BTN_Login.Location = new System.Drawing.Point(462, 304);
             this.BTN_Login.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.BTN_Login.Name = "BTN_Login";
-            this.BTN_Login.Size = new System.Drawing.Size(86, 31);
+            this.BTN_Login.Size = new System.Drawing.Size(94, 29);
             this.BTN_Login.TabIndex = 7;
             this.BTN_Login.Text = "Login";
             this.BTN_Login.UseVisualStyleBackColor = true;
