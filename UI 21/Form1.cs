@@ -22,8 +22,9 @@ namespace UI_21
         public Player player;
         public Dealer dealer;
         public Deck deck;
+        public int bet;
 
-        public Frm_Game(Player player1)
+        public Frm_Game(Player player1, int Bet)
         {
 
 
@@ -33,6 +34,7 @@ namespace UI_21
             dealer = new Dealer();
             player = player1;
             deck = new Deck();
+            bet = Bet;
         }
 
         private void Btn_Return_Click(object sender, EventArgs e)
@@ -60,7 +62,7 @@ namespace UI_21
 
         private void lbl_TotalBet_Click(object sender, EventArgs e)
         {  
-            lbl_TotalBet.Text = "$" + Convert.ToString(Frm_Betting.Bet);
+            lbl_TotalBet.Text = "$" + Convert.ToString(bet);
 
             //string Bet = Frm_Betting.Bet.ToString();
             // lbl_TotalBet.Text = "$" + Bet;

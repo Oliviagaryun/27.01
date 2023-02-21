@@ -106,7 +106,7 @@ namespace UI_21
 
             
             this.Hide();
-            Frm_Game form1 = new Frm_Game(player);
+            Frm_Game form1 = new Frm_Game(player, Bet);
             form1.ShowDialog();
             //form 1.play game 
             //form1.returnResult();

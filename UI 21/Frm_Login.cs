@@ -31,8 +31,7 @@ namespace UI_21
         private void register_Click(object sender, EventArgs e)
         {
 
-            Register register;
-            register = true;
+            bool register = true;
         }
 
         private void txtLoginPassword_TextChanged(object sender, EventArgs e)

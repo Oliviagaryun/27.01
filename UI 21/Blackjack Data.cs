@@ -51,7 +51,7 @@ namespace UI_21
                     Game game = new Game();
                     game.Setup();
                     int playerTotal = game.Player.GetTotal();
-                    if (sumofcards = playerTotal)
+                    if (sumofcards == playerTotal)
                     {
 
                         totalWins++;
