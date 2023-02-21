@@ -18,23 +18,23 @@ namespace UI_21
         private static OleDbDataAdapter da = new OleDbDataAdapter(); //data adapter
 
 
-        private void btnRegister_Click(object sender, EventArgs e)  //register part there 
+        public void Register_Click()  //register part there 
         {
-            string hashedPassword = Hashing.HashPassword(txtRegisterPassword.Text);//hash
-            string regSQL = "INSERT INTO tbl_users ([username], [password]) VALUES ('" + txtRegisterUsername.Text + "', '" + hashedPassword + "')";//hash
+            string hashedPassword = Hashing.HashPassword(txtPassword.Text);//hash
+            string regSQL = "INSERT INTO tbl_users ([username], [password]) VALUES ('" + txtUsername.Text + "', '" + hashedPassword + "')";//hash
 
-            if (txtRegisterUsername.Text == "" && txtRegisterPassword.Text == "") //check if fields are empty
+            if (txtUsername.Text == "" && txtPassword.Text == "") //check if fields are empty
             {
                 MessageBox.Show("Username and Password fields are empty.", "Registration failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            else if (txtRegisterUsername.Text == "" || txtRegisterPassword.Text == "") //check if fields are empty
+            else if (txtUsername.Text == "" || txtPassword.Text == "") //check if fields are empty
             {
                 MessageBox.Show("Username or Password fields are empty.", "Registration failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
             {
                 con.Open(); //open connection
-                string regSQL = "INSERT INTO tbl_users ([username], [password]) VALUES ('" + txtRegisterUsername.Text + "', '" + txtRegisterPassword.Text + "')"; //the sql command to insert username and password
+                regSQL = "INSERT INTO tbl_users ([username], [password]) VALUES ('" + txtUsername.Text + "', '" + txtPassword.Text + "')"; //the sql command to insert username and password
                 cmd = new OleDbCommand(regSQL, con); //setting up the command and the connection
                 try
                 {
@@ -48,23 +48,23 @@ namespace UI_21
                 catch (Exception ex) //catch if cmd does not execute
                 {
                     MessageBox.Show("Username has already been registered,", "Registration Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    txtRegisterUsername.Clear(); //clear the fields
-                    txtRegisterPassword.Clear();
+                    txtUsername.Clear(); //clear the fields
+                    txtPassword.Clear();
                     con.Close(); //closing the connection or else there is an error
                 }
             }
         }
 
-        private void btnLogin_Click(object sender, EventArgs e) //login part
+        private void Login_Click() //login part
         {
 
-            string hashedPassword = Hashing.HashPassword(txtLoginPassword.Text);//hash
-            string logSQL = "SELECT * FROM tbl_users WHERE username=  '" + txtLoginUsername.Text + "' and password= '" + hashedPassword + "'";//hash
+            string hashedPassword = Hashing.HashPassword(txtPassword.Text);//hash
+            string logSQL = "SELECT * FROM tbl_users WHERE username=  '" + txtUsername.Text + "' and password= '" + hashedPassword + "'";//hash
 
             try
             {
                 con.Open(); //connection open
-                string logSQL = "SELECT * FROM tbl_users WHERE username=  '" + txtLoginUsername.Text + "' and password= '" + txtLoginPassword.Text + "'"; //sql statement
+                logSQL = "SELECT * FROM tbl_users WHERE username=  '" + txtUsername.Text + "' and password= '" + txtPassword.Text + "'"; //sql statement
                 cmd = new OleDbCommand(logSQL, con); //execute the sql
 
                 OleDbDataReader dr = cmd.ExecuteReader(); //use the reader to read through the usernames and passwords
@@ -77,8 +77,8 @@ namespace UI_21
                 else //invalid login
                 {
                     MessageBox.Show("Invalid username or password.", "Login failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    txtLoginPassword.Clear();
-                    txtLoginUsername.Clear();
+                    txtPassword.Clear();
+                    txtUsername.Clear();
                     con.Close();
                 }
             }
@@ -108,8 +108,7 @@ namespace UI_21
 
         private void register_Click(object sender, EventArgs e)
         {
-
-            bool register = true;
+            Register_Click();
         }
 
         private void txtLoginPassword_TextChanged(object sender, EventArgs e)
@@ -119,6 +118,12 @@ namespace UI_21
 
         private void Frm_Login_Load(object sender, EventArgs e)
         {
+
+        }
+
+        private void BTN_Login_Click(object sender, EventArgs e)
+        {
+            Login_Click();
 
         }
     }

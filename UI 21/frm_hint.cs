@@ -22,5 +22,10 @@ namespace UI_21
             double winRate = Blackjack_Data.ReadBlackJackData();
             Console.WriteLine("Win rate:", winRate );
         }
+
+        private void frm_hint_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
