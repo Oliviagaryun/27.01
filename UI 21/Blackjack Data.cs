@@ -36,7 +36,7 @@ namespace UI_21
                    
                     string sumOfCards = values[7];// i think it will be at the 7th index. check the excel sheet.
                     int sumofcards = int.Parse(sumOfCards);// i thought this would convert the string read in to an int.
-                    string result = values[15]; // i think it will be at the 15th index
+                    String result = values[15]; // i think it will be at the 15th index
 
 
                     totalHands++;
@@ -51,10 +51,13 @@ namespace UI_21
                     if (sumofcards == playerTotal)
                     {
 
+                        totalHands++;
+                    }
+                    if (result == "win")
+                    {
                         totalWins++;
                     }
-                    
-                }//
+                }
 
 
                 // try and calculate the information for the hints 

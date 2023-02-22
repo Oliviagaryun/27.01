@@ -142,11 +142,7 @@ namespace UI_21
 
         }
 
-        private void Btn_Chip25(object sender, EventArgs e)
-        {
-
-        }
-
+        
         private void Btn_Bet_Click_1(object sender, EventArgs e)
         {
             this.Hide();
@@ -175,16 +171,21 @@ namespace UI_21
         {
             Bet = Bet + 5;
         }
+        private void Btn_Chip25_0(object sender, EventArgs e)
+        {
+            Bet = Bet + 25;
+        }
+        private void Btn_Chip50_Click(object sender, EventArgs e)
+        {
+            Bet = Bet + 50;
+        }
 
         private void Btn_chip100_Click_1(object sender, EventArgs e)
         {
             Bet = Bet + 100;
         }
 
-        private void Btn_Chip50_Click(object sender, EventArgs e)
-        {
-            Bet = Bet + 50;
-        }
+        
 
         private void lbl_BaNk(object sender, EventArgs e)
         {
