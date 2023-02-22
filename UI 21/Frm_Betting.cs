@@ -19,7 +19,7 @@ namespace UI_21
         public int Bet = 0;
         Player player;
         public bool GameResult= false;
-           // Bank = Bank - Bet;
+          
         public Frm_Betting()
         {
             InitializeComponent();
@@ -41,8 +41,7 @@ namespace UI_21
         /*private void textBox1_TextChanged(object sender, EventArgs e)
         {
             textBox1.Text = Bank.ToString();
-            // Bank is called above but doesnt add to the textbox. does it have to be a label to display variables? 
-        // tried as a label below. but there is still an errror
+            
         }
         */
 
@@ -150,42 +149,51 @@ namespace UI_21
 
         private void Btn_Bet_Click_1(object sender, EventArgs e)
         {
+            this.Hide();
+            Frm_Game form1 = new Frm_Game(player, Bet);
+            form1.ShowDialog();
+            //form 1.play game 
+            //form1.returnResult();
+            Boolean GameResult = form1.returnResult();
 
         }
 
         private void Btn_MM_Click_1(object sender, EventArgs e)
         {
-
+            this.Hide();
+            Frm_Title form1 = new Frm_Title();
+            form1.ShowDialog();
+            this.Close();
         }
 
         private void Btn_chip1_Click(object sender, EventArgs e)
         {
-
+            Bet = Bet + 1;
         }
 
         private void Btn_chip5_Click(object sender, EventArgs e)
         {
-
+            Bet = Bet + 5;
         }
 
         private void Btn_chip100_Click_1(object sender, EventArgs e)
         {
-
+            Bet = Bet + 100;
         }
 
         private void Btn_Chip50_Click(object sender, EventArgs e)
         {
-
+            Bet = Bet + 50;
         }
 
         private void lbl_BaNk(object sender, EventArgs e)
         {
-
+            lbl_Bank.Text = "$" + Bank.ToString();
         }
 
         private void lbl_bet(object sender, EventArgs e)
         {
-
+            lbl_bet.Text =  "$" + Bet.ToString();
         }
     }
 }

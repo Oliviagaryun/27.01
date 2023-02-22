@@ -90,11 +90,15 @@
             // lbl_bank
             // 
             resources.ApplyResources(this.lbl_bank, "lbl_bank");
+            this.lbl_bank.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(49)))), ((int)(((byte)(69)))));
+            this.lbl_bank.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.lbl_bank.Name = "lbl_bank";
             // 
             // label2_bet
             // 
             resources.ApplyResources(this.label2_bet, "label2_bet");
+            this.label2_bet.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(100)))), ((int)(((byte)(62)))));
+            this.label2_bet.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.label2_bet.Name = "label2_bet";
             this.label2_bet.Click += new System.EventHandler(this.lbl_bet);
             // 
