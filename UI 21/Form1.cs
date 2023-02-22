@@ -125,5 +125,20 @@ namespace UI_21
         {
 
         }
+
+        private void Pb_DealtCard3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Pb_DealtCard4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Pb_DealtCard5_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
