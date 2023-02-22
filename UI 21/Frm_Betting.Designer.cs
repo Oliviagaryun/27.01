@@ -99,7 +99,7 @@
             resources.ApplyResources(this.Btn_Chip25, "Btn_Chip25");
             this.Btn_Chip25.Name = "Btn_Chip25";
             this.Btn_Chip25.UseVisualStyleBackColor = false;
-            this.Btn_Chip25.Click += new System.EventHandler(this.button1_Click_2);
+            this.Btn_Chip25.Click += new System.EventHandler(this.Btn_Chip25);
             // 
             // lbl_bank
             // 

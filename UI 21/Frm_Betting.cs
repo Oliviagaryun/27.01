@@ -142,7 +142,7 @@ namespace UI_21
 
         }
 
-        private void button1_Click_2(object sender, EventArgs e)
+        private void Btn_Chip25(object sender, EventArgs e)
         {
 
         }
