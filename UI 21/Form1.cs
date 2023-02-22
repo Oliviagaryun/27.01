@@ -116,7 +116,7 @@ namespace UI_21
 
         private void btn_hint_Click(object sender, EventArgs e) // this needs to be tested 
         {
-            frm_hint form1 = new frm_hint();// take to hint form 
+            frm_hint form1 = new frm_hint(player);// take to hint form 
             form1.ShowDialog();
             this.Close();
         }

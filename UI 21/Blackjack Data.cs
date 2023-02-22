@@ -15,7 +15,7 @@ namespace UI_21
     // i think i was able to read the lines, but am unsure how to split the variables 
     // try and calculate the information for the hints 
     
-        public static double ReadBlackJackData()
+        public static double ReadBlackJackData(Player player)
         {
             string filePath = "blkjckhands.csv";
             double winRate = 0.0;
@@ -47,10 +47,7 @@ namespace UI_21
                     }
                     */
 
-
-                    Game game = new Game();
-                    game.Setup();
-                    int playerTotal = game.Player.GetTotal();
+                    int playerTotal = player.GetTotal();
                     if (sumofcards == playerTotal)
                     {
 

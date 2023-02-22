@@ -12,14 +12,14 @@ namespace UI_21
 {
     public partial class frm_hint : Form
     {
-        public frm_hint()
+        public frm_hint(Player player)
         {
             InitializeComponent();
         }
 
         private void Hint_TextChanged(object sender, EventArgs e)
         {
-            double winRate = Blackjack_Data.ReadBlackJackData();
+            double winRate = Blackjack_Data.ReadBlackJackData(player);
             Console.WriteLine("Win rate:", winRate );
         }
 
