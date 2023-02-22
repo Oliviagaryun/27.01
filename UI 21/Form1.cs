@@ -96,17 +96,17 @@ namespace UI_21
 
         private void Pb_DealtCard1_Click(object sender, EventArgs e)
         {
-            
-            foreach (var card in player.Hand)
-                // player hand is from game class. How do i bring it over?
-                //the object i told you to create at the top...
-            {
-                //where is deck coming from?
-                //you need to create the objects
-                string imagePath = deck.CardImages[card];
-                // use the imagePath to display the image for the card
-            }
 
+            /* foreach (var card in player.Hand)
+                 {
+                 string imagePath = deck.CardImages[card];
+                 // use the imagePath to display the image for the card
+             }
+            
+            // take the first card, find the image 
+            player.Hand[0];
+
+            */
         }
 
         private void Frm_Game_Load(object sender, EventArgs e)
