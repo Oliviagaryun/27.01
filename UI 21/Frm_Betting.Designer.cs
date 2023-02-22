@@ -32,37 +32,50 @@
             this.Btn_chip1 = new System.Windows.Forms.Button();
             this.Btn_chip5 = new System.Windows.Forms.Button();
             this.Btn_chip100 = new System.Windows.Forms.Button();
-            this.Btn_Chip500 = new System.Windows.Forms.Button();
+            this.Btn_Chip50 = new System.Windows.Forms.Button();
             this.Btn_MM = new System.Windows.Forms.Button();
             this.Btn_Bet = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.Btn_Chip25 = new System.Windows.Forms.Button();
             this.lbl_bank = new System.Windows.Forms.Label();
             this.label2_bet = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // Btn_chip1
             // 
+            this.Btn_chip1.BackColor = System.Drawing.Color.Transparent;
+            this.Btn_chip1.FlatAppearance.BorderSize = 0;
             resources.ApplyResources(this.Btn_chip1, "Btn_chip1");
+            this.Btn_chip1.ForeColor = System.Drawing.Color.Transparent;
             this.Btn_chip1.Name = "Btn_chip1";
+            this.Btn_chip1.UseVisualStyleBackColor = false;
             this.Btn_chip1.Click += new System.EventHandler(this.Btn_chip1_Click);
             // 
             // Btn_chip5
             // 
+            this.Btn_chip5.BackColor = System.Drawing.Color.Transparent;
+            this.Btn_chip5.FlatAppearance.BorderSize = 0;
             resources.ApplyResources(this.Btn_chip5, "Btn_chip5");
             this.Btn_chip5.Name = "Btn_chip5";
+            this.Btn_chip5.UseVisualStyleBackColor = false;
             this.Btn_chip5.Click += new System.EventHandler(this.Btn_chip5_Click);
             // 
             // Btn_chip100
             // 
+            this.Btn_chip100.BackColor = System.Drawing.Color.Transparent;
+            this.Btn_chip100.FlatAppearance.BorderSize = 0;
             resources.ApplyResources(this.Btn_chip100, "Btn_chip100");
             this.Btn_chip100.Name = "Btn_chip100";
+            this.Btn_chip100.UseVisualStyleBackColor = false;
             this.Btn_chip100.Click += new System.EventHandler(this.Btn_chip100_Click_1);
             // 
-            // Btn_Chip500
+            // Btn_Chip50
             // 
-            resources.ApplyResources(this.Btn_Chip500, "Btn_Chip500");
-            this.Btn_Chip500.Name = "Btn_Chip500";
-            this.Btn_Chip500.Click += new System.EventHandler(this.Btn_Chip50_Click);
+            this.Btn_Chip50.BackColor = System.Drawing.Color.Transparent;
+            this.Btn_Chip50.FlatAppearance.BorderSize = 0;
+            resources.ApplyResources(this.Btn_Chip50, "Btn_Chip50");
+            this.Btn_Chip50.Name = "Btn_Chip50";
+            this.Btn_Chip50.UseVisualStyleBackColor = false;
+            this.Btn_Chip50.Click += new System.EventHandler(this.Btn_Chip50_Click);
             // 
             // Btn_MM
             // 
@@ -79,13 +92,14 @@
             this.Btn_Bet.Name = "Btn_Bet";
             this.Btn_Bet.Click += new System.EventHandler(this.Btn_Bet_Click_1);
             // 
-            // button1
+            // Btn_Chip25
             // 
-            this.button1.BackColor = System.Drawing.Color.Transparent;
-            resources.ApplyResources(this.button1, "button1");
-            this.button1.Name = "button1";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click_2);
+            this.Btn_Chip25.BackColor = System.Drawing.Color.Transparent;
+            this.Btn_Chip25.FlatAppearance.BorderSize = 0;
+            resources.ApplyResources(this.Btn_Chip25, "Btn_Chip25");
+            this.Btn_Chip25.Name = "Btn_Chip25";
+            this.Btn_Chip25.UseVisualStyleBackColor = false;
+            this.Btn_Chip25.Click += new System.EventHandler(this.button1_Click_2);
             // 
             // lbl_bank
             // 
@@ -111,10 +125,10 @@
             this.Controls.Add(this.Btn_chip1);
             this.Controls.Add(this.Btn_chip5);
             this.Controls.Add(this.Btn_chip100);
-            this.Controls.Add(this.Btn_Chip500);
+            this.Controls.Add(this.Btn_Chip50);
             this.Controls.Add(this.Btn_MM);
             this.Controls.Add(this.Btn_Bet);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.Btn_Chip25);
             this.Name = "Frm_Betting";
             this.Load += new System.EventHandler(this.Frm_Betting_Load);
             this.ResumeLayout(false);
@@ -126,11 +140,11 @@
         private Button Btn_chip1;
         private Button Btn_chip5;
         private Button Btn_chip100;
-        private Button Btn_Chip500;
+        private Button Btn_Chip50;
         private Button Btn_MM;
         private Button Btn_History;
         private Button Btn_Bet;
-        private Button button1;
+        private Button Btn_Chip25;
         private Label lbl_Bank;
         private Label lbl_bank;
         private Label label2_bet;
