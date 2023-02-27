@@ -96,7 +96,7 @@ namespace UI_21
 
         private void Pb_DealtCard1_Click(object sender, EventArgs e)
         {
-
+            // locate card image of player.hand [0]
             /* foreach (var card in player.Hand)
                  {
                  string imagePath = deck.CardImages[card];
@@ -123,22 +123,25 @@ namespace UI_21
 
         private void Pb_DealtCard2_Click(object sender, EventArgs e)
         {
-
+            // locate card image of player.hand [1]
         }
 
         private void Pb_DealtCard3_Click(object sender, EventArgs e)
         {
-
+            // keep hidden until there is a value here
+            // locate card image of player.hand [2]
         }
 
         private void Pb_DealtCard4_Click(object sender, EventArgs e)
         {
-
+            // keep hidden until there is a value here
+            // locate card image of player.hand [3]
         }
 
         private void Pb_DealtCard5_Click(object sender, EventArgs e)
         {
-
+            // keep hidden until there is a value here
+            // locate card image of player.hand [4]
         }
     }
 }
