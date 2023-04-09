@@ -189,11 +189,13 @@ namespace UI_21
 
         private void lbl_BaNk(object sender, EventArgs e)
         {
+            //spelling here
             lbl_Bank.Text = "$" + Bank.ToString();
         }
 
         private void lbl_bet(object sender, EventArgs e)
         {
+            // explain this please
             lbl_bet.Text =  "$" + Bet.ToString();
         }
     }
