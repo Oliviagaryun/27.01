@@ -8,6 +8,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.OleDb;
+using System.Security.Policy;
+using System.Security.Cryptography;
+using System.Collections;
 
 namespace UI_21
 {
@@ -20,6 +23,7 @@ namespace UI_21
 
         public void Register_Click()  //register part there 
         {
+            //You are going to have to find a hashing function. Its easy thats why i aint doing it
             string hashedPassword = Hashing.HashPassword(txtPassword.Text);//hash
             string regSQL = "INSERT INTO tbl_users ([username], [password]) VALUES ('" + txtUsername.Text + "', '" + hashedPassword + "')";//hash
 
