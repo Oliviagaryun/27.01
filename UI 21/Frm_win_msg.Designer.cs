@@ -39,6 +39,7 @@
             this.txt_betWin.Size = new System.Drawing.Size(267, 27);
             this.txt_betWin.TabIndex = 1;
             this.txt_betWin.Text = "you win. bet x2 ( variable ) ";
+            this.txt_betWin.TextChanged += new System.EventHandler(this.txt_betWin_TextChanged);
             // 
             // Frm_win_msg
             // 

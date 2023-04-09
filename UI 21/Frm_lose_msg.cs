@@ -15,6 +15,15 @@ namespace UI_21
         public Frm_lose_msg()
         {
             InitializeComponent();
+            this.Hide();
+            Frm_lose_msg form1 = new Frm_lose_msg();
+            form1.ShowDialog();
+            this.Close();
+        }
+
+        private void txt_loseMsg_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

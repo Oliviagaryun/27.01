@@ -27,5 +27,10 @@ namespace UI_21
             form1.ShowDialog();
             this.Close();
         }
+
+        private void txt_betWin_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
