@@ -29,21 +29,12 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_win_msg));
-            this.txt_winner = new System.Windows.Forms.TextBox();
             this.txt_betWin = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
-            // txt_winner
-            // 
-            this.txt_winner.Location = new System.Drawing.Point(138, 138);
-            this.txt_winner.Name = "txt_winner";
-            this.txt_winner.Size = new System.Drawing.Size(125, 27);
-            this.txt_winner.TabIndex = 0;
-            this.txt_winner.Text = "WINNER";
-            // 
             // txt_betWin
             // 
-            this.txt_betWin.Location = new System.Drawing.Point(139, 197);
+            this.txt_betWin.Location = new System.Drawing.Point(301, 307);
             this.txt_betWin.Name = "txt_betWin";
             this.txt_betWin.Size = new System.Drawing.Size(267, 27);
             this.txt_betWin.TabIndex = 1;
@@ -54,9 +45,8 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(854, 463);
             this.Controls.Add(this.txt_betWin);
-            this.Controls.Add(this.txt_winner);
             this.Name = "Frm_win_msg";
             this.Text = "Frm_win_msg";
             this.Load += new System.EventHandler(this.Frm_win_msg_Load);
@@ -66,8 +56,6 @@
         }
 
         #endregion
-
-        private TextBox txt_winner;
         private TextBox txt_betWin;
     }
 }

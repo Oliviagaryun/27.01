@@ -15,11 +15,14 @@ namespace UI_21
         public Frm_win_msg()
         {
             InitializeComponent();
+            Frm_win_msg form1 = new Frm_win_msg();
+            form1.ShowDialog();
+            this.Close();
         }
 
         public void Frm_win_msg_Load(object sender, EventArgs e)
         {
-            this.Hide();
+            
             Frm_win_msg form1 = new Frm_win_msg();
             form1.ShowDialog();
             this.Close();
