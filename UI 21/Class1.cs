@@ -268,14 +268,16 @@ namespace UI_21
                 Console.WriteLine("Dealer busts! You win!");
                 Console.WriteLine("You win " + (Bet * 2) + " chips.");
                 win = true;
-                Frm_win_msg(); // load winner form (ui for winner) 
+                Application.Run(new Frm_win_msg()); // load winner form (ui for winner) 
             }
             else if (dealer.GetTotal() < player.GetTotal())
             {
                 Console.WriteLine("You win!");
                 Console.WriteLine("You win " + (Bet * 2) + " chips.");
                 win = true;
-                Frm_win_msg(); //load winner form(ui for winner)
+                
+                //Frm_win_msg(); //load winner form(ui for winner)
+                Application.Run(new Frm_win_msg());
             }
             else
             {
