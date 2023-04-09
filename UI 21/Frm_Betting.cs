@@ -187,7 +187,7 @@ namespace UI_21
 
         
 
-        private void lbl_BaNk(object sender, EventArgs e)
+        private void lbl_Bank(object sender, EventArgs e)
         {
             //spelling here
             lbl_Bank.Text = "$" + Bank.ToString();
@@ -197,6 +197,7 @@ namespace UI_21
         {
             // explain this please
             lbl_bet.Text =  "$" + Bet.ToString();
+            //lable bet should display the bet which is from the functions above ie.Btn_chip5_Click
         }
     }
 }
