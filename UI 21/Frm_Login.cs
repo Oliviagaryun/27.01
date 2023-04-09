@@ -24,6 +24,8 @@ namespace UI_21
         public void Register_Click()  //register part there 
         {
             //You are going to have to find a hashing function. Its easy thats why i aint doing it
+            // i dont fully understand what u r looking for. 
+            // check login.cs
             string hashedPassword = Hashing.HashPassword(txtPassword.Text);//hash
             string regSQL = "INSERT INTO tbl_users ([username], [password]) VALUES ('" + txtUsername.Text + "', '" + hashedPassword + "')";//hash
 
