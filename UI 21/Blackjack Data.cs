@@ -11,9 +11,7 @@ namespace UI_21
 {
     public class Blackjack_Data
     {
-    // attempt to read the excel file and take the necessary data. 
-    // i think i was able to read the lines, but am unsure how to split the variables 
-    // try and calculate the information for the hints 
+    
     
         public static double ReadBlackJackData(Player player)
         {

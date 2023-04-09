@@ -19,7 +19,7 @@ namespace UI_21
 
         private void Hint_TextChanged(object sender, EventArgs e)
         {
-            double winRate = Blackjack_Data.ReadBlackJackData(player);
+            double winRate = Blackjack_Data.ReadBlackJackData(Player);
             Console.WriteLine("Win rate:", winRate );
         }
 
