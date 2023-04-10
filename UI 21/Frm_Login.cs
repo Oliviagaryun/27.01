@@ -14,6 +14,17 @@ using System.Collections;
 
 namespace UI_21
 {
+    class Hashing//hash start
+    {
+        public static string HashPassword(string password)
+        {
+            using (var sha256 = SHA256.Create())
+            {
+                var hashedBytes = sha256.ComputeHash(Encoding.UTF8.GetBytes(password));
+                return Convert.ToBase64String(hashedBytes);
+            }
+        }
+    }// hash end 
     public partial class Frm_Login : Form
     {
         private static OleDbConnection con = new OleDbConnection("Provider=Microsoft.Jet.OLEDB.4.0;Data Source=db_graphix_users.mdb"); //establishing connection
@@ -134,6 +145,11 @@ namespace UI_21
         }
 
         private void lbl_Password_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void BTN_Login_Click_1(object sender, EventArgs e)
         {
 
         }
