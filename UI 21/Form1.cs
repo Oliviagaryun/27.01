@@ -143,5 +143,11 @@ namespace UI_21
             // keep hidden until there is a value here
             // locate card image of player.hand [4]
         }
+
+        private void Pb_Dealer_DealtCard5_Click(object sender, EventArgs e)
+        {
+            
+            
+        }
     }
 }
