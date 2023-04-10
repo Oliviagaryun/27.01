@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using UI_21;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
-using static UI_21.Game;
+using static UI_21.Frm_Game;
 
 namespace UI_21
 {
