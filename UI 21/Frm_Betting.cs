@@ -187,6 +187,7 @@ namespace UI_21
 
         
 
+        //this method isnt used anywhere, why is it here?
         private void Lbl_Bank(object sender, EventArgs e)
         {
             //spelling here

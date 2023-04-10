@@ -117,6 +117,7 @@ namespace UI_21
 
         public void Draw(Deck deck)
         {
+            //have you instantiated your player class properly?
             Hand.Add(deck.Cards[0]);
             deck.Cards.RemoveAt(0);
         }
