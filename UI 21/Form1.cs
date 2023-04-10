@@ -29,6 +29,7 @@ namespace UI_21
 
 
             InitializeComponent();
+            
             //NEW INSTANCE OF DEALER 
             //NOT dealer = dealer
             dealer = new Dealer();

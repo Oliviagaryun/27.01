@@ -14,10 +14,11 @@ namespace UI_21
 
 
     public partial class Frm_Betting : Form
+        // use player object rather than clas 
     {
         public int Bank = 1500;
         public int Bet = 0;
-        Player player;
+        public Player player;
         public bool GameResult= false;
           
         public Frm_Betting()
