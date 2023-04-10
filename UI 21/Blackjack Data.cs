@@ -8,77 +8,64 @@ using Excel = Microsoft.Office.Interop.Excel;
 using System.IO;
 
 namespace UI_21
+    // TS complete, added descriptive comments 
 {
     public class Blackjack_Data
     {
-    
-    
         public static double ReadBlackJackData(Player player)
         {
+            // Define the file path for the CSV file containing the blackjack hands
             string filePath = "blkjckhands.csv";
+
             double winRate = 0.0;
+
             try
             {
                 int totalHands = 0;
-                //int sumofcards = 0;
                 int totalWins = 0;
 
-
+                // Read all lines from the CSV file
                 string[] lines = File.ReadAllLines(filePath);
 
+                // Loop through each line in the CSV file
                 foreach (string line in lines)
                 {
-                    string[] values = line.Split(',');// everytime there is a comma will split the original line 
+                    // Split the line by comma to extract the values
+                    string[] values = line.Split(',');
 
-                    // Parse the values into variables
-                   
-                    string sumOfCards = values[7];// i think it will be at the 7th index. check the excel sheet.
-                    int sumofcards = int.Parse(sumOfCards);// i thought this would convert the string read in to an int.
-                    String result = values[15]; // i think it will be at the 15th index
+                    // Extract the sum of cards and result from the values
+                    string sumOfCards = values[7];
+                    int sumofcards = int.Parse(sumOfCards);
+                    string result = values[15];
 
-
+                    // Increment the total number of hands
                     totalHands++;
 
-                    /*if (result == "win")
-                    {
-                        totalWins++;
-                    }
-                    */
-
+                    // Check if the sum of cards in the hand is the same as the player's total
                     int playerTotal = player.GetTotal();
                     if (sumofcards == playerTotal)
                     {
-
                         totalHands++;
                     }
+
+                    // Check if the hand was a win
                     if (result == "win")
                     {
                         totalWins++;
                     }
                 }
 
-
-                // try and calculate the information for the hints 
                 // Calculate the win rate
                 winRate = (double)totalWins / (double)totalHands;
-                // can do this part in labels. 
-                /*Console.WriteLine("Total hands: {0}", totalHands);
-                Console.WriteLine("Total wins: {0}", totalWins);
-                Console.WriteLine("Win rate: {0:P2}", winRate);
-                */
             }
             catch (Exception ex)
             {
+                // If an error occurs, print the error message
                 Console.WriteLine("An error occurred: " + ex.Message);
             }
 
-            return winRate; 
+            // Return the win rate
+            return winRate;
         }
     }
 }
-
- 
-
-
-
-
