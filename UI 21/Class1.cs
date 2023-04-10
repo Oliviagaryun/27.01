@@ -7,22 +7,16 @@ using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
-using Excel = Microsoft.Office.Interop.Excel; // to read and write into excel file 
-/*
- * player object in lower case
- * make a public player
- * 
- * 
- * create new game whe button bet is pressed 
- * 
- * 
- * button play create new player 
- */
+using Excel = Microsoft.Office.Interop.Excel; // to read and write into excel file
+using System.IO;
+
 
 namespace UI_21
+// TS complete, added descriptive comments 
 {
     public class Card
     {
+        // Properties of a card
         public string Rank { get; set; }
         public string Suit { get; set; }
         public int Value { get; set; }
@@ -34,26 +28,31 @@ namespace UI_21
             Value = value;
         }
 
-        // create function equal , check wanted card is equal to the dictonary 
-        // takes location of the dictionary
-    }
+        // Function to check if a card is equal to another one
+        public bool Equals(Card otherCard)
+        {
+            return this.Rank == otherCard.Rank && this.Suit == otherCard.Suit && this.Value == otherCard.Value;
+        }
+   
+   
 
-    public class Deck
+   public class Deck
     {
+        // List of cards in the deck
         public List<Card> Cards { get; set; }
-
-        //this dictionary stores the location of every card image to the corresponding card
+        // Dictionary that stores the path to the image file for each card
         public Dictionary<Card, string> CardImages = new Dictionary<Card, string>();
 
         public Deck()
         {
             var Cards = new List<Card>();
-            string[] suits = { "Hearts", "Diamonds", "Spades", "Clubs" };
+                // String arrays with the suits, ranks and values of the cards
+                string[] suits = { "Hearts", "Diamonds", "Spades", "Clubs" };
             string[] ranks = { "Ace", "2", "3", "4", "5", "6", "7", "8", "9", "10", "Jack", "Queen", "King" };
             int[] values = { 11, 2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10, 10 };
             string path = "cards/Playing Cards/PNG-cards-1.3";
 
-            //creates a card based on every suit and rank and adds the card to a list of cards
+           //Create a card for each suit and rank and add it to the list of cards
             for (int i = 0; i < suits.Length; i++)
             {
                 for (int j = 0; j < ranks.Length; j++)
@@ -63,8 +62,7 @@ namespace UI_21
                 }
             }
 
-            //need to add the correct image to the card
-            //this loop iterates through every card image in my folder
+            // Associate the image file with each card
             foreach (string image in Directory.EnumerateFiles(path, "*", SearchOption.AllDirectories))
             {
                 string filename = Path.GetFileNameWithoutExtension(image);
@@ -93,6 +91,7 @@ namespace UI_21
 
             
         }
+         // Shuffle the cards in the deck randomly
         public void Shuffle()
         {
             List<Card> newDeck = new List<Card>();
@@ -108,16 +107,16 @@ namespace UI_21
     }
     public class Player
     {
-        public List<Card> Hand { get; set; }
+        public List<Card> Hand { get; set; } // List of cards in the player's hand
 
         public Player()
         {
             Hand = new List<Card>();
         }
 
-        public void Draw(Deck deck)
+        public void Draw(Deck deck) // // Draw a card from the deck and add it to the player's hand
+       
         {
-            //have you instantiated your player class properly?
             Hand.Add(deck.Cards[0]);
             deck.Cards.RemoveAt(0);
         }
@@ -158,16 +157,19 @@ namespace UI_21
             return total;
         }
     }
+        //--------------------------------------------------------------------------
 
     public class Game
-    {// Create instances of the deck, player, and dealer classes
+    {
+            //properties
         public Deck Deck { get; set; }
         public Player Player { get; set; }
         public Dealer Dealer { get; set; }
         public int Bet { get; set; }
 
-        public Game()
+        public Game() // constructor 
         {
+            // Create instances of the deck, player, and dealer classes
             Deck = new Deck();
             Player = new Player();
             Dealer = new Dealer();
@@ -175,12 +177,9 @@ namespace UI_21
 
         public void Setup()
         {
-            //you probably want to create a public deck clas you can access anywhere
-            Deck deck = new Deck();
-            deck.Shuffle();
-
-            //Console.WriteLine("Enter your bet: ");
-            //Bet = Convert.ToInt32(Console.ReadLine());
+           // Method to setup the game
+            Deck  = new Deck();
+            Deck.Shuffle();
 
             // Draw two cards for the player and two cards for the dealer
             Player.Draw(Deck);
@@ -201,34 +200,15 @@ namespace UI_21
             Console.WriteLine("Dealer's cards are: ");
             Console.WriteLine(Dealer.Hand[0].Rank + " of " + Dealer.Hand[0].Suit);
             Console.WriteLine("Hidden card");
-            /*
-            while (Player.GetTotal() < 21)
-            {
-                Console.WriteLine("Do you want to hit or stand?");
-                string action = Console.ReadLine().ToLower();
-                if (action == "hit")
-                {
-                    Player.Draw(Deck);
-                    Console.WriteLine("Your cards are: ");
-                    Console.WriteLine("Your cards are: ");
-                    foreach (var card in Player.Hand)
-                    {
-                        Console.WriteLine(card.Rank + " of " + card.Suit);
-                    }
-                    Console.WriteLine("Your total is: " + Player.GetTotal());
-                }
-                else if (action == "stand")
-                {
-                    break;
-                }
-            }
-        }
-            */
+            
         }
 
-        public void Hit()
+        public void Hit() //Method to handle a hit from the player 
         {
+            //Draw a card for the player
             Player.Draw(Deck);
+            
+            // Display the player's cards and total
             Console.WriteLine("Your cards are: ");
             foreach (var card in Player.Hand)
             {
@@ -240,10 +220,11 @@ namespace UI_21
             Console.WriteLine("Your total is: " + Player.GetTotal());
         }
 
-
+            // Method to determine the winner of the game
         public bool DetermineWinner(Player player, Dealer dealer)
         {
-            bool win = false; // set 
+            bool win = false; // Set to true if the player wins
+            // Display the dealer's cards and total
             Console.WriteLine("Dealer's cards are: ");
             foreach (var card in dealer.Hand) // reveals both dealers cards
             {
@@ -251,17 +232,17 @@ namespace UI_21
             }
             Console.WriteLine("Dealer's total is: " + dealer.GetTotal());
             
-            // this isnt compulsary, not a priority.
+            // Keep drawing cards for the dealer until they have a total of 17 or more
             while (dealer.GetTotal() < 17)
             {
                 Dealer.Draw(Deck);
                
             }
-
+            // Check who won the game
             if (player.GetTotal() > 21)
             {
                 Console.WriteLine("You lose!");
-                // bool win is false 
+               // Player busted, so the player loses and the bool win remains false 
 
             }
             else if (dealer.GetTotal() > 21)
@@ -269,21 +250,22 @@ namespace UI_21
                 Console.WriteLine("Dealer busts! You win!");
                 Console.WriteLine("You win " + (Bet * 2) + " chips.");
                 win = true;
-                Application.Run(new Frm_win_msg()); // load winner form (ui for winner) 
-            }
-            else if (dealer.GetTotal() < player.GetTotal())
+                Application.Run(new Frm_win_msg());
+                // Load winner form (UI for winner) using Windows Forms
+                }
+                else if (dealer.GetTotal() < player.GetTotal())
             {
                 Console.WriteLine("You win!");
                 Console.WriteLine("You win " + (Bet * 2) + " chips.");
                 win = true;
                 
-                //Frm_win_msg(); //load winner form(ui for winner)
+                // Load winner form (UI for winner) using Windows Forms
                 Application.Run(new Frm_win_msg());
             }
             else
             {
                 Console.WriteLine("You lose!");
-                // bool win is false 
+                 // Player's total is less than or equal to dealer's total, so the player loses and the bool win remains false 
             }
             return win;
         }
@@ -324,7 +306,7 @@ namespace UI_21
             }
 
             //Save your workbook as BlackjackHands.xlsx in C drive
-            xlWorkBook.SaveAs("BlackjackHands.xlsx");
+            xlWorkBook.SaveAs("C:\\BlackjackHands.xlsx");
 
             //Close your workbook and quit your application
             xlWorkBook.Close();
