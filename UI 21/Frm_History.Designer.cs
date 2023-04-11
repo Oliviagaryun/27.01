@@ -36,6 +36,9 @@
             // 
             // Btn_MM
             // 
+            this.Btn_MM.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.Btn_MM.BackColor = System.Drawing.SystemColors.WindowFrame;
             this.Btn_MM.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.Btn_MM.ImeMode = System.Windows.Forms.ImeMode.NoControl;
@@ -49,6 +52,9 @@
             // 
             // pictureBox1
             // 
+            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(76, 84);
             this.pictureBox1.Name = "pictureBox1";

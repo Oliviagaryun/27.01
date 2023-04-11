@@ -34,6 +34,9 @@
             // 
             // txt_betWin
             // 
+            this.txt_betWin.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.txt_betWin.Location = new System.Drawing.Point(301, 307);
             this.txt_betWin.Name = "txt_betWin";
             this.txt_betWin.Size = new System.Drawing.Size(267, 27);

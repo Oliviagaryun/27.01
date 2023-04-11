@@ -36,6 +36,9 @@
             // 
             // Btn_History
             // 
+            this.Btn_History.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.Btn_History.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("Btn_History.BackgroundImage")));
             this.Btn_History.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.Btn_History.Location = new System.Drawing.Point(191, 342);
@@ -48,6 +51,9 @@
             // 
             // Btn_Play
             // 
+            this.Btn_Play.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.Btn_Play.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("Btn_Play.BackgroundImage")));
             this.Btn_Play.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.Btn_Play.Location = new System.Drawing.Point(388, 342);
@@ -60,6 +66,9 @@
             // 
             // Btn_HowToPlay
             // 
+            this.Btn_HowToPlay.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.Btn_HowToPlay.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("Btn_HowToPlay.BackgroundImage")));
             this.Btn_HowToPlay.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.Btn_HowToPlay.Location = new System.Drawing.Point(572, 342);

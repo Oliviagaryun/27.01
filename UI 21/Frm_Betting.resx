@@ -58,6 +58,9 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="Btn_chip1.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Bottom, Left, Right</value>
+  </data>
   <data name="Btn_chip1.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Popup</value>
   </data>
@@ -84,6 +87,9 @@
   <data name="&gt;&gt;Btn_chip1.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
+  <data name="Btn_chip5.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Bottom, Left, Right</value>
+  </data>
   <data name="Btn_chip5.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Popup</value>
   </data>
@@ -107,6 +113,9 @@
   </data>
   <data name="&gt;&gt;Btn_chip5.ZOrder" xml:space="preserve">
     <value>3</value>
+  </data>
+  <data name="Btn_chip100.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Bottom, Left, Right</value>
   </data>
   <data name="Btn_chip100.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Popup</value>
@@ -132,6 +141,9 @@
   <data name="&gt;&gt;Btn_chip100.ZOrder" xml:space="preserve">
     <value>4</value>
   </data>
+  <data name="Btn_Chip50.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Bottom, Left, Right</value>
+  </data>
   <data name="Btn_Chip50.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Popup</value>
   </data>
@@ -155,6 +167,9 @@
   </data>
   <data name="&gt;&gt;Btn_Chip50.ZOrder" xml:space="preserve">
     <value>5</value>
+  </data>
+  <data name="Btn_MM.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Bottom, Left, Right</value>
   </data>
   <data name="Btn_MM.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
     <value>None</value>
@@ -182,6 +197,9 @@
   </data>
   <data name="&gt;&gt;Btn_MM.ZOrder" xml:space="preserve">
     <value>6</value>
+  </data>
+  <data name="Btn_Bet.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Bottom, Left, Right</value>
   </data>
   <data name="Btn_Bet.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -215,6 +233,9 @@
   <data name="&gt;&gt;Btn_Bet.ZOrder" xml:space="preserve">
     <value>7</value>
   </data>
+  <data name="Btn_Chip25.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Bottom, Left, Right</value>
+  </data>
   <data name="Btn_Chip25.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Popup</value>
   </data>
@@ -241,6 +262,9 @@
   </data>
   <data name="&gt;&gt;Btn_Chip25.ZOrder" xml:space="preserve">
     <value>8</value>
+  </data>
+  <data name="lbl_bank.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Bottom, Left, Right</value>
   </data>
   <data name="lbl_bank.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -271,6 +295,9 @@
   </data>
   <data name="&gt;&gt;lbl_bank.ZOrder" xml:space="preserve">
     <value>1</value>
+  </data>
+  <data name="label2_bet.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Bottom, Left, Right</value>
   </data>
   <data name="label2_bet.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>

@@ -36,6 +36,9 @@
             // 
             // lbl_rules
             // 
+            this.lbl_rules.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lbl_rules.AutoSize = true;
             this.lbl_rules.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(214)))), ((int)(((byte)(91)))));
             this.lbl_rules.Font = new System.Drawing.Font("Segoe UI Historic", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
@@ -49,6 +52,9 @@
             // 
             // lbl_HowToPlay
             // 
+            this.lbl_HowToPlay.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lbl_HowToPlay.AutoSize = true;
             this.lbl_HowToPlay.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(224)))), ((int)(((byte)(91)))));
             this.lbl_HowToPlay.Font = new System.Drawing.Font("Sylfaen", 25.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
@@ -61,6 +67,9 @@
             // 
             // Btn_MM
             // 
+            this.Btn_MM.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.Btn_MM.BackColor = System.Drawing.SystemColors.WindowFrame;
             this.Btn_MM.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.Btn_MM.Location = new System.Drawing.Point(12, 12);

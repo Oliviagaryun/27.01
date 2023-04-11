@@ -61,11 +61,13 @@
             // 
             // btn_Stand
             // 
+            this.btn_Stand.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.btn_Stand.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_Stand.BackgroundImage")));
-            this.btn_Stand.Location = new System.Drawing.Point(167, 210);
-            this.btn_Stand.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btn_Stand.Location = new System.Drawing.Point(191, 280);
             this.btn_Stand.Name = "btn_Stand";
-            this.btn_Stand.Size = new System.Drawing.Size(82, 22);
+            this.btn_Stand.Size = new System.Drawing.Size(94, 29);
             this.btn_Stand.TabIndex = 0;
             this.btn_Stand.Text = "Stand";
             this.btn_Stand.UseVisualStyleBackColor = true;
@@ -73,11 +75,13 @@
             // 
             // Btn_Hit
             // 
+            this.Btn_Hit.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.Btn_Hit.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("Btn_Hit.BackgroundImage")));
-            this.Btn_Hit.Location = new System.Drawing.Point(472, 210);
-            this.Btn_Hit.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Btn_Hit.Location = new System.Drawing.Point(539, 280);
             this.Btn_Hit.Name = "Btn_Hit";
-            this.Btn_Hit.Size = new System.Drawing.Size(82, 22);
+            this.Btn_Hit.Size = new System.Drawing.Size(94, 29);
             this.Btn_Hit.TabIndex = 1;
             this.Btn_Hit.Text = "Hit";
             this.Btn_Hit.UseVisualStyleBackColor = true;
@@ -85,13 +89,15 @@
             // 
             // Btn_Return
             // 
+            this.Btn_Return.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.Btn_Return.BackColor = System.Drawing.SystemColors.WindowFrame;
             this.Btn_Return.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.Btn_Return.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.Btn_Return.Location = new System.Drawing.Point(10, 9);
-            this.Btn_Return.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Btn_Return.Location = new System.Drawing.Point(11, 12);
             this.Btn_Return.Name = "Btn_Return";
-            this.Btn_Return.Size = new System.Drawing.Size(108, 32);
+            this.Btn_Return.Size = new System.Drawing.Size(123, 43);
             this.Btn_Return.TabIndex = 9;
             this.Btn_Return.Text = "RETURN";
             this.Btn_Return.UseVisualStyleBackColor = false;
@@ -104,35 +110,40 @@
             this.lbl_TotalBet.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lbl_TotalBet.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.lbl_TotalBet.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.lbl_TotalBet.Location = new System.Drawing.Point(391, 33);
+            this.lbl_TotalBet.Location = new System.Drawing.Point(447, 44);
             this.lbl_TotalBet.Name = "lbl_TotalBet";
-            this.lbl_TotalBet.Size = new System.Drawing.Size(44, 25);
+            this.lbl_TotalBet.Size = new System.Drawing.Size(54, 31);
             this.lbl_TotalBet.TabIndex = 12;
             this.lbl_TotalBet.Text = "////";
             this.lbl_TotalBet.Click += new System.EventHandler(this.lbl_TotalBet_Click);
             // 
             // lbl_cardVal
             // 
+            this.lbl_cardVal.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lbl_cardVal.AutoSize = true;
             this.lbl_cardVal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(100)))), ((int)(((byte)(62)))));
             this.lbl_cardVal.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lbl_cardVal.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.lbl_cardVal.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.lbl_cardVal.Location = new System.Drawing.Point(472, 234);
+            this.lbl_cardVal.Location = new System.Drawing.Point(539, 312);
             this.lbl_cardVal.Name = "lbl_cardVal";
-            this.lbl_cardVal.Size = new System.Drawing.Size(23, 20);
+            this.lbl_cardVal.Size = new System.Drawing.Size(28, 25);
             this.lbl_cardVal.TabIndex = 14;
             this.lbl_cardVal.Text = "//";
             this.lbl_cardVal.Click += new System.EventHandler(this.lbl_PlayerTotal);
             // 
             // Pb_backOfCard
             // 
+            this.Pb_backOfCard.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.Pb_backOfCard.BackColor = System.Drawing.Color.Transparent;
             this.Pb_backOfCard.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("Pb_backOfCard.BackgroundImage")));
-            this.Pb_backOfCard.Location = new System.Drawing.Point(164, 41);
-            this.Pb_backOfCard.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Pb_backOfCard.Location = new System.Drawing.Point(187, 55);
             this.Pb_backOfCard.Name = "Pb_backOfCard";
-            this.Pb_backOfCard.Size = new System.Drawing.Size(97, 160);
+            this.Pb_backOfCard.Size = new System.Drawing.Size(98, 164);
             this.Pb_backOfCard.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.Pb_backOfCard.TabIndex = 15;
             this.Pb_backOfCard.TabStop = false;
@@ -140,10 +151,12 @@
             // 
             // Pb_PLY_DealtCard1
             // 
+            this.Pb_PLY_DealtCard1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.Pb_PLY_DealtCard1.BackColor = System.Drawing.Color.DarkRed;
             this.Pb_PLY_DealtCard1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.Pb_PLY_DealtCard1.Location = new System.Drawing.Point(271, 219);
-            this.Pb_PLY_DealtCard1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Pb_PLY_DealtCard1.Location = new System.Drawing.Point(310, 292);
             this.Pb_PLY_DealtCard1.Name = "Pb_PLY_DealtCard1";
             this.Pb_PLY_DealtCard1.Size = new System.Drawing.Size(97, 162);
             this.Pb_PLY_DealtCard1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -153,12 +166,14 @@
             // 
             // Pb_PLY_DealtCard2
             // 
+            this.Pb_PLY_DealtCard2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.Pb_PLY_DealtCard2.BackColor = System.Drawing.Color.Goldenrod;
             this.Pb_PLY_DealtCard2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.Pb_PLY_DealtCard2.Location = new System.Drawing.Point(294, 219);
-            this.Pb_PLY_DealtCard2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Pb_PLY_DealtCard2.Location = new System.Drawing.Point(336, 292);
             this.Pb_PLY_DealtCard2.Name = "Pb_PLY_DealtCard2";
-            this.Pb_PLY_DealtCard2.Size = new System.Drawing.Size(85, 122);
+            this.Pb_PLY_DealtCard2.Size = new System.Drawing.Size(97, 163);
             this.Pb_PLY_DealtCard2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.Pb_PLY_DealtCard2.TabIndex = 17;
             this.Pb_PLY_DealtCard2.TabStop = false;
@@ -166,11 +181,13 @@
             // 
             // btn_hint
             // 
+            this.btn_hint.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.btn_hint.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_hint.BackgroundImage")));
-            this.btn_hint.Location = new System.Drawing.Point(205, 236);
-            this.btn_hint.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btn_hint.Location = new System.Drawing.Point(234, 315);
             this.btn_hint.Name = "btn_hint";
-            this.btn_hint.Size = new System.Drawing.Size(45, 38);
+            this.btn_hint.Size = new System.Drawing.Size(51, 51);
             this.btn_hint.TabIndex = 18;
             this.btn_hint.Text = ".";
             this.btn_hint.UseVisualStyleBackColor = true;
@@ -178,12 +195,14 @@
             // 
             // Pb_PLY_DealtCard3
             // 
+            this.Pb_PLY_DealtCard3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.Pb_PLY_DealtCard3.BackColor = System.Drawing.Color.Khaki;
             this.Pb_PLY_DealtCard3.Cursor = System.Windows.Forms.Cursors.SizeAll;
-            this.Pb_PLY_DealtCard3.Location = new System.Drawing.Point(318, 219);
-            this.Pb_PLY_DealtCard3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Pb_PLY_DealtCard3.Location = new System.Drawing.Point(363, 292);
             this.Pb_PLY_DealtCard3.Name = "Pb_PLY_DealtCard3";
-            this.Pb_PLY_DealtCard3.Size = new System.Drawing.Size(85, 122);
+            this.Pb_PLY_DealtCard3.Size = new System.Drawing.Size(97, 163);
             this.Pb_PLY_DealtCard3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.Pb_PLY_DealtCard3.TabIndex = 19;
             this.Pb_PLY_DealtCard3.TabStop = false;
@@ -191,11 +210,13 @@
             // 
             // Pb_PLY_DealtCard4
             // 
+            this.Pb_PLY_DealtCard4.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.Pb_PLY_DealtCard4.BackColor = System.Drawing.Color.LimeGreen;
-            this.Pb_PLY_DealtCard4.Location = new System.Drawing.Point(340, 219);
-            this.Pb_PLY_DealtCard4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Pb_PLY_DealtCard4.Location = new System.Drawing.Point(389, 292);
             this.Pb_PLY_DealtCard4.Name = "Pb_PLY_DealtCard4";
-            this.Pb_PLY_DealtCard4.Size = new System.Drawing.Size(85, 122);
+            this.Pb_PLY_DealtCard4.Size = new System.Drawing.Size(97, 163);
             this.Pb_PLY_DealtCard4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.Pb_PLY_DealtCard4.TabIndex = 20;
             this.Pb_PLY_DealtCard4.TabStop = false;
@@ -203,11 +224,13 @@
             // 
             // Pb_PLY_DealtCard5
             // 
+            this.Pb_PLY_DealtCard5.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.Pb_PLY_DealtCard5.BackColor = System.Drawing.Color.LightSeaGreen;
-            this.Pb_PLY_DealtCard5.Location = new System.Drawing.Point(361, 219);
-            this.Pb_PLY_DealtCard5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Pb_PLY_DealtCard5.Location = new System.Drawing.Point(413, 292);
             this.Pb_PLY_DealtCard5.Name = "Pb_PLY_DealtCard5";
-            this.Pb_PLY_DealtCard5.Size = new System.Drawing.Size(85, 122);
+            this.Pb_PLY_DealtCard5.Size = new System.Drawing.Size(97, 163);
             this.Pb_PLY_DealtCard5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.Pb_PLY_DealtCard5.TabIndex = 21;
             this.Pb_PLY_DealtCard5.TabStop = false;
@@ -215,11 +238,13 @@
             // 
             // Pb_Dealer_DealtCard5
             // 
+            this.Pb_Dealer_DealtCard5.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.Pb_Dealer_DealtCard5.BackColor = System.Drawing.Color.LightSeaGreen;
-            this.Pb_Dealer_DealtCard5.Location = new System.Drawing.Point(404, 2);
-            this.Pb_Dealer_DealtCard5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Pb_Dealer_DealtCard5.Location = new System.Drawing.Point(462, 3);
             this.Pb_Dealer_DealtCard5.Name = "Pb_Dealer_DealtCard5";
-            this.Pb_Dealer_DealtCard5.Size = new System.Drawing.Size(85, 122);
+            this.Pb_Dealer_DealtCard5.Size = new System.Drawing.Size(97, 163);
             this.Pb_Dealer_DealtCard5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.Pb_Dealer_DealtCard5.TabIndex = 26;
             this.Pb_Dealer_DealtCard5.TabStop = false;
@@ -227,47 +252,55 @@
             // 
             // Pb_Dealer_DealtCard4
             // 
+            this.Pb_Dealer_DealtCard4.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.Pb_Dealer_DealtCard4.BackColor = System.Drawing.Color.LimeGreen;
-            this.Pb_Dealer_DealtCard4.Location = new System.Drawing.Point(382, 2);
-            this.Pb_Dealer_DealtCard4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Pb_Dealer_DealtCard4.Location = new System.Drawing.Point(437, 3);
             this.Pb_Dealer_DealtCard4.Name = "Pb_Dealer_DealtCard4";
-            this.Pb_Dealer_DealtCard4.Size = new System.Drawing.Size(85, 122);
+            this.Pb_Dealer_DealtCard4.Size = new System.Drawing.Size(97, 163);
             this.Pb_Dealer_DealtCard4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.Pb_Dealer_DealtCard4.TabIndex = 25;
             this.Pb_Dealer_DealtCard4.TabStop = false;
             // 
             // Pb_Dealer_DealtCard3
             // 
+            this.Pb_Dealer_DealtCard3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.Pb_Dealer_DealtCard3.BackColor = System.Drawing.Color.Khaki;
             this.Pb_Dealer_DealtCard3.Cursor = System.Windows.Forms.Cursors.SizeAll;
-            this.Pb_Dealer_DealtCard3.Location = new System.Drawing.Point(360, 2);
-            this.Pb_Dealer_DealtCard3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Pb_Dealer_DealtCard3.Location = new System.Drawing.Point(411, 3);
             this.Pb_Dealer_DealtCard3.Name = "Pb_Dealer_DealtCard3";
-            this.Pb_Dealer_DealtCard3.Size = new System.Drawing.Size(85, 122);
+            this.Pb_Dealer_DealtCard3.Size = new System.Drawing.Size(97, 163);
             this.Pb_Dealer_DealtCard3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.Pb_Dealer_DealtCard3.TabIndex = 24;
             this.Pb_Dealer_DealtCard3.TabStop = false;
             // 
             // Pb_Dealer_DealtCard2
             // 
+            this.Pb_Dealer_DealtCard2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.Pb_Dealer_DealtCard2.BackColor = System.Drawing.Color.Goldenrod;
             this.Pb_Dealer_DealtCard2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.Pb_Dealer_DealtCard2.Location = new System.Drawing.Point(337, 2);
-            this.Pb_Dealer_DealtCard2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Pb_Dealer_DealtCard2.Location = new System.Drawing.Point(385, 3);
             this.Pb_Dealer_DealtCard2.Name = "Pb_Dealer_DealtCard2";
-            this.Pb_Dealer_DealtCard2.Size = new System.Drawing.Size(85, 122);
+            this.Pb_Dealer_DealtCard2.Size = new System.Drawing.Size(97, 163);
             this.Pb_Dealer_DealtCard2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.Pb_Dealer_DealtCard2.TabIndex = 23;
             this.Pb_Dealer_DealtCard2.TabStop = false;
             // 
             // Pb_Dealer_DealtCard1
             // 
+            this.Pb_Dealer_DealtCard1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.Pb_Dealer_DealtCard1.BackColor = System.Drawing.Color.DarkRed;
             this.Pb_Dealer_DealtCard1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.Pb_Dealer_DealtCard1.Location = new System.Drawing.Point(314, 2);
-            this.Pb_Dealer_DealtCard1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Pb_Dealer_DealtCard1.Location = new System.Drawing.Point(359, 3);
             this.Pb_Dealer_DealtCard1.Name = "Pb_Dealer_DealtCard1";
-            this.Pb_Dealer_DealtCard1.Size = new System.Drawing.Size(97, 162);
+            this.Pb_Dealer_DealtCard1.Size = new System.Drawing.Size(111, 216);
             this.Pb_Dealer_DealtCard1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.Pb_Dealer_DealtCard1.TabIndex = 22;
             this.Pb_Dealer_DealtCard1.TabStop = false;
@@ -275,10 +308,10 @@
             // 
             // Frm_Game
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
-            this.ClientSize = new System.Drawing.Size(700, 338);
+            this.ClientSize = new System.Drawing.Size(800, 451);
             this.Controls.Add(this.Pb_Dealer_DealtCard5);
             this.Controls.Add(this.Pb_Dealer_DealtCard4);
             this.Controls.Add(this.Pb_Dealer_DealtCard3);
@@ -296,7 +329,6 @@
             this.Controls.Add(this.Btn_Return);
             this.Controls.Add(this.Btn_Hit);
             this.Controls.Add(this.btn_Stand);
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "Frm_Game";
             this.Text = "Frm_Game";
             this.Load += new System.EventHandler(this.Frm_Game_Load);

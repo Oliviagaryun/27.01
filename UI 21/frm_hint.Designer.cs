@@ -36,32 +36,35 @@
             // 
             // Pb_yellow
             // 
+            this.Pb_yellow.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.Pb_yellow.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(214)))), ((int)(((byte)(91)))));
-            this.Pb_yellow.Location = new System.Drawing.Point(70, 62);
-            this.Pb_yellow.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Pb_yellow.Location = new System.Drawing.Point(80, 83);
             this.Pb_yellow.Name = "Pb_yellow";
-            this.Pb_yellow.Size = new System.Drawing.Size(236, 140);
+            this.Pb_yellow.Size = new System.Drawing.Size(270, 187);
             this.Pb_yellow.TabIndex = 0;
             this.Pb_yellow.TabStop = false;
             // 
             // txt_hint
             // 
-            this.txt_hint.Location = new System.Drawing.Point(99, 84);
-            this.txt_hint.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txt_hint.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txt_hint.Location = new System.Drawing.Point(113, 112);
             this.txt_hint.Name = "txt_hint";
-            this.txt_hint.Size = new System.Drawing.Size(174, 23);
+            this.txt_hint.Size = new System.Drawing.Size(198, 27);
             this.txt_hint.TabIndex = 1;
             this.txt_hint.TextChanged += new System.EventHandler(this.Hint_TextChanged);
             // 
             // frm_hint
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
-            this.ClientSize = new System.Drawing.Size(369, 232);
+            this.ClientSize = new System.Drawing.Size(422, 309);
             this.Controls.Add(this.txt_hint);
             this.Controls.Add(this.Pb_yellow);
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "frm_hint";
             this.Text = "frm_hint";
             this.Load += new System.EventHandler(this.frm_hint_Load);

@@ -42,9 +42,9 @@
             // 
             // Btn_chip1
             // 
+            resources.ApplyResources(this.Btn_chip1, "Btn_chip1");
             this.Btn_chip1.BackColor = System.Drawing.Color.Transparent;
             this.Btn_chip1.FlatAppearance.BorderSize = 0;
-            resources.ApplyResources(this.Btn_chip1, "Btn_chip1");
             this.Btn_chip1.ForeColor = System.Drawing.Color.Transparent;
             this.Btn_chip1.Name = "Btn_chip1";
             this.Btn_chip1.UseVisualStyleBackColor = false;
@@ -52,35 +52,35 @@
             // 
             // Btn_chip5
             // 
+            resources.ApplyResources(this.Btn_chip5, "Btn_chip5");
             this.Btn_chip5.BackColor = System.Drawing.Color.Transparent;
             this.Btn_chip5.FlatAppearance.BorderSize = 0;
-            resources.ApplyResources(this.Btn_chip5, "Btn_chip5");
             this.Btn_chip5.Name = "Btn_chip5";
             this.Btn_chip5.UseVisualStyleBackColor = false;
             this.Btn_chip5.Click += new System.EventHandler(this.Btn_chip5_Click);
             // 
             // Btn_chip100
             // 
+            resources.ApplyResources(this.Btn_chip100, "Btn_chip100");
             this.Btn_chip100.BackColor = System.Drawing.Color.Transparent;
             this.Btn_chip100.FlatAppearance.BorderSize = 0;
-            resources.ApplyResources(this.Btn_chip100, "Btn_chip100");
             this.Btn_chip100.Name = "Btn_chip100";
             this.Btn_chip100.UseVisualStyleBackColor = false;
             this.Btn_chip100.Click += new System.EventHandler(this.Btn_chip100_Click_1);
             // 
             // Btn_Chip50
             // 
+            resources.ApplyResources(this.Btn_Chip50, "Btn_Chip50");
             this.Btn_Chip50.BackColor = System.Drawing.Color.Transparent;
             this.Btn_Chip50.FlatAppearance.BorderSize = 0;
-            resources.ApplyResources(this.Btn_Chip50, "Btn_Chip50");
             this.Btn_Chip50.Name = "Btn_Chip50";
             this.Btn_Chip50.UseVisualStyleBackColor = false;
             this.Btn_Chip50.Click += new System.EventHandler(this.Btn_Chip50_Click);
             // 
             // Btn_MM
             // 
-            this.Btn_MM.BackColor = System.Drawing.Color.DimGray;
             resources.ApplyResources(this.Btn_MM, "Btn_MM");
+            this.Btn_MM.BackColor = System.Drawing.Color.DimGray;
             this.Btn_MM.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.Btn_MM.Name = "Btn_MM";
             this.Btn_MM.UseVisualStyleBackColor = false;
@@ -94,13 +94,12 @@
             // 
             // Btn_Chip25
             // 
+            resources.ApplyResources(this.Btn_Chip25, "Btn_Chip25");
             this.Btn_Chip25.BackColor = System.Drawing.Color.Transparent;
             this.Btn_Chip25.FlatAppearance.BorderSize = 0;
-            resources.ApplyResources(this.Btn_Chip25, "Btn_Chip25");
             this.Btn_Chip25.Name = "Btn_Chip25";
             this.Btn_Chip25.UseVisualStyleBackColor = false;
             this.Btn_Chip25.Click += new System.EventHandler(this.Btn_Chip25_0);
-
             // 
             // lbl_bank
             // 
