@@ -98,17 +98,8 @@ namespace UI_21
 
         private void Pb_DealtCard1_Click(object sender, EventArgs e)
         {
-            // locate card image of player.hand [0]
-            /* foreach (var card in player.Hand)
-                 {
-                 string imagePath = deck.CardImages[card];
-                 // use the imagePath to display the image for the card
-             }
             
-            // take the first card, find the image 
-            player.Hand[0];
-
-            */
+          
         }
 
         private void Frm_Game_Load(object sender, EventArgs e)
@@ -125,34 +116,27 @@ namespace UI_21
 
         private void Pb_DealtCard2_Click(object sender, EventArgs e)
         {
-            // locate card image of player.hand [1]
+            SetPictureBoxes();
         }
 
         private void Pb_DealtCard3_Click(object sender, EventArgs e)
         {
-            // keep hidden until there is a value here
-            // locate card image of player.hand [2]
+            SetPictureBoxes();
         }
 
         private void Pb_DealtCard4_Click(object sender, EventArgs e)
         {
-            // keep hidden until there is a value here
-            // locate card image of player.hand [3]
+            SetPictureBoxes();
         }
 
         private void Pb_DealtCard5_Click(object sender, EventArgs e)
         {
-            // keep hidden until there is a value here
-            // locate card image of player.hand [4]
+            SetPictureBoxes();
         }
 
         private void Pb_Dealer_DealtCard5_Click(object sender, EventArgs e)
         {
-           
-
-            
-
-
+            SetPictureBoxes();
         }
 
         public string GetCardImagePath(Card chosencard) 
@@ -196,6 +180,21 @@ namespace UI_21
         }
 
         private void Pb_Dealer_DealtCard1_Click(object sender, EventArgs e)
+        {
+            SetPictureBoxes();
+        }
+
+        private void Pb_Dealer_DealtCard4_Click(object sender, EventArgs e)
+        {
+            SetPictureBoxes();
+        }
+
+        private void Pb_Dealer_DealtCard3_Click(object sender, EventArgs e)
+        {
+            SetPictureBoxes();
+        }
+
+        private void Pb_Dealer_DealtCard2_Click(object sender, EventArgs e)
         {
             SetPictureBoxes();
         }
