@@ -11,10 +11,10 @@ using System.Windows.Forms;
 
 namespace UI_21
 {
-
-
     public partial class Frm_Betting : Form
-        // use player object rather than clas 
+        // use player object rather than class 
+        // link player to bank 
+
     {
         public int Bank = 1500;
         public int Bet = 0;
@@ -38,6 +38,7 @@ namespace UI_21
             Btn_chip1.BackColor = Color.Transparent; 
             Bet = Bet + 1;
         }
+        
 
         /*private void textBox1_TextChanged(object sender, EventArgs e)
         {
