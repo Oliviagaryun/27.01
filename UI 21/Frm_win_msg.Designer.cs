@@ -51,6 +51,7 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(854, 463);
             this.Controls.Add(this.txt_betWin);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "Frm_win_msg";
             this.Text = "Frm_win_msg";
             this.Load += new System.EventHandler(this.Frm_win_msg_Load);

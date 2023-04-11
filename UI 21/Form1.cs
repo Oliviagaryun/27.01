@@ -13,7 +13,7 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using static UI_21.Frm_Game;
 
 namespace UI_21
-{//
+{
 
     public partial class Frm_Game : Form
     {

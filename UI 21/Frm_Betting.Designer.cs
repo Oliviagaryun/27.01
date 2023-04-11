@@ -129,6 +129,7 @@
             this.Controls.Add(this.Btn_MM);
             this.Controls.Add(this.Btn_Bet);
             this.Controls.Add(this.Btn_Chip25);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "Frm_Betting";
             this.Load += new System.EventHandler(this.Frm_Betting_Load);
             this.ResumeLayout(false);

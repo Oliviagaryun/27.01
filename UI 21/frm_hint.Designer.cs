@@ -65,6 +65,7 @@
             this.ClientSize = new System.Drawing.Size(422, 309);
             this.Controls.Add(this.txt_hint);
             this.Controls.Add(this.Pb_yellow);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "frm_hint";
             this.Text = "frm_hint";
             this.Load += new System.EventHandler(this.frm_hint_Load);

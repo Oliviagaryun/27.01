@@ -332,6 +332,7 @@
             this.Controls.Add(this.Btn_Return);
             this.Controls.Add(this.Btn_Hit);
             this.Controls.Add(this.btn_Stand);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "Frm_Game";
             this.Text = "Frm_Game";
             this.Load += new System.EventHandler(this.Frm_Game_Load);

@@ -71,6 +71,7 @@
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.Btn_MM);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "Frm_History";
             this.Text = "Frm_History";
             this.Load += new System.EventHandler(this.Frm_History_Load);

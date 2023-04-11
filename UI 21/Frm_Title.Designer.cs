@@ -91,6 +91,7 @@
             this.Controls.Add(this.Btn_Play);
             this.Controls.Add(this.Btn_History);
             this.ForeColor = System.Drawing.Color.Green;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "Frm_Title";
             this.Text = "Title";
             this.Load += new System.EventHandler(this.Frm_Title_Load);

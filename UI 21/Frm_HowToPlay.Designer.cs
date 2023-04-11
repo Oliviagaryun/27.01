@@ -89,6 +89,7 @@
             this.Controls.Add(this.Btn_MM);
             this.Controls.Add(this.lbl_HowToPlay);
             this.Controls.Add(this.lbl_rules);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "Frm_HowToPlay";
             this.Text = "HowToPlay";
             this.ResumeLayout(false);
