@@ -35,6 +35,7 @@ namespace UI_21
             dealer = new Dealer();
             player = player1;
             deck = new Deck();
+            game = new Game();
             bet = Bet;
         }
 
@@ -75,8 +76,8 @@ namespace UI_21
         
         private void Btn_Hit_Click(object sender, EventArgs e)
         {
-            Game G1 = new Game();
-            G1.Hit();
+            
+            game.Hit();
             // call function hit 
 
         }
@@ -147,8 +148,56 @@ namespace UI_21
 
         private void Pb_Dealer_DealtCard5_Click(object sender, EventArgs e)
         {
+           
+
             
+
+
+        }
+
+        public string GetCardImagePath(Card chosencard) 
+        {
+            string cardpath = "";
+
+            foreach (var CardImage in game.deck.CardImages)
+            {
+                if (CardImage.Key.Equals(chosencard))
+                {
+                    cardpath = CardImage.Value;
+                    break;
+                }
+            }
+
+            return cardpath;
+
+        }
+
+        //testmethod
+        public void SetPictureBoxes() 
+        {
+            //iterate through all elements on the form, if it is a picture box, adds a random picture
+            foreach(Control c in this.Controls) 
+            {
+                if(c is PictureBox) 
+                {
+                    Random random = new Random();
+                    int x = random.Next(1, 50);
+                    Card RandCard = game.deck.Cards[x];
+                    PictureBox Card = c as PictureBox;
+
+                    Card.Image = Image.FromFile(GetCardImagePath(RandCard));
+
+                    
+                    
+
+                }
+            }
             
+        }
+
+        private void Pb_Dealer_DealtCard1_Click(object sender, EventArgs e)
+        {
+            SetPictureBoxes();
         }
     }
 }

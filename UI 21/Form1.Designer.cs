@@ -132,7 +132,7 @@
             this.Pb_backOfCard.Location = new System.Drawing.Point(164, 41);
             this.Pb_backOfCard.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Pb_backOfCard.Name = "Pb_backOfCard";
-            this.Pb_backOfCard.Size = new System.Drawing.Size(85, 122);
+            this.Pb_backOfCard.Size = new System.Drawing.Size(97, 160);
             this.Pb_backOfCard.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.Pb_backOfCard.TabIndex = 15;
             this.Pb_backOfCard.TabStop = false;
@@ -184,6 +184,7 @@
             this.Pb_PLY_DealtCard3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Pb_PLY_DealtCard3.Name = "Pb_PLY_DealtCard3";
             this.Pb_PLY_DealtCard3.Size = new System.Drawing.Size(85, 122);
+            this.Pb_PLY_DealtCard3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.Pb_PLY_DealtCard3.TabIndex = 19;
             this.Pb_PLY_DealtCard3.TabStop = false;
             this.Pb_PLY_DealtCard3.Click += new System.EventHandler(this.Pb_DealtCard3_Click);
@@ -195,6 +196,7 @@
             this.Pb_PLY_DealtCard4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Pb_PLY_DealtCard4.Name = "Pb_PLY_DealtCard4";
             this.Pb_PLY_DealtCard4.Size = new System.Drawing.Size(85, 122);
+            this.Pb_PLY_DealtCard4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.Pb_PLY_DealtCard4.TabIndex = 20;
             this.Pb_PLY_DealtCard4.TabStop = false;
             this.Pb_PLY_DealtCard4.Click += new System.EventHandler(this.Pb_DealtCard4_Click);
@@ -206,6 +208,7 @@
             this.Pb_PLY_DealtCard5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Pb_PLY_DealtCard5.Name = "Pb_PLY_DealtCard5";
             this.Pb_PLY_DealtCard5.Size = new System.Drawing.Size(85, 122);
+            this.Pb_PLY_DealtCard5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.Pb_PLY_DealtCard5.TabIndex = 21;
             this.Pb_PLY_DealtCard5.TabStop = false;
             this.Pb_PLY_DealtCard5.Click += new System.EventHandler(this.Pb_DealtCard5_Click);
@@ -217,6 +220,7 @@
             this.Pb_Dealer_DealtCard5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Pb_Dealer_DealtCard5.Name = "Pb_Dealer_DealtCard5";
             this.Pb_Dealer_DealtCard5.Size = new System.Drawing.Size(85, 122);
+            this.Pb_Dealer_DealtCard5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.Pb_Dealer_DealtCard5.TabIndex = 26;
             this.Pb_Dealer_DealtCard5.TabStop = false;
             this.Pb_Dealer_DealtCard5.Click += new System.EventHandler(this.Pb_Dealer_DealtCard5_Click);
@@ -228,6 +232,7 @@
             this.Pb_Dealer_DealtCard4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Pb_Dealer_DealtCard4.Name = "Pb_Dealer_DealtCard4";
             this.Pb_Dealer_DealtCard4.Size = new System.Drawing.Size(85, 122);
+            this.Pb_Dealer_DealtCard4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.Pb_Dealer_DealtCard4.TabIndex = 25;
             this.Pb_Dealer_DealtCard4.TabStop = false;
             // 
@@ -239,6 +244,7 @@
             this.Pb_Dealer_DealtCard3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Pb_Dealer_DealtCard3.Name = "Pb_Dealer_DealtCard3";
             this.Pb_Dealer_DealtCard3.Size = new System.Drawing.Size(85, 122);
+            this.Pb_Dealer_DealtCard3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.Pb_Dealer_DealtCard3.TabIndex = 24;
             this.Pb_Dealer_DealtCard3.TabStop = false;
             // 
@@ -262,9 +268,10 @@
             this.Pb_Dealer_DealtCard1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Pb_Dealer_DealtCard1.Name = "Pb_Dealer_DealtCard1";
             this.Pb_Dealer_DealtCard1.Size = new System.Drawing.Size(97, 162);
-            this.Pb_Dealer_DealtCard1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.Pb_Dealer_DealtCard1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.Pb_Dealer_DealtCard1.TabIndex = 22;
             this.Pb_Dealer_DealtCard1.TabStop = false;
+            this.Pb_Dealer_DealtCard1.Click += new System.EventHandler(this.Pb_Dealer_DealtCard1_Click);
             // 
             // Frm_Game
             // 

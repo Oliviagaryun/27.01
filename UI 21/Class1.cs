@@ -52,7 +52,7 @@ namespace UI_21
             // String arrays with the suits, ranks and values of the cards
             string[] suits = { "Hearts", "Diamonds", "Spades", "Clubs" };
             string[] ranks = { "Ace", "2", "3", "4", "5", "6", "7", "8", "9", "10", "Jack", "Queen", "King" };
-            int[] values = { 11, 2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10, 10 };
+            int[] values = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10, 10 };
             string path = "cards/Playing Cards/PNG-cards-1.3";
 
             //Create a card for each suit and rank and add it to the list of cards
