@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ADOX;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -171,8 +172,16 @@ namespace UI_21
 
                     Card.Image = Image.FromFile(GetCardImagePath(RandCard));
 
-                    
-                    
+                    for (int i = 0; i < player.Hand.Length; i++)
+                    {
+                        // Access the element at index i in the array
+                        int element = player.Hand[i];
+
+                        // Do something with the element
+
+                        Image cardImage = player.Hand[i].Image;
+                    }
+
 
                 }
             }
