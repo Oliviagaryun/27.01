@@ -1,4 +1,5 @@
 ﻿using ADOX;
+using Microsoft.VisualBasic.Logging;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -25,6 +26,13 @@ namespace UI_21
         public Deck deck;
         public int bet;
 
+        public int playercardcount;
+        public int dealercardcount;
+
+        public int[] playerlocations = new int[]{363, 389, 413};
+        public int[] dealerlocations = new int[] {385, 411, 437, 462 };
+
+
         public Frm_Game(Player player1, int Bet)
         {
 
@@ -38,6 +46,68 @@ namespace UI_21
             deck = new Deck();
             game = new Game();
             bet = Bet;
+
+            playercardcount = game.player.Hand.Count();
+            dealercardcount = game.dealer.Hand.Count();
+
+            
+            SetUp();
+        }
+
+        public void Stand() 
+        {
+            game.stand();
+
+            for(int i = 1; i < game.dealer.Hand.Count(); i++) 
+            {
+                Card dealercard = game.dealer.Hand[i];
+                PictureBox newcardpic = new PictureBox();
+                newcardpic.SizeMode = PictureBoxSizeMode.StretchImage;
+                newcardpic.Width = 97;
+                newcardpic.Height = 162;
+                newcardpic.Location = new Point(dealerlocations[i - 1], 3);
+                newcardpic.Image = Image.FromFile(GetCardImagePath(dealercard));
+                this.Controls.Add(newcardpic);
+
+            }
+
+            game.DetermineWinner();
+        }
+
+        public void SetUp()  
+        {
+            game.deck.Shuffle();
+
+            game.CardSetUp();
+            //Set two cards for player
+            Card plyrcard1 = game.player.Hand[0];
+            PictureBox newcardpic = new PictureBox();
+            newcardpic.SizeMode = PictureBoxSizeMode.StretchImage;
+            newcardpic.Width = 97;
+            newcardpic.Height = 162;
+            newcardpic.Location = new Point(310, 292);
+            newcardpic.Image = Image.FromFile(GetCardImagePath(plyrcard1));
+            this.Controls.Add(newcardpic);
+
+            Card plyrcard2 = game.player.Hand[1];
+            PictureBox newcardpic1 = new PictureBox();
+            newcardpic1.SizeMode = PictureBoxSizeMode.StretchImage;
+            newcardpic1.Width = 97;
+            newcardpic1.Height = 162;
+            newcardpic1.Location = new Point(310 + 26, 292);
+            newcardpic1.Image = Image.FromFile(GetCardImagePath(plyrcard2));
+            this.Controls.Add(newcardpic1);
+
+
+            //set one card for dealer
+            Card dealercard1 = game.dealer.Hand[0];
+            PictureBox newcardpic2 = new PictureBox();
+            newcardpic2.SizeMode = PictureBoxSizeMode.StretchImage;
+            newcardpic2.Width = 97;
+            newcardpic2.Height = 162;
+            newcardpic2.Location = new Point(359, 3);
+            newcardpic2.Image = Image.FromFile(GetCardImagePath(dealercard1));
+            this.Controls.Add(newcardpic2);
         }
 
         private void Btn_Return_Click(object sender, EventArgs e)
@@ -51,7 +121,7 @@ namespace UI_21
 
         private void btn_stand(object sender, EventArgs e)
         {
-            
+            Stand();
             // game to continue. show dealers hidden card and determine winner 
             //Class1.DetermineWinner();
             
@@ -79,7 +149,25 @@ namespace UI_21
         {
             
             game.Hit();
+            
             // call function hit 
+
+            //update player card deck
+            if(game.player.Hand.Count() - 2 > playercardcount) 
+            {
+                int loc = playerlocations[playercardcount];
+                Card playercard = game.player.Hand[playercardcount];
+                PictureBox newcardpic = new PictureBox();
+                newcardpic.SizeMode= PictureBoxSizeMode.StretchImage;
+                newcardpic.Width = 97;
+                newcardpic.Height = 162;
+                newcardpic.Location = new Point(loc, 292);
+                newcardpic.Image = Image.FromFile(GetCardImagePath(playercard));
+                this.Controls.Add(newcardpic);
+                playercardcount++;
+            }
+
+            //update dealer card eck
 
         }
 
@@ -172,15 +260,15 @@ namespace UI_21
 
                     Card.Image = Image.FromFile(GetCardImagePath(RandCard));
 
-                    for (int i = 0; i < player.Hand.Length; i++)
-                    {
-                        // Access the element at index i in the array
-                        int element = player.Hand[i];
+                    //for (int i = 0; i < player.Hand.Length; i++)
+                    //{
+                    //    // Access the element at index i in the array
+                    //    int element = player.Hand[i];
 
-                        // Do something with the element
+                    //    // Do something with the element
 
-                        Image cardImage = player.Hand[i].Image;
-                    }
+                    //    Image cardImage = player.Hand[i].Image;
+                    //}
 
 
                 }

@@ -117,11 +117,12 @@ namespace UI_21
             Hand = new List<Card>();
         }
 
-        public void Draw(Deck deck) // // Draw a card from the deck and add it to the player's hand
+        public Deck Draw(Deck deck) // // Draw a card from the deck and add it to the player's hand
 
         {
             Hand.Add(deck.Cards[0]);
             deck.Cards.RemoveAt(0);
+            return deck;
         }
 
         public int GetTotal()
@@ -144,10 +145,11 @@ namespace UI_21
             Hand = new List<Card>();
         }
 
-        public void Draw(Deck deck)
+        public Deck Draw(Deck deck)
         {
             Hand.Add(deck.Cards[0]);
             deck.Cards.RemoveAt(0);
+            return deck;
         }
 
         public int GetTotal()
@@ -176,6 +178,15 @@ namespace UI_21
             deck = new Deck();
             player = new Player();
             dealer = new Dealer();
+        }
+
+        public void stand() 
+        {
+            //keep drawing till total is greater than 17
+            while(dealer.GetTotal() <= 17) 
+            {
+                deck = dealer.Draw(deck);
+            }
         }
 
         public void Setup()
@@ -221,6 +232,13 @@ namespace UI_21
 
             }
             Console.WriteLine("Your total is: " + player.GetTotal());
+        }
+
+        public void CardSetUp() 
+        {
+            deck = player.Draw(deck);
+            deck = player.Draw(deck);
+            deck = dealer.Draw(deck);
         }
 
         // Method to determine the winner of the game
