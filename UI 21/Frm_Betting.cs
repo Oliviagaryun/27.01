@@ -40,12 +40,7 @@ namespace UI_21
         }
         
 
-        /*private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-            textBox1.Text = Bank.ToString();
-            
-        }
-        */
+     
 
 
 
@@ -91,7 +86,6 @@ namespace UI_21
 
         public void label1_Click_1(object sender, EventArgs e)
         {
-            //Im guessing you havent made the labels yet, this is why this doesn't work, lbl_totalBet doesn't exist yet
             //lbl_TotalBet.Text =  "$" + Bet.ToString();
             //lbl_TotalBet.Text = Console.WriteLine("$ ") + Bet.ToString();
 
@@ -132,12 +126,7 @@ namespace UI_21
                 
         }
 
-        /*private void label1_Click_3(object sender, EventArgs e) // lbl bank
-        {
-            lbl_Bank = "$" + Bank.ToString();
-
-        }
-        */
+        
 
         private void Frm_Betting_Load(object sender, EventArgs e)
         {
@@ -189,19 +178,19 @@ namespace UI_21
 
         
 
-        //this method isnt used anywhere, why is it here?
+        
         private void Lbl_Bank(object sender, EventArgs e)
         {
-            //spelling here
+            
             lbl_bank.Text = "$" + Bank.ToString();
             
         }
 
         private void lbl_bet(object sender, EventArgs e)
         {
-            // explain this please
+            
             label2_bet.Text =  "$" + Bet.ToString();
-            //lable bet should display the bet which is from the functions above ie.Btn_chip5_Click
+            
         }
     }
 }
