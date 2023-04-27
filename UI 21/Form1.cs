@@ -71,7 +71,7 @@ namespace UI_21
 
             }
 
-            game.DetermineWinner();
+            //game.DetermineWinner();
         }
 
         public void SetUp()  
