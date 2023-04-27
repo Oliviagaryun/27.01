@@ -27,7 +27,7 @@ namespace UI_21
     }// hash end 
     public partial class Frm_Login : Form
     {
-        private static OleDbConnection con = new OleDbConnection("Provider=Microsoft.Jet.OLEDB.4.0;Data Source=db_graphix_users.mdb"); //establishing connection
+        private static OleDbConnection con = new OleDbConnection("Provider=Microsoft.Jet.OLEDB.4.0;Data Source=LoginSystem.accdb"); //establishing connection
         private static OleDbCommand cmd = new OleDbCommand(); // command to execute later
         private static OleDbDataAdapter da = new OleDbDataAdapter(); //data adapter
 
