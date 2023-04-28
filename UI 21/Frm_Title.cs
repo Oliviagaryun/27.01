@@ -20,7 +20,7 @@ namespace UI_21
         {
             Player player= new Player();
             // this.Hide();
-            Frm_Betting form1 = new Frm_Betting();// use class names
+            Frm_Login form1 = new Frm_Login();// use class names
             form1.ShowDialog();
             this.Close();
         }

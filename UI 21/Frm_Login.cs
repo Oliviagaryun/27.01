@@ -158,3 +158,7 @@ namespace UI_21
     }// hash end 
 
 }
+// needs a play buttons. for after authorisation. 
+//Frm_Betting form1 = new Frm_Betting();// use class names
+//form1.ShowDialog();
+//this.Close();
