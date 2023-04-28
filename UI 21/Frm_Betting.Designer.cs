@@ -107,6 +107,7 @@
             this.lbl_bank.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(49)))), ((int)(((byte)(69)))));
             this.lbl_bank.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.lbl_bank.Name = "lbl_bank";
+            this.lbl_bank.Click += new System.EventHandler(this.lbl_bank_Click);
             // 
             // label2_bet
             // 

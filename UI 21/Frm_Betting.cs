@@ -192,5 +192,10 @@ namespace UI_21
             label2_bet.Text =  "$" + Bet.ToString();
             
         }
+
+        private void lbl_bank_Click(object sender, EventArgs e)
+        {
+            
+        }
     }
 }

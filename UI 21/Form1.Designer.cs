@@ -90,7 +90,7 @@
             this.lbl_TotalBet.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lbl_TotalBet.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.lbl_TotalBet.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.lbl_TotalBet.Location = new System.Drawing.Point(447, 44);
+            this.lbl_TotalBet.Location = new System.Drawing.Point(502, 188);
             this.lbl_TotalBet.Name = "lbl_TotalBet";
             this.lbl_TotalBet.Size = new System.Drawing.Size(54, 31);
             this.lbl_TotalBet.TabIndex = 12;
