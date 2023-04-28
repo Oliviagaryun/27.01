@@ -17,7 +17,7 @@ namespace UI_21
     
     public partial class Frm_Login : Form
     {
-        private static OleDbConnection con = new OleDbConnection("Provider=Microsoft.Jet.OLEDB.4.0;Data Source=LoginSystem.accdb"); //establishing connection
+        private static OleDbConnection con = new OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=LoginSystem.accdb"); //establishing connection
         private static OleDbCommand cmd = new OleDbCommand(); // command to execute later
         private static OleDbDataAdapter da = new OleDbDataAdapter(); //data adapter
 
