@@ -147,6 +147,11 @@ namespace UI_21
             //}
         
         }
+
+        private void BTN_Login_Click_1(object sender, EventArgs e)
+        {
+            Login_Click();
+        }
     }
 
     class Hashing//hash start
