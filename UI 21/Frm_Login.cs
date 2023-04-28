@@ -79,6 +79,9 @@ namespace UI_21
                 if (dr.Read() == true) //if the read is executed and the username and passwords match to one in the database
                 {
                     //insert code here for anything after logging in
+                    Frm_Betting form1 = new Frm_Betting();// use class names
+                    form1.ShowDialog();
+                    this.Close();
 
                 }
                 else //invalid login
@@ -103,25 +106,16 @@ namespace UI_21
             bool Register = false;
         }
 
-        private void txtLoginUsername_TextChanged(object sender, EventArgs e)
-        {
+        
 
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
+      
 
         private void register_Click(object sender, EventArgs e)
         {
             Register_Click();
         }
 
-        private void txtLoginPassword_TextChanged(object sender, EventArgs e)
-        {
-
-        }
+       
 
         private void Frm_Login_Load(object sender, EventArgs e)
         {
@@ -134,30 +128,23 @@ namespace UI_21
 
         }
 
-        private void lbl_Password_Click(object sender, EventArgs e)
-        {
+       
 
-        }
-
-        private void BTN_Login_Click_1(object sender, EventArgs e)
-        {
-            
-        }
 
         private void Btn_Play_Click(object sender, EventArgs e)
         {
-            if (login = true)
-            {
-                //able to go to betting form 
-                // else. error msg 
-                Frm_Betting form1 = new Frm_Betting();// use class names
-                form1.ShowDialog();
-                this.Close();
-            }
-            else
-            {
-                //error msg 
-            }
+            //if (login == true)
+            //{
+            //    //able to go to betting form 
+            //    // else. error msg 
+            //    Frm_Betting form1 = new Frm_Betting();// use class names
+            //    form1.ShowDialog();
+            //    this.Close();
+            //}
+            //else
+            //{
+            //    //error msg 
+            //}
         
         }
     }
