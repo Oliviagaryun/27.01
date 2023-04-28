@@ -63,7 +63,7 @@
             this.txtUsername.Name = "txtUsername";
             this.txtUsername.Size = new System.Drawing.Size(197, 27);
             this.txtUsername.TabIndex = 1;
-            this.txtUsername.TextChanged += new System.EventHandler(this.txtLoginUsername_TextChanged);
+            
             // 
             // txtPassword
             // 
@@ -74,7 +74,7 @@
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Size = new System.Drawing.Size(197, 27);
             this.txtPassword.TabIndex = 2;
-            this.txtPassword.TextChanged += new System.EventHandler(this.txtLoginPassword_TextChanged);
+            
             // 
             // Pb_loginTitle
             // 
@@ -100,7 +100,7 @@
             this.lbl_Username.Size = new System.Drawing.Size(75, 20);
             this.lbl_Username.TabIndex = 4;
             this.lbl_Username.Text = "Username";
-            this.lbl_Username.Click += new System.EventHandler(this.label1_Click);
+            
             // 
             // lbl_Password
             // 
@@ -114,7 +114,7 @@
             this.lbl_Password.Size = new System.Drawing.Size(70, 20);
             this.lbl_Password.TabIndex = 5;
             this.lbl_Password.Text = "Password";
-            this.lbl_Password.Click += new System.EventHandler(this.lbl_Password_Click);
+            
             // 
             // btnRegister
             // 
@@ -141,7 +141,7 @@
             this.BTN_Login.TabIndex = 7;
             this.BTN_Login.Text = "Login";
             this.BTN_Login.UseVisualStyleBackColor = true;
-            this.BTN_Login.Click += new System.EventHandler(this.BTN_Login_Click_1);
+            
             // 
             // Btn_Play
             // 
