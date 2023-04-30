@@ -25,6 +25,8 @@ namespace UI_21
         {
             InitializeComponent();
             player = new Player();
+            LBL_BankTotal.Text = "$" + Bank.ToString();
+            label2_bet.Text = "$" + Bet.ToString();
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -156,24 +158,30 @@ namespace UI_21
         private void Btn_chip1_Click(object sender, EventArgs e)
         {
             Bet = Bet + 1;
+            label2_bet.Text = "$" + Bet.ToString();
         }
 
         private void Btn_chip5_Click(object sender, EventArgs e)
         {
             Bet = Bet + 5;
+            label2_bet.Text = "$" + Bet.ToString();
+
         }
         private void Btn_Chip25_0(object sender, EventArgs e)
         {
             Bet = Bet + 25;
+            label2_bet.Text = "$" + Bet.ToString();
         }
         private void Btn_Chip50_Click(object sender, EventArgs e)
         {
             Bet = Bet + 50;
+            label2_bet.Text = "$" + Bet.ToString();
         }
 
         private void Btn_chip100_Click_1(object sender, EventArgs e)
         {
             Bet = Bet + 100;
+            label2_bet.Text = "$" + Bet.ToString();
         }
 
         
@@ -196,6 +204,14 @@ namespace UI_21
         private void lbl_bank_Click(object sender, EventArgs e)
         {
             
+        }
+
+        private void BTN_Reset_Click(object sender, EventArgs e)
+        {
+            Bet = 0;
+            label2_bet.Text = "$" + Bet.ToString();
+
+
         }
     }
 }

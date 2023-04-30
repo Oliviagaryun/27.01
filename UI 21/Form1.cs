@@ -167,6 +167,8 @@ namespace UI_21
                 playercardcount++;
             }
 
+
+
             //update dealer card eck
 
         }

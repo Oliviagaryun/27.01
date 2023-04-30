@@ -38,6 +38,9 @@
             this.Btn_Chip25 = new System.Windows.Forms.Button();
             this.lbl_bank = new System.Windows.Forms.Label();
             this.label2_bet = new System.Windows.Forms.Label();
+            this.BTN_Reset = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.LBL_BankTotal = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // Btn_chip1
@@ -117,10 +120,33 @@
             this.label2_bet.Name = "label2_bet";
             this.label2_bet.Click += new System.EventHandler(this.lbl_bet);
             // 
+            // BTN_Reset
+            // 
+            resources.ApplyResources(this.BTN_Reset, "BTN_Reset");
+            this.BTN_Reset.Name = "BTN_Reset";
+            this.BTN_Reset.Click += new System.EventHandler(this.BTN_Reset_Click);
+            // 
+            // label1
+            // 
+            resources.ApplyResources(this.label1, "label1");
+            this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(49)))), ((int)(((byte)(69)))));
+            this.label1.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label1.Name = "label1";
+            // 
+            // LBL_BankTotal
+            // 
+            resources.ApplyResources(this.LBL_BankTotal, "LBL_BankTotal");
+            this.LBL_BankTotal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(100)))), ((int)(((byte)(62)))));
+            this.LBL_BankTotal.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.LBL_BankTotal.Name = "LBL_BankTotal";
+            // 
             // Frm_Betting
             // 
             this.BackColor = System.Drawing.SystemColors.Control;
             resources.ApplyResources(this, "$this");
+            this.Controls.Add(this.LBL_BankTotal);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.BTN_Reset);
             this.Controls.Add(this.label2_bet);
             this.Controls.Add(this.lbl_bank);
             this.Controls.Add(this.Btn_chip1);
@@ -150,5 +176,8 @@
         private Label lbl_Bank;
         private Label lbl_bank;
         private Label label2_bet;
+        private Button BTN_Reset;
+        private Label label1;
+        private Label LBL_BankTotal;
     }
 }
