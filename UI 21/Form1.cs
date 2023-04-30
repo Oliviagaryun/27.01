@@ -32,6 +32,8 @@ namespace UI_21
         public int[] playerlocations = new int[]{363, 389, 413};
         public int[] dealerlocations = new int[] {385, 411, 437, 462 };
 
+        public bool result;
+
 
         public Frm_Game(Player player1, int Bet)
         {
@@ -71,7 +73,25 @@ namespace UI_21
 
             }
 
-            game.DetermineWinner(game.player, game.dealer);
+            bool win = game.DetermineWinner(game.player, game.dealer);
+            if (win) 
+            {
+                Frm_win_msg winner = new Frm_win_msg();
+                winner.ShowDialog();
+                result = win;
+                Frm_Betting betting = new Frm_Betting(result, bet);
+                betting.ShowDialog();
+                this.Close();
+            }
+            else  
+            {
+                Frm_lose_msg loser = new Frm_lose_msg();
+                loser.ShowDialog();
+                result = win;
+                Frm_Betting betting = new Frm_Betting(result, bet);
+                betting.ShowDialog();
+                this.Close();
+            }
         }
 
         public void SetUp()  
@@ -167,7 +187,18 @@ namespace UI_21
                 playercardcount++;
             }
 
+            if(game.player.GetTotal() > 21) 
+            {
+                //player loses, dealer wins
+                
+                Frm_lose_msg loser = new Frm_lose_msg();
+                loser.ShowDialog();
+                result = false;
+                Frm_Betting betting = new Frm_Betting(result, bet);
+                betting.ShowDialog();
+                this.Close();
 
+            }
 
             //update dealer card eck
 

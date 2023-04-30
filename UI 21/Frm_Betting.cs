@@ -29,6 +29,14 @@ namespace UI_21
             label2_bet.Text = "$" + Bet.ToString();
         }
 
+        public Frm_Betting(bool result, int bet)
+        {
+            InitializeComponent();
+            player = new Player();
+            Bet = bet;
+            GetResult(result);
+        }
+
         private void label1_Click(object sender, EventArgs e)
         {
 
@@ -56,7 +64,7 @@ namespace UI_21
             this.Hide();
             Frm_Title form1 = new Frm_Title();
             form1.ShowDialog();
-            this.Close();
+            
         }
 
         private void button1_Click_1(object sender, EventArgs e)
@@ -212,6 +220,28 @@ namespace UI_21
             label2_bet.Text = "$" + Bet.ToString();
 
 
+        }
+
+        public void GetResult(bool x) 
+        {
+            if (x) 
+            {
+                Bank = Bank + (Bet * 2);
+                Bet = 0;
+                label2_bet.Text = "$" + Bet.ToString();
+                LBL_BankTotal.Text = "$" + Bank.ToString();
+
+            }
+            else 
+            { 
+                Bank = Bank - Bet; 
+                Bet = 0;
+                label2_bet.Text = "$" + Bet.ToString();
+                LBL_BankTotal.Text = "$" + Bank.ToString();
+
+            }
+            
+            
         }
     }
 }

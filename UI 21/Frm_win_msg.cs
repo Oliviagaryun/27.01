@@ -14,18 +14,11 @@ namespace UI_21
     {
         public Frm_win_msg()
         {
-            InitializeComponent();
-            Frm_win_msg form1 = new Frm_win_msg();
-            form1.ShowDialog();
-            this.Close();
         }
 
         public void Frm_win_msg_Load(object sender, EventArgs e)
         {
-            
-            Frm_win_msg form1 = new Frm_win_msg();
-            form1.ShowDialog();
-            this.Close();
+          
         }
 
         private void txt_betWin_TextChanged(object sender, EventArgs e)

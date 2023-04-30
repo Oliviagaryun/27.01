@@ -246,32 +246,28 @@ namespace UI_21
         {
             bool win = false; // Set to true if the player wins
                               // Display the dealer's cards and total
-            Console.WriteLine("Dealer's cards are: ");
-            foreach (var card in dealer.Hand) // reveals both dealers cards
-            {
-                Console.WriteLine(card.Rank + " of " + card.Suit);
-            }
-            Console.WriteLine("Dealer's total is: " + dealer.GetTotal());
+            //Console.WriteLine("Dealer's cards are: ");
+            //foreach (var card in dealer.Hand) // reveals both dealers cards
+            //{
+            //    Console.WriteLine(card.Rank + " of " + card.Suit);
+            //}
+            //Console.WriteLine("Dealer's total is: " + dealer.GetTotal());
 
-            // Keep drawing cards for the dealer until they have a total of 17 or more
-            while (dealer.GetTotal() < 17)
-            {
-                dealer.Draw(deck);
+            //// Keep drawing cards for the dealer until they have a total of 17 or more
+            //while (dealer.GetTotal() < 17)
+            //{
+            //    dealer.Draw(deck);
 
-            }
+            //}
+
             // Check who won the game
-            if (player.GetTotal() > 21)
-            {
-                Console.WriteLine("You lose!");
-                // Player busted, so the player loses and the bool win remains false 
-
-            }
-            else if (dealer.GetTotal() > 21)
+            
+            if (dealer.GetTotal() > 21)
             {
                 Console.WriteLine("Dealer busts! You win!");
                 Console.WriteLine("You win " + (Bet * 2) + " chips.");
                 win = true;
-                Application.Run(new Frm_win_msg());
+                //Application.Run(new Frm_win_msg());
                 // Load winner form (UI for winner) using Windows Forms
             }
             else if (dealer.GetTotal() < player.GetTotal())
@@ -281,7 +277,7 @@ namespace UI_21
                 win = true;
 
                 // Load winner form (UI for winner) using Windows Forms
-                Application.Run(new Frm_win_msg());
+                //Application.Run(new Frm_win_msg());
             }
             else
             {
