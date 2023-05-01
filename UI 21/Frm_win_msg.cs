@@ -14,6 +14,7 @@ namespace UI_21
     {
         public Frm_win_msg()
         {
+            InitializeComponent();
         }
 
         public void Frm_win_msg_Load(object sender, EventArgs e)

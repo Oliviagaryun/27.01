@@ -14,6 +14,7 @@ namespace UI_21
     {
         public Frm_lose_msg()
         {
+            InitializeComponent();
         }
 
         private void txt_loseMsg_TextChanged(object sender, EventArgs e)

@@ -98,12 +98,14 @@ namespace UI_21
         public void Shuffle()
         {
             List<Card> newDeck = new List<Card>();
+            //var NewCardImages = new Dictionary<Card, string>();
             Random random = new Random();
             while (Cards.Count > 0)
             {
                 int index = random.Next(Cards.Count);
                 newDeck.Add(Cards[index]);
                 Cards.RemoveAt(index);
+               
             }
             Cards = newDeck;
         }

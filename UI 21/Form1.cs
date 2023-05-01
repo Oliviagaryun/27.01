@@ -51,8 +51,9 @@ namespace UI_21
 
             playercardcount = game.player.Hand.Count();
             dealercardcount = game.dealer.Hand.Count();
+            lbl_TotalBet.Text = "Bet: " + "$" + Convert.ToString(bet);
 
-            
+
             SetUp();
         }
 
@@ -69,9 +70,13 @@ namespace UI_21
                 newcardpic.Height = 162;
                 newcardpic.Location = new Point(dealerlocations[i - 1], 3);
                 newcardpic.Image = Image.FromFile(GetCardImagePath(dealercard));
+
                 this.Controls.Add(newcardpic);
+                this.Controls[this.Controls.Count- 1].BringToFront();
 
             }
+
+            LBL_DealerTotal.Text = "Dealer: " + Convert.ToString(game.dealer.GetTotal());
 
             bool win = game.DetermineWinner(game.player, game.dealer);
             if (win) 
@@ -91,6 +96,7 @@ namespace UI_21
                 Frm_Betting betting = new Frm_Betting(result, bet);
                 betting.ShowDialog();
                 this.Close();
+                
             }
         }
 
@@ -107,7 +113,9 @@ namespace UI_21
             newcardpic.Height = 162;
             newcardpic.Location = new Point(310, 292);
             newcardpic.Image = Image.FromFile(GetCardImagePath(plyrcard1));
+            
             this.Controls.Add(newcardpic);
+            this.Controls[this.Controls.Count - 1].BringToFront();
 
             Card plyrcard2 = game.player.Hand[1];
             PictureBox newcardpic1 = new PictureBox();
@@ -116,7 +124,9 @@ namespace UI_21
             newcardpic1.Height = 162;
             newcardpic1.Location = new Point(310 + 26, 292);
             newcardpic1.Image = Image.FromFile(GetCardImagePath(plyrcard2));
+            
             this.Controls.Add(newcardpic1);
+            this.Controls[this.Controls.Count - 1].BringToFront();
 
 
             //set one card for dealer
@@ -127,7 +137,12 @@ namespace UI_21
             newcardpic2.Height = 162;
             newcardpic2.Location = new Point(359, 3);
             newcardpic2.Image = Image.FromFile(GetCardImagePath(dealercard1));
+            
             this.Controls.Add(newcardpic2);
+            this.Controls[this.Controls.Count - 1].BringToFront();
+
+            lbl_cardVal.Text = Convert.ToString(game.player.GetTotal());
+            LBL_DealerTotal.Text = "Dealer: " + Convert.ToString(game.dealer.GetTotal());
         }
 
         private void Btn_Return_Click(object sender, EventArgs e)
@@ -155,7 +170,7 @@ namespace UI_21
 
         private void lbl_TotalBet_Click(object sender, EventArgs e)
         {  
-            lbl_TotalBet.Text = "$" + Convert.ToString(bet);
+            
 
             //string Bet = Frm_Betting.Bet.ToString();
             // lbl_TotalBet.Text = "$" + Bet;
@@ -176,18 +191,21 @@ namespace UI_21
             if(game.player.Hand.Count() - 2 > playercardcount) 
             {
                 int loc = playerlocations[playercardcount];
-                Card playercard = game.player.Hand[playercardcount];
+                Card playercard = game.player.Hand[playercardcount + 2];
                 PictureBox newcardpic = new PictureBox();
                 newcardpic.SizeMode= PictureBoxSizeMode.StretchImage;
                 newcardpic.Width = 97;
                 newcardpic.Height = 162;
                 newcardpic.Location = new Point(loc, 292);
                 newcardpic.Image = Image.FromFile(GetCardImagePath(playercard));
+                
                 this.Controls.Add(newcardpic);
+                this.Controls[this.Controls.Count - 1].BringToFront();
                 playercardcount++;
             }
+            lbl_cardVal.Text = Convert.ToString(game.player.GetTotal());
 
-            if(game.player.GetTotal() > 21) 
+            if (game.player.GetTotal() > 21) 
             {
                 //player loses, dealer wins
                 
@@ -200,17 +218,18 @@ namespace UI_21
 
             }
 
-            //update dealer card eck
+            
+
+            //update dealer card deck
 
         }
 
         private void lbl_PlayerTotal(object sender, EventArgs e)
         {
             //made another temp player, you can remove this once you make a public player that all these functions can access
-            Player TEMPplayer = new Player();
             
             //converted the total to string so it can be put in lbl_cardVal.text
-            lbl_cardVal.Text = Convert.ToString(TEMPplayer.GetTotal());
+            
         }
 
         private void BackofCard(object sender, EventArgs e)
