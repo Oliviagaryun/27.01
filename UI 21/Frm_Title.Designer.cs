@@ -85,11 +85,12 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Green;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
-            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(898, 501);
             this.Controls.Add(this.Btn_HowToPlay);
             this.Controls.Add(this.Btn_Play);
             this.Controls.Add(this.Btn_History);
+            this.DoubleBuffered = true;
             this.ForeColor = System.Drawing.Color.Green;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "Frm_Title";

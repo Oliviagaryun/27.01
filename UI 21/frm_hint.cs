@@ -29,5 +29,10 @@ namespace UI_21
         {
 
         }
+
+        private void Pb_yellow_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

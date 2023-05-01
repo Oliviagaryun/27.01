@@ -45,6 +45,7 @@
             this.Pb_yellow.Size = new System.Drawing.Size(270, 187);
             this.Pb_yellow.TabIndex = 0;
             this.Pb_yellow.TabStop = false;
+            this.Pb_yellow.Click += new System.EventHandler(this.Pb_yellow_Click);
             // 
             // txt_hint
             // 

@@ -139,6 +139,7 @@
             this.LBL_BankTotal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(100)))), ((int)(((byte)(62)))));
             this.LBL_BankTotal.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.LBL_BankTotal.Name = "LBL_BankTotal";
+            this.LBL_BankTotal.Click += new System.EventHandler(this.LBL_BankTotal_Click);
             // 
             // Frm_Betting
             // 
@@ -156,6 +157,7 @@
             this.Controls.Add(this.Btn_MM);
             this.Controls.Add(this.Btn_Bet);
             this.Controls.Add(this.Btn_Chip25);
+            this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "Frm_Betting";
             this.Load += new System.EventHandler(this.Frm_Betting_Load);

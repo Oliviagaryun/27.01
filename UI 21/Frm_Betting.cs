@@ -243,5 +243,10 @@ namespace UI_21
             
             
         }
+
+        private void LBL_BankTotal_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

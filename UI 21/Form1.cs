@@ -347,5 +347,10 @@ namespace UI_21
         {
             SetPictureBoxes();
         }
+
+        private void LBL_DealerTotal_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
