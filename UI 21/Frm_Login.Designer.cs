@@ -37,7 +37,6 @@
             this.lbl_Password = new System.Windows.Forms.Label();
             this.btnRegister = new System.Windows.Forms.Button();
             this.BTN_Login = new System.Windows.Forms.Button();
-            this.Btn_Play = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.Pb_login)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Pb_loginTitle)).BeginInit();
             this.SuspendLayout();
@@ -143,29 +142,12 @@
             this.BTN_Login.UseVisualStyleBackColor = true;
             this.BTN_Login.Click += new System.EventHandler(this.BTN_Login_Click_1);
             // 
-            // Btn_Play
-            // 
-            this.Btn_Play.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.Btn_Play.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("Btn_Play.BackgroundImage")));
-            this.Btn_Play.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.Btn_Play.Location = new System.Drawing.Point(556, 223);
-            this.Btn_Play.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.Btn_Play.Name = "Btn_Play";
-            this.Btn_Play.Size = new System.Drawing.Size(115, 51);
-            this.Btn_Play.TabIndex = 8;
-            this.Btn_Play.Text = "Play";
-            this.Btn_Play.UseVisualStyleBackColor = true;
-            this.Btn_Play.Click += new System.EventHandler(this.Btn_Play_Click);
-            // 
             // Frm_Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(700, 338);
-            this.Controls.Add(this.Btn_Play);
             this.Controls.Add(this.BTN_Login);
             this.Controls.Add(this.btnRegister);
             this.Controls.Add(this.lbl_Password);
@@ -195,6 +177,5 @@
         private Label lbl_Password;
         private Button btnRegister;
         private Button BTN_Login;
-        private Button Btn_Play;
     }
 }
