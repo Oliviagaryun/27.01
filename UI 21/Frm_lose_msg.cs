@@ -21,5 +21,10 @@ namespace UI_21
         {
 
         }
+
+        private void Frm_lose_msg_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
