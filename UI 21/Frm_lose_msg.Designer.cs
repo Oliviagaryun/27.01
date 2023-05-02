@@ -29,17 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_lose_msg));
-            this.txt_loseMsg = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
-            // 
-            // txt_loseMsg
-            // 
-            this.txt_loseMsg.Location = new System.Drawing.Point(380, 101);
-            this.txt_loseMsg.Name = "txt_loseMsg";
-            this.txt_loseMsg.Size = new System.Drawing.Size(212, 27);
-            this.txt_loseMsg.TabIndex = 0;
-            this.txt_loseMsg.Text = "lose. bank = bank-bet";
-            this.txt_loseMsg.TextChanged += new System.EventHandler(this.txt_loseMsg_TextChanged);
             // 
             // Frm_lose_msg
             // 
@@ -48,18 +38,15 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.txt_loseMsg);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "Frm_lose_msg";
             this.Text = "Frm_lose_msg";
+            this.Load += new System.EventHandler(this.Frm_lose_msg_Load);
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
-
-        private TextBox txt_loseMsg;
     }
 }
