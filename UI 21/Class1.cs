@@ -31,7 +31,7 @@ namespace UI_21
         // Function to check if a card is equal to another one
         public bool Equals(Card otherCard)
         {
-            return this.Rank == otherCard.Rank && this.Suit == otherCard.Suit && this.Value == otherCard.Value;
+            return this.Rank.ToLower() == otherCard.Rank.ToLower() && this.Suit.ToLower() == otherCard.Suit.ToLower() && this.Value == otherCard.Value;
         }
 
 

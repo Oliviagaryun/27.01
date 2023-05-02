@@ -76,7 +76,44 @@ namespace UI_21
 
             
         }
-        // a method that handles the timer tick event
+       
+
+
+        public PictureBox AnimateLastPictureBox(int x, int y)
+        {
+            // find the last picturebox in the list of controls
+            lastPictureBox = pictureBoxes.Last();
+
+
+            // set the initial location of the picturebox to (164, 41)
+            lastPictureBox.Location = new System.Drawing.Point(164, 41);
+
+            Timers.Add(new System.Windows.Forms.Timer());
+            Timers.Last().Interval = 10;
+            Timers.Last().Tick += new EventHandler(timer_Tick);
+
+           
+
+            // set the target location of the picturebox to (x, y)
+            this.x = x;
+            this.y = y;
+
+            // calculate the change in x and y per tick based on the distance and duration
+            // assuming the duration is 1000 milliseconds
+            int distanceX = x - 164;
+            int distanceY = y - 41;
+            int duration = 1000;
+            dx = distanceX / (duration / Timers.Last().Interval);
+            dy = distanceY / (duration / Timers.Last().Interval);
+
+            
+
+
+
+            // return the final picturebox with the new location
+            return lastPictureBox;
+        }
+         // a method that handles the timer tick event
         private void timer_Tick(object sender, EventArgs e)
         {
             // get the current location of the picturebox
@@ -88,6 +125,7 @@ namespace UI_21
             {
                 // stop the timer and exit
                 Timers.Last().Stop();
+                Timers.RemoveAt(Timers.Count - 1);
                 return;
             }
 
@@ -108,41 +146,6 @@ namespace UI_21
 
             // set the new location of the picturebox
             lastPictureBox.Location = new System.Drawing.Point(currentX, currentY);
-        }
-
-
-        public PictureBox AnimateLastPictureBox(int x, int y)
-        {
-            // find the last picturebox in the list of controls
-            lastPictureBox = pictureBoxes.Last();
-
-
-            // set the initial location of the picturebox to (164, 41)
-            lastPictureBox.Location = new System.Drawing.Point(164, 41);
-
-            Timers.Add(new System.Windows.Forms.Timer());
-            Timers.Last().Interval = 10;
-            Timers.Last().Tick += new EventHandler(timer_Tick);
-
-            // set the target location of the picturebox to (x, y)
-            this.x = x;
-            this.y = y;
-
-            // calculate the change in x and y per tick based on the distance and duration
-            // assuming the duration is 1000 milliseconds
-            int distanceX = x - 164;
-            int distanceY = y - 41;
-            int duration = 1000;
-            dx = distanceX / (duration / Timers.Last().Interval);
-            dy = distanceY / (duration / Timers.Last().Interval);
-
-            
-
-            // start the timer to animate the picturebox
-            Timers.Last().Start();
-
-            // return the final picturebox with the new location
-            return lastPictureBox;
         }
 
 
@@ -195,6 +198,17 @@ namespace UI_21
             }
         }
 
+        public void AddCardToForm(PictureBox card, int x, int y)
+        {
+            pictureBoxes.Add(card);
+            pictureBoxes.Last().BringToFront();
+            this.Controls.Add(pictureBoxes.Last());
+            pictureBoxes[pictureBoxes.Count() - 1] = AnimateLastPictureBox(x, y);
+
+        }
+
+       
+
         public void SetUp()
         {
             game.deck.Shuffle();
@@ -208,12 +222,12 @@ namespace UI_21
             newcardpic.Height = 162;
             newcardpic.Location = new Point(164, 41);
             newcardpic.Image = Image.FromFile(GetCardImagePath(plyrcard1));
+            AddCardToForm(newcardpic, 310, 292);
 
-            pictureBoxes.Add(newcardpic);
-            pictureBoxes.Last().BringToFront();
-            this.Controls.Add(pictureBoxes.Last());
-            pictureBoxes[pictureBoxes.Count() - 1] = AnimateLastPictureBox(310, 292);
+            Timers.Last().Start();
+
             
+
 
 
             Card plyrcard2 = game.player.Hand[1];
@@ -224,11 +238,10 @@ namespace UI_21
             newcardpic1.Location = new Point(164, 41);
             newcardpic1.Image = Image.FromFile(GetCardImagePath(plyrcard2));
 
-            pictureBoxes.Add(newcardpic1);
-            pictureBoxes.Last().BringToFront();
-            this.Controls.Add(pictureBoxes.Last());
-            pictureBoxes[pictureBoxes.Count() - 1] = AnimateLastPictureBox(336, 292);
-            
+            AddCardToForm(newcardpic1, 336, 292);
+            Timers.Last().Start();
+
+
 
 
             //set one card for dealer
@@ -240,14 +253,17 @@ namespace UI_21
             newcardpic2.Location = new Point(164, 41);
             newcardpic2.Image = Image.FromFile(GetCardImagePath(dealercard1));
 
-            pictureBoxes.Add(newcardpic2);
-            pictureBoxes.Last().BringToFront();
-            this.Controls.Add(pictureBoxes.Last());
-            pictureBoxes[pictureBoxes.Count() - 1] = AnimateLastPictureBox(359, 3);
             
+            AddCardToForm(newcardpic2, 359, 3);
+            Timers.Last().Start();
+
+
+
 
             lbl_cardVal.Text = Convert.ToString(game.player.GetTotal());
             LBL_DealerTotal.Text = "Dealer: " + Convert.ToString(game.dealer.GetTotal());
+
+            
         }
 
         private void Btn_Return_Click(object sender, EventArgs e)
