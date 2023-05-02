@@ -13,6 +13,7 @@ using System.Windows.Forms;
 using UI_21;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using static UI_21.Frm_Game;
+using WinFormAnimation;
 
 namespace UI_21
 {
@@ -55,6 +56,16 @@ namespace UI_21
 
 
             SetUp();
+        }
+
+        public PictureBox DrawCard(PictureBox card, int endX, int endY) 
+        {
+            Float2D start = new Float2D(164, 41);
+            Float2D end = new Float2D(endX, endY);
+            new Animator2D(
+                new Path2D(start, end, 1000)
+                .ContinueTo(this.Location.ToFloat2D(), 2000, 3000)
+                .Play(this, Animator2D.KnownProperties.Location);
         }
 
         public void Stand() 
