@@ -13,7 +13,7 @@ using System.Windows.Forms;
 using UI_21;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using static UI_21.Frm_Game;
-using WinFormAnimation;
+
 
 namespace UI_21
 {
@@ -27,13 +27,26 @@ namespace UI_21
         public Deck deck;
         public int bet;
 
+        private int x; // the target x 
+        private int y; // the target y 
+        private int dx; // the change in x 
+        private int dy; // the change in y 
+
+        public List<PictureBox> pictureBoxes = new List<PictureBox>();
+        public List<System.Windows.Forms.Timer> Timers = new List<System.Windows.Forms.Timer>();
+
+
         public int playercardcount;
         public int dealercardcount;
 
-        public int[] playerlocations = new int[]{363, 389, 413};
-        public int[] dealerlocations = new int[] {385, 411, 437, 462 };
+        public int[] playerlocations = new int[] { 363, 389, 413 };
+        public int[] dealerlocations = new int[] { 385, 411, 437, 462 };
 
         public bool result;
+        private System.Windows.Forms.Timer timer;
+        private PictureBox lastPictureBox;
+
+        bool start;
 
 
         public Frm_Game(Player player1, int Bet)
@@ -41,7 +54,7 @@ namespace UI_21
 
 
             InitializeComponent();
-            
+
             //NEW INSTANCE OF DEALER 
             //NOT dealer = dealer
             dealer = new Dealer();
@@ -55,42 +68,113 @@ namespace UI_21
             lbl_TotalBet.Text = "Bet: " + "$" + Convert.ToString(bet);
 
 
-            SetUp();
-        }
+            
 
-        public PictureBox DrawCard(PictureBox card, int endX, int endY) 
+            start = false;
+
+          
+
+            
+        }
+        // a method that handles the timer tick event
+        private void timer_Tick(object sender, EventArgs e)
         {
-            Float2D start = new Float2D(164, 41);
-            Float2D end = new Float2D(endX, endY);
-            new Animator2D(
-                new Path2D(start, end, 1000)
-                .ContinueTo(this.Location.ToFloat2D(), 2000, 3000)
-                .Play(this, Animator2D.KnownProperties.Location);
+            // get the current location of the picturebox
+            int currentX = lastPictureBox.Location.X;
+            int currentY = lastPictureBox.Location.Y;
+
+            // check if the picturebox has reached the target location or not
+            if (currentX == x && currentY == y)
+            {
+                // stop the timer and exit
+                Timers.Last().Stop();
+                return;
+            }
+
+            // update the location of the picturebox by adding dx and dy
+            currentX += dx;
+            currentY += dy;
+
+            // make sure the location does not exceed the target location
+            if (dx > 0 && currentX > x || dx < 0 && currentX < x)
+            {
+                currentX = x;
+            }
+
+            if (dy > 0 && currentY > y || dy < 0 && currentY < y)
+            {
+                currentY = y;
+            }
+
+            // set the new location of the picturebox
+            lastPictureBox.Location = new System.Drawing.Point(currentX, currentY);
         }
 
-        public void Stand() 
+
+        public PictureBox AnimateLastPictureBox(int x, int y)
+        {
+            // find the last picturebox in the list of controls
+            lastPictureBox = pictureBoxes.Last();
+
+
+            // set the initial location of the picturebox to (164, 41)
+            lastPictureBox.Location = new System.Drawing.Point(164, 41);
+
+            Timers.Add(new System.Windows.Forms.Timer());
+            Timers.Last().Interval = 10;
+            Timers.Last().Tick += new EventHandler(timer_Tick);
+
+            // set the target location of the picturebox to (x, y)
+            this.x = x;
+            this.y = y;
+
+            // calculate the change in x and y per tick based on the distance and duration
+            // assuming the duration is 1000 milliseconds
+            int distanceX = x - 164;
+            int distanceY = y - 41;
+            int duration = 1000;
+            dx = distanceX / (duration / Timers.Last().Interval);
+            dy = distanceY / (duration / Timers.Last().Interval);
+
+            
+
+            // start the timer to animate the picturebox
+            Timers.Last().Start();
+
+            // return the final picturebox with the new location
+            return lastPictureBox;
+        }
+
+
+
+
+        public void Stand()
         {
             game.stand();
 
-            for(int i = 1; i < game.dealer.Hand.Count(); i++) 
+            for (int i = 1; i < game.dealer.Hand.Count(); i++)
             {
                 Card dealercard = game.dealer.Hand[i];
                 PictureBox newcardpic = new PictureBox();
                 newcardpic.SizeMode = PictureBoxSizeMode.StretchImage;
                 newcardpic.Width = 97;
                 newcardpic.Height = 162;
-                newcardpic.Location = new Point(dealerlocations[i - 1], 3);
+                newcardpic.Location = new Point(164, 41);
                 newcardpic.Image = Image.FromFile(GetCardImagePath(dealercard));
 
-                this.Controls.Add(newcardpic);
-                this.Controls[this.Controls.Count- 1].BringToFront();
+                pictureBoxes.Add(newcardpic);
+                pictureBoxes.Last().BringToFront();
+                this.Controls.Add(pictureBoxes.Last());
+                pictureBoxes[pictureBoxes.Count() - 1] = AnimateLastPictureBox(dealerlocations[i - 1], 3);
+                
+                
 
             }
 
             LBL_DealerTotal.Text = "Dealer: " + Convert.ToString(game.dealer.GetTotal());
 
             bool win = game.DetermineWinner(game.player, game.dealer);
-            if (win) 
+            if (win)
             {
                 Frm_win_msg winner = new Frm_win_msg();
                 winner.ShowDialog();
@@ -99,7 +183,7 @@ namespace UI_21
                 betting.ShowDialog();
                 this.Close();
             }
-            else  
+            else
             {
                 Frm_lose_msg loser = new Frm_lose_msg();
                 loser.ShowDialog();
@@ -107,11 +191,11 @@ namespace UI_21
                 Frm_Betting betting = new Frm_Betting(result, bet);
                 betting.ShowDialog();
                 this.Close();
-                
+
             }
         }
 
-        public void SetUp()  
+        public void SetUp()
         {
             game.deck.Shuffle();
 
@@ -122,22 +206,29 @@ namespace UI_21
             newcardpic.SizeMode = PictureBoxSizeMode.StretchImage;
             newcardpic.Width = 97;
             newcardpic.Height = 162;
-            newcardpic.Location = new Point(310, 292);
+            newcardpic.Location = new Point(164, 41);
             newcardpic.Image = Image.FromFile(GetCardImagePath(plyrcard1));
+
+            pictureBoxes.Add(newcardpic);
+            pictureBoxes.Last().BringToFront();
+            this.Controls.Add(pictureBoxes.Last());
+            pictureBoxes[pictureBoxes.Count() - 1] = AnimateLastPictureBox(310, 292);
             
-            this.Controls.Add(newcardpic);
-            this.Controls[this.Controls.Count - 1].BringToFront();
+
 
             Card plyrcard2 = game.player.Hand[1];
             PictureBox newcardpic1 = new PictureBox();
             newcardpic1.SizeMode = PictureBoxSizeMode.StretchImage;
             newcardpic1.Width = 97;
             newcardpic1.Height = 162;
-            newcardpic1.Location = new Point(310 + 26, 292);
+            newcardpic1.Location = new Point(164, 41);
             newcardpic1.Image = Image.FromFile(GetCardImagePath(plyrcard2));
+
+            pictureBoxes.Add(newcardpic1);
+            pictureBoxes.Last().BringToFront();
+            this.Controls.Add(pictureBoxes.Last());
+            pictureBoxes[pictureBoxes.Count() - 1] = AnimateLastPictureBox(336, 292);
             
-            this.Controls.Add(newcardpic1);
-            this.Controls[this.Controls.Count - 1].BringToFront();
 
 
             //set one card for dealer
@@ -146,11 +237,14 @@ namespace UI_21
             newcardpic2.SizeMode = PictureBoxSizeMode.StretchImage;
             newcardpic2.Width = 97;
             newcardpic2.Height = 162;
-            newcardpic2.Location = new Point(359, 3);
+            newcardpic2.Location = new Point(164, 41);
             newcardpic2.Image = Image.FromFile(GetCardImagePath(dealercard1));
+
+            pictureBoxes.Add(newcardpic2);
+            pictureBoxes.Last().BringToFront();
+            this.Controls.Add(pictureBoxes.Last());
+            pictureBoxes[pictureBoxes.Count() - 1] = AnimateLastPictureBox(359, 3);
             
-            this.Controls.Add(newcardpic2);
-            this.Controls[this.Controls.Count - 1].BringToFront();
 
             lbl_cardVal.Text = Convert.ToString(game.player.GetTotal());
             LBL_DealerTotal.Text = "Dealer: " + Convert.ToString(game.dealer.GetTotal());
@@ -170,56 +264,59 @@ namespace UI_21
             Stand();
             // game to continue. show dealers hidden card and determine winner 
             //Class1.DetermineWinner();
-            
-           
+
+
         }
         public bool returnResult()
-            {
+        {
             return game.DetermineWinner(player, dealer);// returns true or false.
         }
 
 
         private void lbl_TotalBet_Click(object sender, EventArgs e)
-        {  
-            
+        {
+
 
             //string Bet = Frm_Betting.Bet.ToString();
             // lbl_TotalBet.Text = "$" + Bet;
         }
-        
 
-        
 
-        
+
+
+
         private void Btn_Hit_Click(object sender, EventArgs e)
         {
-            
+
             game.Hit();
-            
+
             // call function hit 
 
             //update player card deck
-            if(game.player.Hand.Count() - 2 > playercardcount) 
+            if (game.player.Hand.Count() - 2 > playercardcount)
             {
                 int loc = playerlocations[playercardcount];
                 Card playercard = game.player.Hand[playercardcount + 2];
                 PictureBox newcardpic = new PictureBox();
-                newcardpic.SizeMode= PictureBoxSizeMode.StretchImage;
+                newcardpic.SizeMode = PictureBoxSizeMode.StretchImage;
                 newcardpic.Width = 97;
                 newcardpic.Height = 162;
-                newcardpic.Location = new Point(loc, 292);
+                newcardpic.Location = new Point(164, 41);
                 newcardpic.Image = Image.FromFile(GetCardImagePath(playercard));
-                
-                this.Controls.Add(newcardpic);
-                this.Controls[this.Controls.Count - 1].BringToFront();
+
+                pictureBoxes.Add(newcardpic);
+                pictureBoxes.Last().BringToFront();
+                this.Controls.Add(pictureBoxes.Last());
+                pictureBoxes[pictureBoxes.Count() - 1] = AnimateLastPictureBox(loc, 292);
+              
                 playercardcount++;
             }
             lbl_cardVal.Text = Convert.ToString(game.player.GetTotal());
 
-            if (game.player.GetTotal() > 21) 
+            if (game.player.GetTotal() > 21)
             {
                 //player loses, dealer wins
-                
+
                 Frm_lose_msg loser = new Frm_lose_msg();
                 loser.ShowDialog();
                 result = false;
@@ -229,7 +326,7 @@ namespace UI_21
 
             }
 
-            
+
 
             //update dealer card deck
 
@@ -238,9 +335,9 @@ namespace UI_21
         private void lbl_PlayerTotal(object sender, EventArgs e)
         {
             //made another temp player, you can remove this once you make a public player that all these functions can access
-            
+
             //converted the total to string so it can be put in lbl_cardVal.text
-            
+
         }
 
         private void BackofCard(object sender, EventArgs e)
@@ -250,8 +347,8 @@ namespace UI_21
 
         private void Pb_DealtCard1_Click(object sender, EventArgs e)
         {
-            
-          
+
+
         }
 
         private void Frm_Game_Load(object sender, EventArgs e)
@@ -291,7 +388,7 @@ namespace UI_21
             SetPictureBoxes();
         }
 
-        public string GetCardImagePath(Card chosencard) 
+        public string GetCardImagePath(Card chosencard)
         {
             string cardpath = "";
 
@@ -309,12 +406,12 @@ namespace UI_21
         }
 
         //testmethod
-        public void SetPictureBoxes() 
+        public void SetPictureBoxes()
         {
             //iterate through all elements on the form, if it is a picture box, adds a random picture
-            foreach(Control c in this.Controls) 
+            foreach (Control c in this.Controls)
             {
-                if(c is PictureBox) 
+                if (c is PictureBox)
                 {
                     Random random = new Random();
                     int x = random.Next(1, 50);
@@ -336,7 +433,7 @@ namespace UI_21
 
                 }
             }
-            
+
         }
 
         private void Pb_Dealer_DealtCard1_Click(object sender, EventArgs e)
@@ -363,5 +460,12 @@ namespace UI_21
         {
 
         }
+
+        private void BTN_Start_Click(object sender, EventArgs e)
+        {
+            SetUp();
+            start = true;
+        }
     }
+
 }
