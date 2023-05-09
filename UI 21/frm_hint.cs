@@ -12,11 +12,25 @@ namespace UI_21
 {
     public partial class frm_hint : Form
     {
-        Player player;
+        public Player player;
+        public string text;
         public frm_hint(Player p1)
         {
             player = p1;
             InitializeComponent();
+
+
+            if(player.GetTotal() < 17) 
+            {
+                text = "I think you should hit ;)";
+            }else if(player.GetTotal() >= 17)
+            {
+                text = "You should stand! Your win rate: " + Convert.ToString(Blackjack_Data.ReadBlackJackData(player)) + "%";
+            }
+
+            txt_hint.Text = text;
+
+
         }
 
         private void Hint_TextChanged(object sender, EventArgs e)

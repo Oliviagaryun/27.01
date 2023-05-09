@@ -185,7 +185,7 @@
             this.BTN_Start.TabIndex = 20;
             this.BTN_Start.Text = "START GAME";
             this.BTN_Start.UseVisualStyleBackColor = false;
-            this.BTN_Start.Click += new System.EventHandler(this.BTN_Start_Click);
+           
             // 
             // Frm_Game
             // 
